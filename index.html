@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCARD PLAY IPTV - A Evolução da TV a Cabo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #050505;
+        color: #ffffff;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      .bg-graphite { background-color: #0a0a0a; }
+      .text-scard-red { color: #cc0000; }
+      .bg-scard-red { background-color: #cc0000; }
+      .border-scard-red { border-color: #cc0000; }
+      .scard-glow {
+        box-shadow: 0 0 30px rgba(204, 0, 0, 0.4);
+      }
+      .hero-overlay {
+        background: linear-gradient(to bottom, rgba(5,5,5,0.7), rgba(5,5,5,1));
+      }
+
+      @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 4s ease-in-out infinite;
+      }
+
+      /* Animated Border for Highlighted Card */
+      @keyframes border-rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .animated-border-container {
+        position: relative;
+        padding: 2px;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .animated-border-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          transparent,
+          rgba(204, 0, 0, 1),
+          transparent 35%
+        );
+        animation: border-rotate 4s linear infinite;
+        z-index: -2;
+      }
+
+      .animated-border-container::after {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #050505;
+        border-radius: 1.45rem;
+        z-index: -1;
+      }
+
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(204, 0, 0, 0.2); }
+        50% { box-shadow: 0 0 40px rgba(204, 0, 0, 0.4); }
+      }
+
+      .highlight-pulse {
+        animation: pulse-glow 3s ease-in-out infinite;
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.473.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
