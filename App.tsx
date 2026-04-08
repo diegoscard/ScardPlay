@@ -339,7 +339,7 @@ const SupportedApps: React.FC = () => {
       name: "Sistema Roku",
       icon: <Box size={24} className="text-scard-red" />,
       free: ["Play Sim", "IPTV Smarters", "MetaPlayer", "GSE Smart IPTV"],
-      paid: ["IBO Player", "Rivu TV"]
+      paid: ["ClouDDy", "IBO Player", "Rivu TV"]
     },
     {
       name: "Sistema Android",
