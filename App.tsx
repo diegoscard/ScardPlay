@@ -54,7 +54,7 @@ const Header: React.FC = () => {
           href={WHATSAPP_BASE_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-scard-red hover:bg-red-700 text-white px-5 py-2 rounded-full text-[10px] font-black transition-all transform hover:scale-105 shadow-xl shadow-red-900/30"
+          className="bg-scard-red hover:bg-red-700 text-white px-4 py-2 sm:px-5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black transition-all transform hover:scale-105 shadow-xl shadow-red-900/30 whitespace-nowrap"
         >
           ASSINAR AGORA
         </a>
@@ -97,11 +97,11 @@ const Hero: React.FC = () => {
               </div>
               
               <div className="space-y-2">
-                <h1 className="text-5xl lg:text-7xl font-black tracking-tighter leading-[0.85] uppercase">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-[0.85] uppercase">
                   LIBERTE O SEU <br />
                   <span className="text-scard-red">ENTRETENIMENTO</span>
                 </h1>
-                <p className="text-xl lg:text-2xl font-bold text-gray-300 tracking-tight uppercase border-l-4 border-scard-red pl-4">
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-300 tracking-tight uppercase border-l-4 border-scard-red pl-4">
                   IPTV Premium: A Evolução Definitiva da TV
                 </p>
               </div>
@@ -256,7 +256,7 @@ const Benefits: React.FC = () => {
           {benefitCards.map((benefit, idx) => (
             <div 
               key={idx} 
-              className="p-10 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-scard-red/20 transition-all group hover:-translate-y-2 relative overflow-hidden"
+              className="p-6 sm:p-10 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-scard-red/20 transition-all group hover:-translate-y-2 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-scard-red/5 blur-3xl rounded-full -mr-16 -mt-16" />
               <div className="text-scard-red mb-6 group-hover:scale-110 transition-transform">
@@ -321,6 +321,93 @@ const FeaturedContent: React.FC = () => {
   );
 };
 
+const SupportedApps: React.FC = () => {
+  const systems = [
+    {
+      name: "Smart TV LG",
+      icon: <Tv size={24} className="text-scard-red" />,
+      free: ["Play Sim", "Smarters Player Lite", "SS IPTV", "Room IPTV"],
+      paid: ["IBO Player", "DuplexPlay", "Flix IPTV", "Bob Player"]
+    },
+    {
+      name: "Smart TV Samsung",
+      icon: <Monitor size={24} className="text-scard-red" />,
+      free: ["Play Sim", "Smarters Player Lite", "SS IPTV", "Room IPTV"],
+      paid: ["IBO Player", "DuplexPlay", "Flix IPTV", "Bob Player"]
+    },
+    {
+      name: "Sistema Roku",
+      icon: <Box size={24} className="text-scard-red" />,
+      free: ["Play Sim", "IPTV Smarters", "MetaPlayer", "GSE Smart IPTV"],
+      paid: ["IBO Player", "Rivu TV"]
+    },
+    {
+      name: "Sistema Android",
+      icon: <Smartphone size={24} className="text-scard-red" />,
+      free: ["Play Sim", "XCIPTV Player", "IPTV Smarters Pro", "Televizo"],
+      paid: ["TiviMate", "IMPlayer", "IBO Player"]
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-[#050505] border-b border-white/5">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16 space-y-3">
+          <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tighter">APLICATIVOS <span className="text-scard-red">COMPATÍVEIS</span></h2>
+          <p className="text-gray-400 text-lg font-medium">Confira os melhores aplicativos grátis e pagos para o seu sistema.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {systems.map((sys, idx) => (
+            <div key={idx} className="bg-zinc-900/40 border border-white/10 rounded-3xl p-6 sm:p-8 hover:bg-zinc-900/60 transition-all hover:border-scard-red/30 group">
+              <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-scard-red/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  {sys.icon}
+                </div>
+                <h3 className="text-xl font-black uppercase tracking-tight">{sys.name}</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                    <h4 className="text-sm font-bold text-gray-300 uppercase tracking-widest">Grátis</h4>
+                  </div>
+                  <ul className="space-y-2">
+                    {sys.free.map((app, i) => (
+                      <li key={i} className="flex items-center gap-2 text-gray-400 text-sm">
+                        <Check size={14} className="text-green-500/50" />
+                        {app}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="h-px w-full bg-white/5"></div>
+
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-2 h-2 rounded-full bg-scard-red"></div>
+                    <h4 className="text-sm font-bold text-gray-300 uppercase tracking-widest">Pagos (Premium)</h4>
+                  </div>
+                  <ul className="space-y-2">
+                    {sys.paid.map((app, i) => (
+                      <li key={i} className="flex items-center gap-2 text-gray-400 text-sm">
+                        <Star size={14} className="text-scard-red/50" />
+                        {app}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const PlansSection: React.FC = () => {
   return (
     <section id="planos" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
@@ -374,12 +461,12 @@ const PlansSection: React.FC = () => {
 
             if (plan.highlight) {
               return (
-                <div key={plan.id} className="relative z-20 flex flex-col scale-105">
+                <div key={plan.id} className="relative z-20 flex flex-col sm:scale-105 mt-4 sm:mt-0">
                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-scard-red text-white px-8 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] z-30 shadow-2xl whitespace-nowrap">
                      RECOMENDADO VIP
                    </div>
                    <div className="animated-border-container highlight-pulse h-full flex flex-col overflow-hidden rounded-3xl">
-                      <div className="relative p-10 h-full flex flex-col bg-[#050505] rounded-3xl border border-scard-red/20">
+                      <div className="relative p-6 sm:p-10 h-full flex flex-col bg-[#050505] rounded-3xl border border-scard-red/20">
                         {innerContent}
                         {benefitsContent}
                         {footerContent}
@@ -391,7 +478,7 @@ const PlansSection: React.FC = () => {
 
             return (
               <div key={plan.id} className="flex flex-col transform hover:translate-y-[-8px] transition-all duration-500">
-                <div className="relative p-10 h-full flex flex-col bg-zinc-900/40 border border-white/5 rounded-3xl hover:border-scard-red/20 transition-all overflow-hidden">
+                <div className="relative p-6 sm:p-10 h-full flex flex-col bg-zinc-900/40 border border-white/5 rounded-3xl hover:border-scard-red/20 transition-all overflow-hidden">
                    {innerContent}
                    {benefitsContent}
                    {footerContent}
@@ -418,9 +505,9 @@ const Compatibility: React.FC = () => {
     <section className="py-20 bg-black border-y border-white/5">
       <div className="container mx-auto px-6 text-center">
         <h3 className="text-xl font-black mb-12 uppercase tracking-widest opacity-60">Liberdade total para assistir onde quiser.</h3>
-        <div className="flex flex-wrap justify-center gap-10 md:gap-24 opacity-30">
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-10 md:gap-24 opacity-30">
           {devices.map((device, idx) => (
-            <div key={idx} className="flex flex-col items-center gap-4 group cursor-default">
+            <div key={idx} className="flex flex-col items-center gap-3 sm:gap-4 group cursor-default w-[80px] sm:w-auto">
               <div className="text-white group-hover:text-scard-red transition-all duration-300 group-hover:scale-110 group-hover:opacity-100">
                 {device.icon}
               </div>
@@ -443,7 +530,7 @@ const SocialProof: React.FC = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, idx) => (
-            <div key={idx} className="bg-zinc-900/20 p-10 rounded-3xl border border-white/5 space-y-6 hover:bg-zinc-900/40 transition-all">
+            <div key={idx} className="bg-zinc-900/20 p-6 sm:p-10 rounded-3xl border border-white/5 space-y-6 hover:bg-zinc-900/40 transition-all">
               <div className="flex gap-1">
                 {[...Array(t.rating)].map((_, i) => (
                   <Star key={i} size={16} className="text-yellow-500 fill-yellow-500" />
@@ -474,10 +561,10 @@ const FAQAccordionItem: React.FC<{ item: FAQItem }> = ({ item }) => {
     <div className="border-b border-white/5 last:border-0">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-8 flex items-center justify-between text-left group"
+        className="w-full py-6 sm:py-8 flex items-center justify-between text-left group gap-4"
       >
-        <span className={`text-xl font-black transition-colors ${isOpen ? 'text-scard-red' : 'text-white'}`}>{item.question}</span>
-        <div className={`p-2 rounded-full transition-all ${isOpen ? 'bg-scard-red text-white rotate-180' : 'bg-white/5 text-gray-500'}`}>
+        <span className={`text-lg sm:text-xl font-black transition-colors ${isOpen ? 'text-scard-red' : 'text-white'}`}>{item.question}</span>
+        <div className={`p-2 rounded-full shrink-0 transition-all ${isOpen ? 'bg-scard-red text-white rotate-180' : 'bg-white/5 text-gray-500'}`}>
           <ChevronDown size={20} />
         </div>
       </button>
@@ -517,17 +604,17 @@ const CTAFinal: React.FC = () => {
             SCARD IPTV
          </div>
       </div>
-      <div className="container mx-auto px-6 text-center relative z-10 space-y-10">
-        <h2 className="text-5xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85]">Sua TV nunca <br />mais será a mesma.</h2>
-        <p className="text-xl lg:text-2xl font-bold text-white/90 max-w-3xl mx-auto leading-tight">
+      <div className="container mx-auto px-6 text-center relative z-10 space-y-8 sm:space-y-10">
+        <h2 className="text-4xl sm:text-5xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85]">Sua TV nunca <br />mais será a mesma.</h2>
+        <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white/90 max-w-3xl mx-auto leading-tight">
           Assine agora a <span className="text-black bg-white px-3 py-1 rounded-xl">SCARD PLAY IPTV</span> e economize até 90% em comparação com a TV convencional.
         </p>
-        <div className="pt-6">
+        <div className="pt-4 sm:pt-6">
           <a 
             href={WHATSAPP_BASE_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-scard-red hover:bg-zinc-100 px-16 py-6 rounded-2xl text-2xl font-black transition-all transform hover:scale-105 active:scale-95 shadow-[0_25px_80px_-20px_rgba(255,255,255,0.4)] uppercase"
+            className="inline-block bg-white text-scard-red hover:bg-zinc-100 px-8 py-4 sm:px-16 sm:py-6 rounded-2xl text-xl sm:text-2xl font-black transition-all transform hover:scale-105 active:scale-95 shadow-[0_25px_80px_-20px_rgba(255,255,255,0.4)] uppercase"
           >
             🔴 COMEÇAR AGORA
           </a>
@@ -554,7 +641,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 gap-16 md:gap-32">
+          <div className="grid grid-cols-2 gap-8 sm:gap-16 md:gap-32">
             <div className="space-y-6">
               <h4 className="font-black uppercase tracking-widest text-xs text-white">Navegação</h4>
               <ul className="space-y-4 text-gray-500 font-bold uppercase text-[10px] tracking-widest">
@@ -592,6 +679,7 @@ const App: React.FC = () => {
       <Benefits />
       <FeaturedContent />
       <Compatibility />
+      <SupportedApps />
       <PlansSection />
       <SocialProof />
       <FAQ />
