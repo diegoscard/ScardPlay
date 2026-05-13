@@ -17,15 +17,14 @@
         scroll-behavior: smooth;
         overflow-x: hidden;
       }
-      .bg-graphite { background-color: #0a0a0a; }
-      .text-scard-red { color: #cc0000; }
-      .bg-scard-red { background-color: #cc0000; }
-      .border-scard-red { border-color: #cc0000; }
-      .scard-glow {
-        box-shadow: 0 0 30px rgba(204, 0, 0, 0.4);
-      }
-      .hero-overlay {
-        background: linear-gradient(to bottom, rgba(5,5,5,0.7), rgba(5,5,5,1));
+      
+      /* Global helper for glassmorphism if needed outside tailwind */
+      .glass-container {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
       }
 
       @keyframes bounce-slow {
@@ -70,18 +69,10 @@
         content: '';
         position: absolute;
         inset: 2px;
-        background: #050505;
+        background: rgba(5, 5, 5, 0.8);
+        backdrop-filter: blur(20px);
         border-radius: 1.45rem;
         z-index: -1;
-      }
-
-      @keyframes pulse-glow {
-        0%, 100% { box-shadow: 0 0 20px rgba(204, 0, 0, 0.2); }
-        50% { box-shadow: 0 0 40px rgba(204, 0, 0, 0.4); }
-      }
-
-      .highlight-pulse {
-        animation: pulse-glow 3s ease-in-out infinite;
       }
     </style>
     <script type="importmap">
