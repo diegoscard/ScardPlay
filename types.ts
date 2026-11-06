@@ -27,3 +27,11 @@ export interface FeaturedItem {
   image: string;
   badge?: string;
 }
+
+export interface MovieItem {
+  titulo: string;
+  ano: number;
+  generos: string[];
+  sinopse: string;
+  imagem: string | null;
+}

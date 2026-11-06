@@ -96,35 +96,38 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FEATURED_CONTENT: FeaturedItem[] = [
   {
     title: "Filmes de Bilheteria",
-    category: "Lançamentos",
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=800",
+    category: "Cinema & Lançamentos",
+    image: "/src/assets/images/featured_cinema_thriller_1794004188048.jpg",
     badge: "4K HDR"
   },
   {
     title: "Séries Completas",
-    category: "Entretenimento",
-    image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=800",
-    badge: "Atualizado"
+    category: "Prestige Dramas",
+    image: "/src/assets/images/featured_prestige_series_1794004202207.jpg",
+    badge: "Temporadas Completas"
   },
   {
-    title: "Filmes & Séries HBO",
-    category: "Premium",
+    title: "Esportes Ao Vivo & Campeonatos",
+    category: "Transmissão 60FPS",
+    image: "/src/assets/images/featured_sports_soccer_1794004175243.jpg",
+    badge: "Futebol & Lutas"
+  },
+  {
+    title: "Filmes & Séries HBO e Max",
+    category: "Catálogo Premium",
     image: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&q=80&w=800",
     badge: "Cinema em Casa"
   },
   {
     title: "Infantil e Desenhos",
-    category: "Kids",
-    image: "https://images.unsplash.com/photo-1559131397-f94da358f7ca?auto=format&fit=crop&q=80&w=800"
+    category: "Família & Kids",
+    image: "https://images.unsplash.com/photo-1559131397-f94da358f7ca?auto=format&fit=crop&q=80&w=800",
+    badge: "Controle Parental"
   },
   {
-    title: "Documentários",
-    category: "Cultura",
-    image: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Esportes e Realitys",
-    category: "Esportes",
-    image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=800"
+    title: "Documentários e Ciência",
+    category: "Cultura & Natureza",
+    image: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&q=80&w=800",
+    badge: "Alta Definição"
   }
 ];

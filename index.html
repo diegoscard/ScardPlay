@@ -8,80 +8,72 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              scard: {
+                red: '#E50914',
+                redDark: '#B20710',
+                redGlow: 'rgba(229, 9, 20, 0.15)',
+                obsidian: '#07080A',
+                card: '#0F1116',
+                cardHover: '#151820',
+                cardBorder: 'rgba(255, 255, 255, 0.08)',
+                cardBorderHover: 'rgba(229, 9, 20, 0.35)',
+                muted: '#94A3B8',
+                subtle: '#64748B',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
+      :root {
+        color-scheme: dark;
+      }
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: #050505;
-        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #07080A;
+        color: #F8FAFC;
         scroll-behavior: smooth;
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      .bg-graphite { background-color: #0a0a0a; }
-      .text-scard-red { color: #cc0000; }
-      .bg-scard-red { background-color: #cc0000; }
-      .border-scard-red { border-color: #cc0000; }
-      .scard-glow {
-        box-shadow: 0 0 30px rgba(204, 0, 0, 0.4);
-      }
-      .hero-overlay {
-        background: linear-gradient(to bottom, rgba(5,5,5,0.7), rgba(5,5,5,1));
+      ::selection {
+        background-color: #E50914;
+        color: #ffffff;
       }
 
-      @keyframes bounce-slow {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+      /* Subtle hairline borders and refined surfaces */
+      .editorial-border {
+        border-color: rgba(255, 255, 255, 0.08);
       }
-      .animate-bounce-slow {
-        animation: bounce-slow 4s ease-in-out infinite;
-      }
-
-      /* Animated Border for Highlighted Card */
-      @keyframes border-rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+      .editorial-border-hover:hover {
+        border-color: rgba(229, 9, 20, 0.35);
       }
 
-      .animated-border-container {
-        position: relative;
-        padding: 2px;
-        border-radius: 1.5rem;
-        overflow: hidden;
-        z-index: 1;
+      /* Clean scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
       }
-
-      .animated-border-container::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: conic-gradient(
-          transparent,
-          rgba(204, 0, 0, 1),
-          transparent 35%
-        );
-        animation: border-rotate 4s linear infinite;
-        z-index: -2;
+      ::-webkit-scrollbar-track {
+        background: #07080A;
       }
-
-      .animated-border-container::after {
-        content: '';
-        position: absolute;
-        inset: 2px;
-        background: #050505;
-        border-radius: 1.45rem;
-        z-index: -1;
+      ::-webkit-scrollbar-thumb {
+        background: #1F2430;
+        border-radius: 4px;
       }
-
-      @keyframes pulse-glow {
-        0%, 100% { box-shadow: 0 0 20px rgba(204, 0, 0, 0.2); }
-        50% { box-shadow: 0 0 40px rgba(204, 0, 0, 0.4); }
-      }
-
-      .highlight-pulse {
-        animation: pulse-glow 3s ease-in-out infinite;
+      ::-webkit-scrollbar-thumb:hover {
+        background: #E50914;
       }
     </style>
     <script type="importmap">
