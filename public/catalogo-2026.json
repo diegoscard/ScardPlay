@@ -1,5 +1,23 @@
 [
   {
+    "titulo": "“O Morro dos Ventos Uivantes”",
+    "ano": 2026,
+    "generos": [
+      "Romance"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/o-morro-dos-ventos-uivantes.jpg"
+  },
+  {
+    "titulo": "(Des)controle",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/des-controle.jpg"
+  },
+  {
     "titulo": "10 Anos do Impeachment",
     "ano": 2026,
     "generos": [
@@ -49,7 +67,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-caixa-azul.jpg"
   },
   {
     "titulo": "A Casa de Verão",
@@ -58,7 +76,21 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-casa-de-verao.jpg"
+  },
+  {
+    "titulo": "A Cela dos Milagres",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-cela-dos-milagres.jpg"
+  },
+  {
+    "titulo": "A Colecionadora: Você é o Próximo",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-colecionadora-voce-e-o-proximo.jpg"
   },
   {
     "titulo": "A Colega Perfeita",
@@ -67,7 +99,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-colega-perfeita.jpg"
   },
   {
     "titulo": "A Conexão Sueca",
@@ -76,7 +108,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-conexao-sueca.jpg"
   },
   {
     "titulo": "A Conspiração Condor",
@@ -85,7 +117,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-conspiracao-condor.jpg"
+  },
+  {
+    "titulo": "A Criança do Lago",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-crianca-do-lago.jpg"
   },
   {
     "titulo": "A Desconhecida",
@@ -94,7 +133,14 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-desconhecida.jpg"
+  },
+  {
+    "titulo": "A Estrela de Cinema e o Cowboy",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-estrela-de-cinema-e-o-cowboy.jpg"
   },
   {
     "titulo": "A Fera do Pântano",
@@ -103,7 +149,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-fera-do-pantano.jpg"
   },
   {
     "titulo": "A Hipótese do Amor",
@@ -112,7 +158,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-hipotese-do-amor.jpg"
   },
   {
     "titulo": "A Ilha Esquecida",
@@ -124,13 +170,27 @@
     "imagem": "/filmes/a-ilha-esquecida.jpg"
   },
   {
+    "titulo": "A Ladra Solitária",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-ladra-solitaria.jpg"
+  },
+  {
+    "titulo": "A Lista do Papai Noel",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-lista-do-papai-noel.jpg"
+  },
+  {
     "titulo": "A Maldição do Casamento",
     "ano": 2026,
     "generos": [
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-maldicao-do-casamento.jpg"
   },
   {
     "titulo": "A Mansão Savage",
@@ -139,7 +199,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-mansao-savage.jpg"
   },
   {
     "titulo": "A Maravilhosa Árvore Encantada",
@@ -148,7 +208,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-maravilhosa-arvore-encantada.jpg"
   },
   {
     "titulo": "A Milícia",
@@ -157,7 +217,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-milicia.jpg"
   },
   {
     "titulo": "A Morte de Robin Hood",
@@ -166,7 +226,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-morte-de-robin-hood.jpg"
   },
   {
     "titulo": "A Mulher Secreta",
@@ -175,7 +235,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-mulher-secreta.jpg"
   },
   {
     "titulo": "A Noiva do Ano",
@@ -184,7 +244,14 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-noiva-do-ano.jpg"
+  },
+  {
+    "titulo": "A Odisseia (L)",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-odisseia-l.jpg"
   },
   {
     "titulo": "A Rainha do Xadrez",
@@ -202,7 +269,14 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-revolucao-dos-bichos.jpg"
+  },
+  {
+    "titulo": "A Sombra do Juiz",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/a-sombra-do-juiz.jpg"
   },
   {
     "titulo": "A Terapia Certa",
@@ -211,7 +285,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-terapia-certa.jpg"
   },
   {
     "titulo": "A Torradeira",
@@ -220,25 +294,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "A Um Passo da Guerra",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "A Virgem da Pedreira",
-    "ano": 2026,
-    "generos": [
-      "Terror"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-torradeira.jpg"
   },
   {
     "titulo": "A Última Casa",
@@ -247,7 +303,39 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-ultima-casa.jpg"
+  },
+  {
+    "titulo": "A Um Passo da Guerra",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/a-um-passo-da-guerra.jpg"
+  },
+  {
+    "titulo": "A Virgem da Pedreira",
+    "ano": 2026,
+    "generos": [
+      "Terror"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/a-virgem-da-pedreira.jpg"
+  },
+  {
+    "titulo": "Academia Sobrenatural: Nascimento da Marca do Dragão",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/academia-sobrenatural-nascimento-da-marca-do-dragao.jpg"
+  },
+  {
+    "titulo": "Acampamento Miasma: Adolescência, Sexo e Morte",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/acampamento-miasma-adolescencia-sexo-e-morte.jpg"
   },
   {
     "titulo": "Agente Zeta",
@@ -257,7 +345,7 @@
       "Suspense"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/agente-zeta.jpg"
   },
   {
     "titulo": "Agentes Muito Especiais",
@@ -266,41 +354,30 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/agentes-muito-especiais.jpg"
+  },
+  {
+    "titulo": "Águas Mortais",
+    "ano": 2026,
+    "generos": [
+      "Terror"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/aguas-mortais.jpg"
   },
   {
     "titulo": "Alarme de Incêndio: Abaixo da Terra",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/alarme-de-incendio-abaixo-da-terra.jpg"
   },
   {
-    "titulo": "Alerta Apocalipse",
-    "ano": 2026,
-    "generos": [
-      "Terror"
-    ],
+    "titulo": "Além da Força, Além da Fé",
+    "ano": 2024,
+    "generos": [],
     "sinopse": "",
-    "imagem": "/filmes/alerta-apocalipse.webp"
-  },
-  {
-    "titulo": "Ali G: Ken é Eu?",
-    "ano": 2026,
-    "generos": [
-      "Comédia"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Alien Disclosure Day",
-    "ano": 2026,
-    "generos": [
-      "Suspense"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/alem-da-forca-alem-da-fe.jpg"
   },
   {
     "titulo": "Além do Dever",
@@ -309,7 +386,41 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/alem-do-dever.jpg"
+  },
+  {
+    "titulo": "Alerta Apocalipse",
+    "ano": 2026,
+    "generos": [
+      "Terror"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/alerta-apocalipse.jpg"
+  },
+  {
+    "titulo": "Ali G: Ken é Eu?",
+    "ano": 2026,
+    "generos": [
+      "Comédia"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/ali-g-ken-e-eu.jpg"
+  },
+  {
+    "titulo": "Alien Disclosure Day",
+    "ano": 2026,
+    "generos": [
+      "Suspense"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/alien-disclosure-day.jpg"
+  },
+  {
+    "titulo": "Alta Gama: O Caso dos Relógios",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/alta-gama-o-caso-dos-relogios.jpg"
   },
   {
     "titulo": "Amigas Sem Filtro",
@@ -318,7 +429,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/amigas-sem-filtro.jpg"
   },
   {
     "titulo": "Amor Demais",
@@ -327,7 +438,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/amor-demais.jpg"
   },
   {
     "titulo": "Amor em Câmera Lenta",
@@ -336,7 +447,14 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/amor-em-camera-lenta.jpg"
+  },
+  {
+    "titulo": "Amor Possível",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/amor-possivel.jpg"
   },
   {
     "titulo": "Amor Tóxico",
@@ -345,7 +463,14 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/amor-toxico.jpg"
+  },
+  {
+    "titulo": "Amor, Romance, Casamento",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/amor-romance-casamento.jpg"
   },
   {
     "titulo": "Apocalipse Z: Novo Mundo",
@@ -354,7 +479,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/apocalipse-z-novo-mundo.jpg"
   },
   {
     "titulo": "Aposta de Alto Risco",
@@ -363,7 +488,7 @@
       "Thriller"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/aposta-de-alto-risco.jpg"
   },
   {
     "titulo": "Apreensão",
@@ -372,7 +497,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/apreensao.jpg"
   },
   {
     "titulo": "As Aventuras de Tadeo e a Lâmpada Mágica",
@@ -381,7 +506,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/as-aventuras-de-tadeo-e-a-lampada-magica.jpg"
   },
   {
     "titulo": "As Cores do Mal: Preto",
@@ -390,7 +515,7 @@
       "Suspense"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/as-cores-do-mal-preto.jpg"
   },
   {
     "titulo": "As Ovelhas Detetives",
@@ -400,7 +525,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/as-ovelhas-detetives.jpg"
   },
   {
     "titulo": "Ataque Brutal",
@@ -409,25 +534,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Ato Noturno",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": "/filmes/ato-noturno.png"
-  },
-  {
-    "titulo": "Atraídos Pelo Destino",
-    "ano": 2026,
-    "generos": [
-      "Romance"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/ataque-brutal.jpg"
   },
   {
     "titulo": "Até Que Amanheça",
@@ -436,7 +543,25 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/ate-que-amanheca.jpg"
+  },
+  {
+    "titulo": "Ato Noturno",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/ato-noturno.jpg"
+  },
+  {
+    "titulo": "Atraídos Pelo Destino",
+    "ano": 2026,
+    "generos": [
+      "Romance"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/atraidos-pelo-destino.jpg"
   },
   {
     "titulo": "Authentic Games: No Império Desconectado",
@@ -445,7 +570,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/authentic-games-no-imperio-desconectado.jpg"
   },
   {
     "titulo": "Avatar Aang: O Último Mestre do Ar",
@@ -454,7 +579,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/avatar-aang-o-ultimo-mestre-do-ar.jpg"
   },
   {
     "titulo": "Aventuras nas Alturas",
@@ -463,7 +588,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/aventuras-nas-alturas.jpg"
   },
   {
     "titulo": "Baleia Assassina",
@@ -473,7 +598,7 @@
       "Thriller"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/baleia-assassina.jpg"
   },
   {
     "titulo": "Balística",
@@ -482,7 +607,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/balistica.jpg"
+  },
+  {
+    "titulo": "Barbie em O Quebra-Nozes",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/barbie-em-o-quebra-nozes.jpg"
   },
   {
     "titulo": "Batman: A Queda do Morcego - Parte 1",
@@ -491,7 +623,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/batman-a-queda-do-morcego-parte-1.jpg"
   },
   {
     "titulo": "Beijar é Fácil",
@@ -500,7 +632,21 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/beijar-e-facil.jpg"
+  },
+  {
+    "titulo": "Boa Sorte, Divirta-se, Não Morra",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/boa-sorte-divirta-se-nao-morra.jpg"
+  },
+  {
+    "titulo": "Bob Esponja: Em Busca da Calça Quadrada",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/bob-esponja-em-busca-da-calca-quadrada.jpg"
   },
   {
     "titulo": "Bola pra Cima",
@@ -509,7 +655,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/bola-pra-cima.jpg"
   },
   {
     "titulo": "Bom Garoto",
@@ -518,7 +664,14 @@
       "Thriller"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/bom-garoto.jpg"
+  },
+  {
+    "titulo": "Bruce, Brenda, David: O menino que nasceu três vezes",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/bruce-brenda-david-o-menino-que-nasceu-tres-vezes.jpg"
   },
   {
     "titulo": "BTS: O Reencontro",
@@ -527,7 +680,21 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/bts-o-reencontro.jpg"
+  },
+  {
+    "titulo": "Café, Pépi e Limão",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/cafe-pepi-e-limao.jpg"
+  },
+  {
+    "titulo": "Caju, Meu Amigo",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/caju-meu-amigo.jpg"
   },
   {
     "titulo": "Caminhos do Crime",
@@ -536,7 +703,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/caminhos-do-crime.jpg"
   },
   {
     "titulo": "Camp Rock 3",
@@ -548,13 +715,27 @@
     "imagem": "/filmes/camp-rock-3.jpg"
   },
   {
+    "titulo": "Cara de Um, Focinho de Outro",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/cara-de-um-focinho-de-outro.jpg"
+  },
+  {
     "titulo": "Carlos Lacerda - A Voz que Abalou o Brasil",
     "ano": 2026,
     "generos": [
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/carlos-lacerda-a-voz-que-abalou-o-brasil.jpg"
+  },
+  {
+    "titulo": "Carrossel Mágico",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/carrossel-magico.jpg"
   },
   {
     "titulo": "Cartas de Redenção",
@@ -563,7 +744,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/cartas-de-redencao.jpg"
   },
   {
     "titulo": "Casamento Sangrento: A Viúva",
@@ -572,7 +753,16 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/casamento-sangrento-a-viuva.jpg"
+  },
+  {
+    "titulo": "Céu em Fúria",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/ceu-em-furia.jpg"
   },
   {
     "titulo": "Chris e Martina: O Último Set",
@@ -581,7 +771,14 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/chris-e-martina-o-ultimo-set.jpg"
+  },
+  {
+    "titulo": "Cidade; Campo",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/cidade-campo.jpg"
   },
   {
     "titulo": "Cinco Tipos de Medo",
@@ -590,7 +787,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": "/filmes/cinco-tipos-de-medo.png"
+    "imagem": "/filmes/cinco-tipos-de-medo.jpg"
   },
   {
     "titulo": "Clika: Sonho e Perigo",
@@ -599,7 +796,16 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/clika-sonho-e-perigo.jpg"
+  },
+  {
+    "titulo": "Código: Vingança",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/codigo-vinganca.jpg"
   },
   {
     "titulo": "Colisão Implacável",
@@ -608,7 +814,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/colisao-implacavel.jpg"
+  },
+  {
+    "titulo": "Comer, Rezar, Ladrar",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/comer-rezar-ladrar.jpg"
   },
   {
     "titulo": "Como Mágica",
@@ -617,7 +830,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/como-magica.jpg"
   },
   {
     "titulo": "Como Perder Sua Popularidade",
@@ -627,7 +840,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/como-perder-sua-popularidade.jpg"
   },
   {
     "titulo": "Conexão Perigosa",
@@ -636,7 +849,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/conexao-perigosa.jpg"
   },
   {
     "titulo": "Conforme a Música",
@@ -645,7 +858,14 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/conforme-a-musica.jpg"
+  },
+  {
+    "titulo": "Confusão Temporal do Bob Esponja e do Patrick",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/confusao-temporal-do-bob-esponja-e-do-patrick.jpg"
   },
   {
     "titulo": "Consequência",
@@ -654,7 +874,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/consequencia.jpg"
   },
   {
     "titulo": "Conspiradores",
@@ -663,7 +883,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/conspiradores.jpg"
   },
   {
     "titulo": "Contra o Furacão",
@@ -672,7 +892,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/contra-o-furacao.jpg"
   },
   {
     "titulo": "Convocadas",
@@ -690,7 +910,14 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/coracao-partido.jpg"
+  },
+  {
+    "titulo": "Coração Selvagem",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/coracao-selvagem.jpg"
   },
   {
     "titulo": "Corrida Contra o Tempo",
@@ -699,7 +926,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/corrida-contra-o-tempo.jpg"
   },
   {
     "titulo": "Corrida dos Bichos",
@@ -717,7 +944,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/corta-fogo.jpg"
   },
   {
     "titulo": "Coyote vs. Acme",
@@ -726,7 +953,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": "/filmes/coyote-vs-acme.webp"
+    "imagem": "/filmes/coyote-vs-acme.jpg"
   },
   {
     "titulo": "Criadas",
@@ -735,7 +962,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/criadas.jpg"
   },
   {
     "titulo": "Criaturas Extraordinariamente Brilhantes",
@@ -744,7 +971,21 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/criaturas-extraordinariamente-brilhantes.jpg"
+  },
+  {
+    "titulo": "Crime em Cena",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/crime-em-cena.jpg"
+  },
+  {
+    "titulo": "Crocodilo Jurássico",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/crocodilo-jurassico.jpg"
   },
   {
     "titulo": "Cuidado com o Que Deseja",
@@ -753,25 +994,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Céu em Fúria",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Código: Vingança",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/cuidado-com-o-que-deseja.jpg"
   },
   {
     "titulo": "Da Fome ao Sonho",
@@ -780,7 +1003,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/da-fome-ao-sonho.jpg"
   },
   {
     "titulo": "Da Magia à Sedução: Feitiço de Amor",
@@ -792,13 +1015,20 @@
     "imagem": "/filmes/da-magia-a-seducao-feitico-de-amor.jpg"
   },
   {
+    "titulo": "Da Toscana, com Amor",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/da-toscana-com-amor.jpg"
+  },
+  {
     "titulo": "De Férias com Você",
     "ano": 2026,
     "generos": [
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/de-ferias-com-voce.jpg"
   },
   {
     "titulo": "De Repente Adolescente",
@@ -807,7 +1037,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/de-repente-adolescente.jpg"
   },
   {
     "titulo": "De Volta Aos Anos 90",
@@ -816,16 +1046,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Des)controle",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/de-volta-aos-anos-90.jpg"
   },
   {
     "titulo": "Desaparecida e Esquecida: O Caso Chompoo",
@@ -834,7 +1055,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/desaparecida-e-esquecida-o-caso-chompoo.jpg"
   },
   {
     "titulo": "Desejo em Manhattan",
@@ -843,7 +1064,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/desejo-em-manhattan.jpg"
   },
   {
     "titulo": "Desligue!",
@@ -852,7 +1073,14 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/desligue.jpg"
+  },
+  {
+    "titulo": "Desprotegida: O Crime de Pazos",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/desprotegida-o-crime-de-pazos.jpg"
   },
   {
     "titulo": "Destruição Final 2",
@@ -861,16 +1089,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Destruição Final 2 HD",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/destruicao-final-2.jpg"
   },
   {
     "titulo": "Detox de Plástico",
@@ -879,7 +1098,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/detox-de-plastico.jpg"
   },
   {
     "titulo": "Devorador",
@@ -888,7 +1107,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/devorador.jpg"
   },
   {
     "titulo": "Devoradores de Estrelas",
@@ -906,7 +1125,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/dhurandhar-a-vinganca.jpg"
   },
   {
     "titulo": "Dia D",
@@ -924,7 +1143,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/dibu-martinez-o-garoto-que-parava-o-tempo.jpg"
   },
   {
     "titulo": "Dinheiro Suspeito",
@@ -933,7 +1152,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/dinheiro-suspeito.jpg"
   },
   {
     "titulo": "Dolly: A Boneca Maldita",
@@ -942,7 +1161,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/dolly-a-boneca-maldita.jpg"
   },
   {
     "titulo": "Domingo Sem Deus",
@@ -951,7 +1170,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/domingo-sem-deus.jpg"
+  },
+  {
+    "titulo": "Dora: Diga Hello para a Aventura",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/dora-diga-hello-para-a-aventura.jpg"
   },
   {
     "titulo": "Dupla Perigosa",
@@ -960,7 +1186,16 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/dupla-perigosa.jpg"
+  },
+  {
+    "titulo": "É Preciso um Vilarejo…",
+    "ano": 2026,
+    "generos": [
+      "Romance"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/e-preciso-um-vilarejo.jpg"
   },
   {
     "titulo": "El Salvador: O Dia em que o Medo Mudou de Lado",
@@ -969,7 +1204,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/el-salvador-o-dia-em-que-o-medo-mudou-de-lado.jpg"
   },
   {
     "titulo": "Eles Vão te Matar",
@@ -978,7 +1213,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/eles-vao-te-matar.jpg"
   },
   {
     "titulo": "Em Busca da Harmonia: A Visão de um Rei",
@@ -987,7 +1222,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/em-busca-da-harmonia-a-visao-de-um-rei.jpg"
   },
   {
     "titulo": "Em um Piscar de Olhos",
@@ -996,7 +1231,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/em-um-piscar-de-olhos.jpg"
   },
   {
     "titulo": "Enola Holmes 3",
@@ -1005,7 +1240,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/enola-holmes-3.jpg"
   },
   {
     "titulo": "Ensaio Fatal",
@@ -1014,7 +1249,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/ensaio-fatal.jpg"
   },
   {
     "titulo": "Enterrado Vivo",
@@ -1023,7 +1258,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/enterrado-vivo.jpg"
   },
   {
     "titulo": "Enterrando os Mortos",
@@ -1032,7 +1267,14 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/enterrando-os-mortos.jpg"
+  },
+  {
+    "titulo": "Escuridão Profunda",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/escuridao-profunda.jpg"
   },
   {
     "titulo": "Esta Sou Eu",
@@ -1041,7 +1283,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/esta-sou-eu.jpg"
   },
   {
     "titulo": "Eu Só Posso Imaginar 2",
@@ -1050,7 +1292,14 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/eu-so-posso-imaginar-2.jpg"
+  },
+  {
+    "titulo": "Eu, Você, Nós",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/eu-voce-nos.jpg"
   },
   {
     "titulo": "Expresso Galático Metrô Via-Lácteo: O Filme",
@@ -1059,7 +1308,7 @@
       "Ficção Científica"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/expresso-galatico-metro-via-lacteo-o-filme.jpg"
   },
   {
     "titulo": "Extermínio: O Templo dos Ossos",
@@ -1068,7 +1317,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/exterminio-o-templo-dos-ossos.jpg"
   },
   {
     "titulo": "Feras no Limite",
@@ -1077,7 +1326,21 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/feras-no-limite.jpg"
+  },
+  {
+    "titulo": "Filhas, Deu Ruim!",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/filhas-deu-ruim.jpg"
+  },
+  {
+    "titulo": "Finja-se de Morto",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/finja-se-de-morto.jpg"
   },
   {
     "titulo": "Frango: A Conspiração do Fast-Food",
@@ -1086,7 +1349,14 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/frango-a-conspiracao-do-fast-food.jpg"
+  },
+  {
+    "titulo": "Frequência Explosiva",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/frequencia-explosiva.jpg"
   },
   {
     "titulo": "Frutas Proibidas",
@@ -1095,7 +1365,21 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/frutas-proibidas.jpg"
+  },
+  {
+    "titulo": "Fuga Mortal",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/fuga-mortal.jpg"
+  },
+  {
+    "titulo": "Futuro Futuro",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/futuro-futuro.jpg"
   },
   {
     "titulo": "Gary",
@@ -1104,7 +1388,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/gary.jpg"
   },
   {
     "titulo": "George Washington",
@@ -1113,7 +1397,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/george-washington.jpg"
   },
   {
     "titulo": "Gintama: Yoshiwara em Chamas",
@@ -1122,7 +1406,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/gintama-yoshiwara-em-chamas.jpg"
   },
   {
     "titulo": "Girls Like Girls: Uma História de Amor Entre Garotas",
@@ -1131,7 +1415,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/girls-like-girls-uma-historia-de-amor-entre-garotas.jpg"
   },
   {
     "titulo": "Golden Kamuy 3 - Invasão a Prisão Abashiri",
@@ -1140,7 +1424,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/golden-kamuy-3-invasao-a-prisao-abashiri.jpg"
   },
   {
     "titulo": "Grenal: O Maior Clássico das Américas",
@@ -1149,14 +1433,14 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/grenal-o-maior-classico-das-americas.jpg"
   },
   {
     "titulo": "Heartstopper Para Sempre",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/heartstopper-para-sempre.jpg"
   },
   {
     "titulo": "Herança de Narcisa",
@@ -1165,7 +1449,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/heranca-de-narcisa.jpg"
   },
   {
     "titulo": "Hit Para Dois",
@@ -1174,7 +1458,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/hit-para-dois.jpg"
   },
   {
     "titulo": "Hokum: O Pesadelo da Bruxa",
@@ -1183,23 +1467,23 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/hokum-o-pesadelo-da-bruxa.jpg"
   },
   {
-    "titulo": "Homem-Aranha: Um Novo Dia (D",
+    "titulo": "Homem-Aranha: Um Novo Dia",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/homem-aranha-um-novo-dia.jpg"
+  },
+  {
+    "titulo": "Homem-Aranha: Um Novo Dia (D)",
     "ano": 2026,
     "generos": [
       "Ação"
     ],
     "sinopse": "",
-    "imagem": "/filmes/homem-aranha-um-novo-dia.jpg"
-  },
-  {
-    "titulo": "Homem-Aranha: Um Novo Dia 4k",
-    "ano": 2026,
-    "generos": [],
-    "sinopse": "",
-    "imagem": "/filmes/homem-aranha-um-novo-dia-4k.jpg"
+    "imagem": "/filmes/homem-aranha-um-novo-dia-d.jpg"
   },
   {
     "titulo": "Hora do Recreio",
@@ -1208,7 +1492,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/hora-do-recreio.jpg"
   },
   {
     "titulo": "Hungria: A Escolha de um Sonho",
@@ -1217,7 +1501,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": "/filmes/hungria-a-escolha-de-um-sonho.png"
+    "imagem": "/filmes/hungria-a-escolha-de-um-sonho.jpg"
   },
   {
     "titulo": "Idiotas",
@@ -1226,7 +1510,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/idiotas.jpg"
   },
   {
     "titulo": "ImpunIdade: As consequências da lei da maioridade penal no Brasil",
@@ -1235,7 +1519,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/impunidade-as-consequencias-da-lei-da-maioridade-penal-no-brasil.jpg"
   },
   {
     "titulo": "Insaciável",
@@ -1244,7 +1528,14 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/insaciavel.jpg"
+  },
+  {
+    "titulo": "Instadocs: Alex Murdaugh, Unconvicted",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/instadocs-alex-murdaugh-unconvicted.jpg"
   },
   {
     "titulo": "Instadocs: IA Rebelde",
@@ -1253,7 +1544,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/instadocs-ia-rebelde.jpg"
   },
   {
     "titulo": "Instadocs: O Jogo dos Palpites",
@@ -1262,7 +1553,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/instadocs-o-jogo-dos-palpites.jpg"
   },
   {
     "titulo": "Instinto Materno",
@@ -1271,7 +1562,7 @@
       "Suspense"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/instinto-materno.jpg"
   },
   {
     "titulo": "Inteligência Humana",
@@ -1280,7 +1571,7 @@
       "Thriller"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/inteligencia-humana.jpg"
   },
   {
     "titulo": "Investigando Lucy Letby",
@@ -1289,7 +1580,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/investigando-lucy-letby.jpg"
   },
   {
     "titulo": "Iron Maiden: Burning Ambition",
@@ -1298,7 +1589,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/iron-maiden-burning-ambition.jpg"
   },
   {
     "titulo": "Isto Não é um Teste",
@@ -1307,7 +1598,7 @@
       "Thriller"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/isto-nao-e-um-teste.jpg"
   },
   {
     "titulo": "Jack Ryan de Tom Clancy: Guerra Fantasma",
@@ -1316,7 +1607,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/jack-ryan-de-tom-clancy-guerra-fantasma.jpg"
   },
   {
     "titulo": "Jackass: O Último é o Melhor",
@@ -1325,7 +1616,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/jackass-o-ultimo-e-o-melhor.jpg"
   },
   {
     "titulo": "Joe e a Viagem de Carro",
@@ -1334,7 +1625,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/joe-e-a-viagem-de-carro.jpg"
   },
   {
     "titulo": "Justiça Artificial",
@@ -1343,7 +1634,7 @@
       "Ficção Científica"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/justica-artificial.jpg"
   },
   {
     "titulo": "K-Pops!",
@@ -1352,7 +1643,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/k-pops.jpg"
   },
   {
     "titulo": "Kaguya: A Princesa Espacial",
@@ -1361,7 +1652,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/kaguya-a-princesa-espacial.jpg"
   },
   {
     "titulo": "La Captura",
@@ -1370,7 +1661,14 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/la-captura.jpg"
+  },
+  {
+    "titulo": "La Condition",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/la-condition.jpg"
   },
   {
     "titulo": "Lego Disney Princesa: Bagunça Mágica",
@@ -1379,7 +1677,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/lego-disney-princesa-bagunca-magica.jpg"
   },
   {
     "titulo": "Less of a Stranger",
@@ -1388,7 +1686,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/less-of-a-stranger.jpg"
   },
   {
     "titulo": "Lindas e Letais",
@@ -1397,7 +1695,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/lindas-e-letais.jpg"
   },
   {
     "titulo": "Little Brother",
@@ -1406,7 +1704,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/little-brother.jpg"
   },
   {
     "titulo": "Live dos Infernos",
@@ -1415,97 +1713,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Made in Korea",
-    "ano": 2026,
-    "generos": [
-      "Aventura"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Maldição da Múmia",
-    "ano": 2026,
-    "generos": [
-      "Terror"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Manual Prático da Vingança Lucrativa",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Mardaani 3",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Maridos em Ação",
-    "ano": 2026,
-    "generos": [
-      "Comédia"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Marsupilami: Confusão a Bordo",
-    "ano": 2026,
-    "generos": [
-      "Aventura"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Masterplan",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Matar. Vingar. Repetir",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Matchbox - O Filme",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Mayday",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/live-dos-infernos.jpg"
   },
   {
     "titulo": "Maçã Podre",
@@ -1514,7 +1722,120 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/maca-podre.jpg"
+  },
+  {
+    "titulo": "Made in Korea",
+    "ano": 2026,
+    "generos": [
+      "Aventura"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/made-in-korea.jpg"
+  },
+  {
+    "titulo": "Mãe Fora da Caixa",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/mae-fora-da-caixa.jpg"
+  },
+  {
+    "titulo": "Maldição da Múmia",
+    "ano": 2026,
+    "generos": [
+      "Terror"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/maldicao-da-mumia.jpg"
+  },
+  {
+    "titulo": "Manual Prático da Vingança Lucrativa",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/manual-pratico-da-vinganca-lucrativa.jpg"
+  },
+  {
+    "titulo": "Máquina de Guerra",
+    "ano": 2026,
+    "generos": [
+      "Guerra"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/maquina-de-guerra.jpg"
+  },
+  {
+    "titulo": "Mardaani 3",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/mardaani-3.jpg"
+  },
+  {
+    "titulo": "Maré Escura",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/mare-escura.jpg"
+  },
+  {
+    "titulo": "Maridos em Ação",
+    "ano": 2026,
+    "generos": [
+      "Comédia"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/maridos-em-acao.jpg"
+  },
+  {
+    "titulo": "Marsupilami: Confusão a Bordo",
+    "ano": 2026,
+    "generos": [
+      "Aventura"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/marsupilami-confusao-a-bordo.jpg"
+  },
+  {
+    "titulo": "Masterplan",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/masterplan.jpg"
+  },
+  {
+    "titulo": "Matar. Vingar. Repetir",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/matar-vingar-repetir.jpg"
+  },
+  {
+    "titulo": "Matchbox - O Filme",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/matchbox-o-filme.jpg"
+  },
+  {
+    "titulo": "Mayday",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/mayday.jpg"
   },
   {
     "titulo": "Mensagens para Isabelle",
@@ -1523,7 +1844,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/mensagens-para-isabelle.jpg"
   },
   {
     "titulo": "Mestres do Universo",
@@ -1532,7 +1853,21 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/mestres-do-universo.jpg"
+  },
+  {
+    "titulo": "Meu Amigo Sandro",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/meu-amigo-sandro.jpg"
+  },
+  {
+    "titulo": "Meu Melhor Amigo, sua Namorada e Eu",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/meu-melhor-amigo-sua-namorada-e-eu.jpg"
   },
   {
     "titulo": "Meu Nome é Agneta",
@@ -1541,7 +1876,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/meu-nome-e-agneta.jpg"
   },
   {
     "titulo": "Meu Nome é Enéas: Muito Além dos 15 Segundos",
@@ -1550,7 +1885,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/meu-nome-e-eneas-muito-alem-dos-15-segundos.jpg"
   },
   {
     "titulo": "Meu Próprio Filho",
@@ -1559,7 +1894,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/meu-proprio-filho.jpg"
   },
   {
     "titulo": "Meu Querido Assassino",
@@ -1568,7 +1903,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/meu-querido-assassino.jpg"
   },
   {
     "titulo": "Mexicali Terra sem Lei 2026",
@@ -1577,7 +1912,16 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/mexicali-terra-sem-lei-2026.png"
+  },
+  {
+    "titulo": "México 1986",
+    "ano": 1986,
+    "generos": [
+      "Comédia"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/mexico-1986.jpg"
   },
   {
     "titulo": "Michael",
@@ -1595,7 +1939,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/miguel-angel-blanco-as-48-horas-que-mudaram-a-espanha.jpg"
   },
   {
     "titulo": "Mike & Nick & Nick & Alice",
@@ -1604,7 +1948,14 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/mike-e-nick-e-nick-e-alice.jpg"
+  },
+  {
+    "titulo": "Minha Melhor Amiga",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/minha-melhor-amiga.jpg"
   },
   {
     "titulo": "Minha Querida Senhorita",
@@ -1613,7 +1964,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/minha-querida-senhorita.jpg"
   },
   {
     "titulo": "Minions e Monstros",
@@ -1631,7 +1982,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/missao-refugio.jpg"
   },
   {
     "titulo": "Moana",
@@ -1640,7 +1991,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/moana.jpg"
   },
   {
     "titulo": "Mortal Kombat 2",
@@ -1661,22 +2012,11 @@
     "imagem": "/filmes/mother-mary.jpg"
   },
   {
-    "titulo": "Máquina de Guerra",
-    "ano": 2026,
-    "generos": [
-      "Guerra"
-    ],
+    "titulo": "Mutante: Destino Sombrio",
+    "ano": 2024,
+    "generos": [],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "México 1986",
-    "ano": 2026,
-    "generos": [
-      "Comédia"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/mutante-destino-sombrio.jpg"
   },
   {
     "titulo": "Na Frieza da Realidade",
@@ -1685,7 +2025,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/na-frieza-da-realidade.jpg"
   },
   {
     "titulo": "Na Rota do Crime",
@@ -1694,7 +2034,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/na-rota-do-crime.jpg"
   },
   {
     "titulo": "Na Zona Cinzenta",
@@ -1703,7 +2043,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/na-zona-cinzenta.jpg"
   },
   {
     "titulo": "Nando Entre Dois Mundos: Um Filme Sintonia",
@@ -1712,70 +2052,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Naufrágio: O Pesadelo do Costa Concordia",
-    "ano": 2026,
-    "generos": [
-      "Documentários"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Never Change!",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Ninja Wars: BlackFox vs Shogun's Ninja",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "No Caminho",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Noah Kahan: Out of Body",
-    "ano": 2026,
-    "generos": [
-      "Suspense"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Nossa Vizinhança",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Notícias em Perigo",
-    "ano": 2026,
-    "generos": [
-      "Crime"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/nando-entre-dois-mundos-um-filme-sintonia.jpg"
   },
   {
     "titulo": "Não Deseje Boa Sorte",
@@ -1784,7 +2061,91 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/nao-deseje-boa-sorte.jpg"
+  },
+  {
+    "titulo": "Naufrágio: O Pesadelo do Costa Concordia",
+    "ano": 2026,
+    "generos": [
+      "Documentários"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/naufragio-o-pesadelo-do-costa-concordia.jpg"
+  },
+  {
+    "titulo": "Never Change!",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/never-change.jpg"
+  },
+  {
+    "titulo": "Ninho: O Preço da Fama",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/ninho-o-preco-da-fama.jpg"
+  },
+  {
+    "titulo": "Ninja Wars: BlackFox vs Shogun's Ninja",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/ninja-wars-blackfox-vs-shogun-s-ninja.jpg"
+  },
+  {
+    "titulo": "No Caminho",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/no-caminho.jpg"
+  },
+  {
+    "titulo": "No Limite da Justiça",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/no-limite-da-justica.jpg"
+  },
+  {
+    "titulo": "Noah Kahan: Out of Body",
+    "ano": 2026,
+    "generos": [
+      "Suspense"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/noah-kahan-out-of-body.jpg"
+  },
+  {
+    "titulo": "Nossa Vizinhança",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/nossa-vizinhanca.jpg"
+  },
+  {
+    "titulo": "Notícias em Perigo",
+    "ano": 2026,
+    "generos": [
+      "Crime"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/noticias-em-perigo.jpg"
+  },
+  {
+    "titulo": "Novo Eu",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/novo-eu.jpg"
   },
   {
     "titulo": "O Afinador",
@@ -1793,7 +2154,14 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-afinador.jpg"
+  },
+  {
+    "titulo": "O Anel de Eva",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-anel-de-eva.jpg"
   },
   {
     "titulo": "O Assassinato de Rachel Nickell",
@@ -1802,7 +2170,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-assassinato-de-rachel-nickell.jpg"
   },
   {
     "titulo": "O Bolo do Presidente",
@@ -1811,7 +2179,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-bolo-do-presidente.jpg"
+  },
+  {
+    "titulo": "O Clube do Pé Esquerdo",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-clube-do-pe-esquerdo.jpg"
   },
   {
     "titulo": "O Cobrador de Dívidas",
@@ -1820,7 +2195,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-cobrador-de-dividas.jpg"
   },
   {
     "titulo": "O Convite",
@@ -1829,7 +2204,14 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-convite.jpg"
+  },
+  {
+    "titulo": "O Deserto de Akin",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-deserto-de-akin.jpg"
   },
   {
     "titulo": "O Diabo Veste Prada 2",
@@ -1839,7 +2221,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": "/filmes/o-diabo-veste-prada-2.png"
+    "imagem": "/filmes/o-diabo-veste-prada-2.jpg"
   },
   {
     "titulo": "O Diário de Pilar na Amazônia",
@@ -1858,7 +2240,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-drama.jpg"
   },
   {
     "titulo": "O Falsário",
@@ -1867,7 +2249,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-falsario.jpg"
   },
   {
     "titulo": "O Filho da Escuridão",
@@ -1876,7 +2258,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-filho-da-escuridao.jpg"
   },
   {
     "titulo": "O fim da Cracolândia",
@@ -1885,7 +2267,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-fim-da-cracolandia.jpg"
   },
   {
     "titulo": "O Fim da Rua",
@@ -1894,34 +2276,7 @@
       "Ficção Científica"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "O Genro",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "O Golpe Final",
-    "ano": 2026,
-    "generos": [
-      "Ação"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "O Golpista Russo",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-fim-da-rua.jpg"
   },
   {
     "titulo": "O Gênio do Crime",
@@ -1930,7 +2285,41 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-genio-do-crime.jpg"
+  },
+  {
+    "titulo": "O Genro",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/o-genro.jpg"
+  },
+  {
+    "titulo": "O Golpe Final",
+    "ano": 2026,
+    "generos": [
+      "Ação"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/o-golpe-final.jpg"
+  },
+  {
+    "titulo": "O Golpista Russo",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/o-golpista-russo.jpg"
+  },
+  {
+    "titulo": "O Guerreiro Banido",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-guerreiro-banido.jpg"
   },
   {
     "titulo": "O Homem que Sussurra",
@@ -1949,7 +2338,7 @@
       "Faroeste"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-jogo-do-predador.jpg"
   },
   {
     "titulo": "O Justiceiro: Uma Última Morte",
@@ -1958,7 +2347,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-justiceiro-uma-ultima-morte.jpg"
   },
   {
     "titulo": "O Mago do Kremlin",
@@ -1967,7 +2356,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-mago-do-kremlin.jpg"
+  },
+  {
+    "titulo": "O Mestre do Golpe",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-mestre-do-golpe.jpg"
   },
   {
     "titulo": "O Momento",
@@ -1976,7 +2372,21 @@
       "Suspense"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-momento.jpg"
+  },
+  {
+    "titulo": "O natal caubói da Sandy e Bob Esponja",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-natal-cauboi-da-sandy-e-bob-esponja.jpg"
+  },
+  {
+    "titulo": "O Peixe Pout-Pout",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-peixe-pout-pout.jpg"
   },
   {
     "titulo": "O Poder do Rosário",
@@ -1985,7 +2395,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-poder-do-rosario.jpg"
   },
   {
     "titulo": "O Primata",
@@ -1994,7 +2404,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-primata.jpg"
   },
   {
     "titulo": "O Que Fica por Dizer",
@@ -2003,7 +2413,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-que-fica-por-dizer.jpg"
   },
   {
     "titulo": "O Rei da Internet",
@@ -2012,7 +2422,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": "/filmes/o-rei-da-internet.webp"
+    "imagem": "/filmes/o-rei-da-internet.jpg"
+  },
+  {
+    "titulo": "O Shaolin do Sertão 2",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/o-shaolin-do-sertao-2.jpg"
   },
   {
     "titulo": "O Som da Morte",
@@ -2021,7 +2438,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-som-da-morte.jpg"
   },
   {
     "titulo": "O Sorveteiro",
@@ -2030,25 +2447,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "O Velho Fusca",
-    "ano": 2026,
-    "generos": [
-      "Comédia"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "O Viúvo: Até Que a Morte nos Separe",
-    "ano": 2026,
-    "generos": [
-      "Documentários"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-sorveteiro.jpg"
   },
   {
     "titulo": "O Último Conquistador",
@@ -2057,7 +2456,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-ultimo-conquistador.jpg"
   },
   {
     "titulo": "O Último Gigante",
@@ -2066,7 +2465,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-ultimo-gigante.jpg"
   },
   {
     "titulo": "O Último Grande Assalto",
@@ -2075,7 +2474,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-ultimo-grande-assalto.jpg"
   },
   {
     "titulo": "O Último Nascer do Sol",
@@ -2084,7 +2483,25 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-ultimo-nascer-do-sol.jpg"
+  },
+  {
+    "titulo": "O Velho Fusca",
+    "ano": 2026,
+    "generos": [
+      "Comédia"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/o-velho-fusca.jpg"
+  },
+  {
+    "titulo": "O Viúvo: Até Que a Morte nos Separe",
+    "ano": 2026,
+    "generos": [
+      "Documentários"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/o-viuvo-ate-que-a-morte-nos-separe.jpg"
   },
   {
     "titulo": "Obsessão",
@@ -2093,7 +2510,14 @@
       "Suspense"
     ],
     "sinopse": "",
-    "imagem": "/filmes/obsessao.jpeg"
+    "imagem": "/filmes/obsessao.jpg"
+  },
+  {
+    "titulo": "Olho por Olho",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/olho-por-olho.jpg"
   },
   {
     "titulo": "Onde Estiver Estarei: Uma Paixão Rubro-negra",
@@ -2102,7 +2526,14 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/onde-estiver-estarei-uma-paixao-rubro-negra.jpg"
+  },
+  {
+    "titulo": "Onde o Mal Habita",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/onde-o-mal-habita.jpg"
   },
   {
     "titulo": "One Last Shot",
@@ -2111,7 +2542,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/one-last-shot.jpg"
   },
   {
     "titulo": "Operação Panda: A Tribo Mágica",
@@ -2120,7 +2551,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/operacao-panda-a-tribo-magica.jpg"
   },
   {
     "titulo": "Os Cantores",
@@ -2129,7 +2560,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/os-cantores.jpg"
   },
   {
     "titulo": "Os Estranhos: Capítulo Final",
@@ -2138,7 +2569,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/os-estranhos-capitulo-final.jpg"
   },
   {
     "titulo": "Paixão de Escritório",
@@ -2147,14 +2578,30 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/paixao-de-escritorio.jpg"
+  },
+  {
+    "titulo": "Palhaçassino",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/palhacassino.jpg"
+  },
+  {
+    "titulo": "Pânico 7",
+    "ano": 2026,
+    "generos": [
+      "Terror"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/panico-7.jpg"
   },
   {
     "titulo": "Parque Lezama",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/parque-lezama.jpg"
   },
   {
     "titulo": "Passageiro do Mal",
@@ -2163,7 +2610,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/passageiro-do-mal.jpg"
   },
   {
     "titulo": "Patrulha Canina: Uma Aventura Dino",
@@ -2172,14 +2619,14 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/patrulha-canina-uma-aventura-dino.jpg"
   },
   {
     "titulo": "Patrulha Noturna",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/patrulha-noturna.jpg"
   },
   {
     "titulo": "Pavana",
@@ -2189,7 +2636,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/pavana.jpg"
   },
   {
     "titulo": "Peaky Blinders: O Homem Imortal",
@@ -2207,7 +2654,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/pedagogia-do-abandono.jpg"
   },
   {
     "titulo": "People Magazine: A Promessa da Cura",
@@ -2216,7 +2663,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/people-magazine-a-promessa-da-cura.jpg"
   },
   {
     "titulo": "Pequenas Criaturas",
@@ -2225,7 +2672,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": "/filmes/pequenas-criaturas.png"
+    "imagem": "/filmes/pequenas-criaturas.jpg"
   },
   {
     "titulo": "Perdida no Ártico",
@@ -2234,7 +2681,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/perdida-no-artico.jpg"
   },
   {
     "titulo": "Perto do Sol é Mais Claro",
@@ -2243,7 +2690,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/perto-do-sol-e-mais-claro.jpg"
   },
   {
     "titulo": "Pinóquio",
@@ -2252,7 +2699,7 @@
       "Fantasia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/pinoquio.jpg"
   },
   {
     "titulo": "Podolski",
@@ -2261,7 +2708,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/podolski.jpg"
   },
   {
     "titulo": "Por Que Eu Me Casei de Novo?",
@@ -2270,7 +2717,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/por-que-eu-me-casei-de-novo.jpg"
   },
   {
     "titulo": "Por Um Fio",
@@ -2279,7 +2726,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/por-um-fio.jpg"
   },
   {
     "titulo": "POV: Presença Oculta",
@@ -2288,7 +2735,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/pov-presenca-oculta.jpg"
   },
   {
     "titulo": "Primeiro as Damas",
@@ -2298,7 +2745,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/primeiro-as-damas.jpg"
   },
   {
     "titulo": "Procurando Emily",
@@ -2307,7 +2754,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/procurando-emily.jpg"
   },
   {
     "titulo": "Propeller: Trem Noturno Sem Volta",
@@ -2316,7 +2763,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/propeller-trem-noturno-sem-volta.jpg"
   },
   {
     "titulo": "Psycho Killer: Em Busca do Assassino",
@@ -2325,23 +2772,14 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/psycho-killer-em-busca-do-assassino.jpg"
   },
   {
-    "titulo": "Pânico 7",
-    "ano": 2026,
-    "generos": [
-      "Terror"
-    ],
-    "sinopse": "",
-    "imagem": "/filmes/panico-7.jpg"
-  },
-  {
-    "titulo": "Pânico 7 4K",
-    "ano": 2026,
+    "titulo": "Punch e Judy",
+    "ano": 2023,
     "generos": [],
     "sinopse": "",
-    "imagem": "/filmes/panico-7-4k.jpg"
+    "imagem": "/filmes/punch-e-judy.jpg"
   },
   {
     "titulo": "Quatro Histórias de Desejo 3",
@@ -2350,7 +2788,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/quatro-historias-de-desejo-3.jpg"
   },
   {
     "titulo": "Queda Livre: As Consequências do Caso Boeing",
@@ -2359,7 +2797,14 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/queda-livre-as-consequencias-do-caso-boeing.jpg"
+  },
+  {
+    "titulo": "Quem Tem com Que Me Pague, Não Me Deve Nada",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/quem-tem-com-que-me-pague-nao-me-deve-nada.jpg"
   },
   {
     "titulo": "Quinze Dias",
@@ -2377,7 +2822,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/raio-x-lula-3.jpg"
   },
   {
     "titulo": "Rastro do Ouro",
@@ -2386,7 +2831,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/rastro-do-ouro.jpg"
   },
   {
     "titulo": "Refém Por Um Fio",
@@ -2395,7 +2840,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/refem-por-um-fio.jpg"
   },
   {
     "titulo": "Refúgio de Inverno",
@@ -2404,7 +2849,28 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/refugio-de-inverno.jpg"
+  },
+  {
+    "titulo": "Refúgio Macabro",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/refugio-macabro.jpg"
+  },
+  {
+    "titulo": "Relatos de um Assassino",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/relatos-de-um-assassino.jpg"
+  },
+  {
+    "titulo": "Resident Evil",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/resident-evil.jpg"
   },
   {
     "titulo": "Rio de Sangue",
@@ -2413,7 +2879,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": "/filmes/rio-de-sangue.png"
+    "imagem": "/filmes/rio-de-sangue.jpg"
   },
   {
     "titulo": "Ruas da Glória",
@@ -2422,7 +2888,14 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/ruas-da-gloria.jpg"
+  },
+  {
+    "titulo": "Ruas de Fogo",
+    "ano": 1984,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/ruas-de-fogo.jpg"
   },
   {
     "titulo": "Salve Geral: Irmandade",
@@ -2431,7 +2904,14 @@
       "Nacional"
     ],
     "sinopse": "",
-    "imagem": "/filmes/salve-geral-irmandade.png"
+    "imagem": "/filmes/salve-geral-irmandade.jpg"
+  },
+  {
+    "titulo": "Saudades, Te Amo",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/saudades-te-amo.jpg"
   },
   {
     "titulo": "Schumacher 94: Nasce Uma Lenda",
@@ -2440,7 +2920,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/schumacher-94-nasce-uma-lenda.jpg"
   },
   {
     "titulo": "Sem Perdão no Velho Oeste",
@@ -2449,14 +2929,21 @@
       "Faroeste"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/sem-perdao-no-velho-oeste.jpg"
+  },
+  {
+    "titulo": "Sempre Vitoriosos",
+    "ano": 2023,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/sempre-vitoriosos.jpg"
   },
   {
     "titulo": "Sequestro: Elizabeth Smart",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/sequestro-elizabeth-smart.jpg"
   },
   {
     "titulo": "Sete Atiradores",
@@ -2465,7 +2952,21 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/sete-atiradores.jpg"
+  },
+  {
+    "titulo": "Sex Drive",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/sex-drive.jpg"
+  },
+  {
+    "titulo": "Shake, Rattle e Roll: As Origens do Mal",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/shake-rattle-e-roll-as-origens-do-mal.jpg"
   },
   {
     "titulo": "Skyscraper Live",
@@ -2474,7 +2975,23 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/skyscraper-live.jpg"
+  },
+  {
+    "titulo": "Snoopy Apresenta - Não Há Nada Como a Nossa Casa, Snoopy",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/snoopy-apresenta-nao-ha-nada-como-a-nossa-casa-snoopy.jpg"
+  },
+  {
+    "titulo": "Só por Uma Noite",
+    "ano": 2026,
+    "generos": [
+      "Romance"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/so-por-uma-noite.jpg"
   },
   {
     "titulo": "Sobrenatural: Agora Entre Nós",
@@ -2483,7 +3000,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/sobrenatural-agora-entre-nos.jpg"
   },
   {
     "titulo": "Socorro!",
@@ -2492,7 +3009,7 @@
       "Suspense"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/socorro.jpg"
   },
   {
     "titulo": "Socorro! Minha Babá Tirou Férias!",
@@ -2501,7 +3018,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/socorro-minha-baba-tirou-ferias.jpg"
   },
   {
     "titulo": "Sonho de Arrocha",
@@ -2510,7 +3027,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/sonho-de-arrocha.jpg"
   },
   {
     "titulo": "Soulm8te",
@@ -2519,7 +3036,14 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/soulm8te.jpg"
+  },
+  {
+    "titulo": "Sozinha no Bunker",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/sozinha-no-bunker.jpg"
   },
   {
     "titulo": "Speed Faster: Velocidade Sem Limites",
@@ -2528,7 +3052,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/speed-faster-velocidade-sem-limites.jpg"
   },
   {
     "titulo": "Star Wars: O Mandaloriano e Grogu",
@@ -2537,7 +3061,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/star-wars-o-mandaloriano-e-grogu.jpg"
   },
   {
     "titulo": "Sua Culpa: Londres",
@@ -2546,7 +3070,21 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/sua-culpa-londres.jpg"
+  },
+  {
+    "titulo": "Suçuarana",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/sucuarana.jpg"
+  },
+  {
+    "titulo": "Sujando as Mãos",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/sujando-as-maos.jpg"
   },
   {
     "titulo": "Super Mario Galaxy: O Filme",
@@ -2564,7 +3102,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/supergirl.jpg"
   },
   {
     "titulo": "Susana e Elvira: Sem Plano B",
@@ -2573,16 +3111,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Só por Uma Noite",
-    "ano": 2026,
-    "generos": [
-      "Romance"
-    ],
-    "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/susana-e-elvira-sem-plano-b.jpg"
   },
   {
     "titulo": "Tempestade na Vila Sésamo",
@@ -2591,7 +3120,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/tempestade-na-vila-sesamo.jpg"
   },
   {
     "titulo": "Território do Crime",
@@ -2600,7 +3129,14 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/territorio-do-crime.jpg"
+  },
+  {
+    "titulo": "Território Hostil",
+    "ano": 2022,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/territorio-hostil.jpg"
   },
   {
     "titulo": "Terror em Silent Hill: Regresso Para o Inferno",
@@ -2609,7 +3145,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/terror-em-silent-hill-regresso-para-o-inferno.jpg"
   },
   {
     "titulo": "Tetra: Acreditar de Novo",
@@ -2618,7 +3154,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/tetra-acreditar-de-novo.jpg"
   },
   {
     "titulo": "That Time I Got Reincarnated as a Slime o Filme: Lágrimas do mar azul-celeste",
@@ -2627,7 +3163,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/that-time-i-got-reincarnated-as-a-slime-o-filme-lagrimas-do-mar-azul-celeste.jpg"
   },
   {
     "titulo": "The Dink - A Última Chance",
@@ -2636,7 +3172,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/the-dink-a-ultima-chance.jpg"
   },
   {
     "titulo": "The Mortuary Assistant",
@@ -2645,7 +3181,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/the-mortuary-assistant.jpg"
   },
   {
     "titulo": "THE ORPHANS",
@@ -2654,7 +3190,14 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/the-orphans.jpg"
+  },
+  {
+    "titulo": "Thomas e Seus Amigos: Histórias da Ferrovia - Locomotivas Muito Prestativas",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/thomas-e-seus-amigos-historias-da-ferrovia-locomotivas-muito-prestativas.jpg"
   },
   {
     "titulo": "Todo Mundo em Pânico",
@@ -2663,7 +3206,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/todo-mundo-em-panico.jpg"
   },
   {
     "titulo": "Tomando Rumo",
@@ -2672,7 +3215,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/tomando-rumo.jpg"
   },
   {
     "titulo": "Toy Story 5",
@@ -2684,13 +3227,20 @@
     "imagem": "/filmes/toy-story-5.jpg"
   },
   {
+    "titulo": "Trabalhamos para os Mortos",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/trabalhamos-para-os-mortos.jpg"
+  },
+  {
     "titulo": "Trago Seu Amor",
     "ano": 2026,
     "generos": [
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/trago-seu-amor.jpg"
   },
   {
     "titulo": "Trunfo",
@@ -2699,7 +3249,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/trunfo.jpg"
   },
   {
     "titulo": "Trustor: Por Dentro do Escândalo Financeiro",
@@ -2708,7 +3258,42 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/trustor-por-dentro-do-escandalo-financeiro.jpg"
+  },
+  {
+    "titulo": "Tudo em Todo o Lugar ao Mesmo Tempo",
+    "ano": 2022,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/tudo-em-todo-o-lugar-ao-mesmo-tempo.jpg"
+  },
+  {
+    "titulo": "Tudo O Que Eu Preciso Neste Natal É Você",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/tudo-o-que-eu-preciso-neste-natal-e-voce.jpg"
+  },
+  {
+    "titulo": "Tudo Sobre Você",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/tudo-sobre-voce.jpg"
+  },
+  {
+    "titulo": "Um Amor de Best-Seller",
+    "ano": 2024,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/um-amor-de-best-seller.jpg"
+  },
+  {
+    "titulo": "Um Ano de Vida, Compre Um Homem",
+    "ano": 2026,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/um-ano-de-vida-compre-um-homem.jpg"
   },
   {
     "titulo": "Um Dia Extraordinário",
@@ -2718,7 +3303,16 @@
       "Nacional"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/um-dia-extraordinario.jpg"
+  },
+  {
+    "titulo": "‎Um Grande Despertar",
+    "ano": 2026,
+    "generos": [
+      "Drama"
+    ],
+    "sinopse": "",
+    "imagem": "/filmes/um-grande-despertar.jpg"
   },
   {
     "titulo": "Uma Carta à Minha Juventude",
@@ -2727,7 +3321,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/uma-carta-a-minha-juventude.jpg"
   },
   {
     "titulo": "Uma Segunda Chance",
@@ -2736,7 +3330,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/uma-segunda-chance.jpg"
   },
   {
     "titulo": "Uma Tia da Pesada 2",
@@ -2745,7 +3339,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/uma-tia-da-pesada-2.jpg"
   },
   {
     "titulo": "Unabomber",
@@ -2754,7 +3348,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/unabomber.jpg"
   },
   {
     "titulo": "Untold Reino Unido: Vinnie Jones",
@@ -2763,7 +3357,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/untold-reino-unido-vinnie-jones.jpg"
   },
   {
     "titulo": "Untold: Crime em Hawthorne Hill",
@@ -2772,7 +3366,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/untold-crime-em-hawthorne-hill.jpg"
   },
   {
     "titulo": "Untold: Jail Blazers",
@@ -2781,7 +3375,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/untold-jail-blazers.jpg"
   },
   {
     "titulo": "Urso Sangrento: A Noite do Terror",
@@ -2790,7 +3384,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/urso-sangrento-a-noite-do-terror.jpg"
   },
   {
     "titulo": "Velhos Bandidos",
@@ -2808,7 +3402,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/velocidade-e-paixao.jpg"
   },
   {
     "titulo": "Velvet Lounge: Noites de Caça",
@@ -2817,7 +3411,14 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/velvet-lounge-noites-de-caca.jpg"
+  },
+  {
+    "titulo": "Verona, Amores e Jogos de Verão",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/verona-amores-e-jogos-de-verao.jpg"
   },
   {
     "titulo": "Vingadora",
@@ -2826,7 +3427,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/vingadora.jpg"
   },
   {
     "titulo": "Vingança Brutal",
@@ -2836,7 +3437,14 @@
       "Faroeste"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/vinganca-brutal.jpg"
+  },
+  {
+    "titulo": "Vizinhos vs. Monstros",
+    "ano": 2025,
+    "generos": [],
+    "sinopse": "",
+    "imagem": "/filmes/vizinhos-vs-monstros.jpg"
   },
   {
     "titulo": "Você Só Precisa Matar",
@@ -2845,7 +3453,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/voce-so-precisa-matar.jpg"
   },
   {
     "titulo": "Você+Eu - Contra o Mundo",
@@ -2854,7 +3462,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/voce-eu-contra-o-mundo.jpg"
   },
   {
     "titulo": "Voltei na Foto",
@@ -2863,7 +3471,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/voltei-na-foto.jpg"
   },
   {
     "titulo": "We Bury the Dead",
@@ -2872,7 +3480,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/we-bury-the-dead.jpg"
   },
   {
     "titulo": "Yellow Mirror: A Realidade Paralela de Homer",
@@ -2881,7 +3489,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/yellow-mirror-a-realidade-paralela-de-homer.jpg"
   },
   {
     "titulo": "Yiya Murano: Morte na Hora do Chá",
@@ -2890,7 +3498,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/yiya-murano-morte-na-hora-do-cha.jpg"
   },
   {
     "titulo": "Zico: O Samurai de Quintino",
@@ -2899,49 +3507,6 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "Águas Mortais",
-    "ano": 2026,
-    "generos": [
-      "Terror"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "É Preciso um Vilarejo…",
-    "ano": 2026,
-    "generos": [
-      "Romance"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "‎Um Grande Despertar",
-    "ano": 2026,
-    "generos": [
-      "Drama"
-    ],
-    "sinopse": "",
-    "imagem": null
-  },
-  {
-    "titulo": "“O Morro dos Ventos Uivantes”",
-    "ano": 2026,
-    "generos": [
-      "Romance"
-    ],
-    "sinopse": "",
-    "imagem": "/filmes/o-morro-dos-ventos-uivantes.png"
-  },
-  {
-    "titulo": "“O Morro dos Ventos Uivantes” 4k",
-    "ano": 2026,
-    "generos": [],
-    "sinopse": "",
-    "imagem": "/filmes/o-morro-dos-ventos-uivantes-4k.png"
+    "imagem": "/filmes/zico-o-samurai-de-quintino.jpg"
   }
 ]
