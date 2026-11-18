@@ -1,88 +1,277 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  Play, 
-  Pause, 
-  Film, 
-  Search, 
-  Sparkles, 
-  ArrowRight,
-  Tv,
-  Check,
-  Calendar,
-  Layers,
+import {
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+  Film,
+  Search,
+  MessageCircle,
   X
 } from 'lucide-react';
 import { MovieItem } from './types';
 
 const WHATSAPP_PHONE = "5541988745822";
+const AUTOPLAY_MS = 5000;
+const DASH_COUNT = 8;
 
-// Deterministic subtle genre styling for the cinema billboard backdrop
-const getGenreAesthetic = (generos: string[]) => {
+const getGenrePalette = (generos: string[]) => {
   const g = generos[0]?.toLowerCase() || '';
   if (g.includes('ação') || g.includes('guerra') || g.includes('faroeste')) {
     return {
-      accent: 'text-red-500',
-      border: 'border-red-500/30',
-      bgGlow: 'radial-gradient(ellipse at 80% 30%, rgba(229, 9, 20, 0.18) 0%, rgba(7, 8, 10, 0) 70%)',
-      badgeBg: 'bg-red-500/10 text-red-400 border-red-500/20',
-      themeName: 'Ação & Combate'
+      gradient: 'from-[#1a080a] via-[#0e0a0d] to-black',
+      glow: 'rgba(229, 9, 20, 0.24)',
+      accentText: 'text-red-400',
+      lineColor: 'bg-red-500/50'
     };
   }
   if (g.includes('terror') || g.includes('suspense') || g.includes('thriller')) {
     return {
-      accent: 'text-rose-400',
-      border: 'border-rose-500/30',
-      bgGlow: 'radial-gradient(ellipse at 80% 30%, rgba(190, 18, 60, 0.16) 0%, rgba(7, 8, 10, 0) 70%)',
-      badgeBg: 'bg-rose-500/10 text-rose-300 border-rose-500/20',
-      themeName: 'Suspense & Mistério'
+      gradient: 'from-[#170910] via-[#0d090d] to-black',
+      glow: 'rgba(190, 18, 60, 0.22)',
+      accentText: 'text-rose-400',
+      lineColor: 'bg-rose-500/50'
     };
   }
   if (g.includes('animação') || g.includes('aventura') || g.includes('fantasia')) {
     return {
-      accent: 'text-amber-400',
-      border: 'border-amber-500/30',
-      bgGlow: 'radial-gradient(ellipse at 80% 30%, rgba(245, 158, 11, 0.15) 0%, rgba(7, 8, 10, 0) 70%)',
-      badgeBg: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
-      themeName: 'Animação & Aventura'
+      gradient: 'from-[#181208] via-[#0f0c08] to-black',
+      glow: 'rgba(245, 158, 11, 0.2)',
+      accentText: 'text-amber-300',
+      lineColor: 'bg-amber-400/50'
     };
   }
   if (g.includes('comédia')) {
     return {
-      accent: 'text-yellow-400',
-      border: 'border-yellow-500/30',
-      bgGlow: 'radial-gradient(ellipse at 80% 30%, rgba(234, 179, 8, 0.14) 0%, rgba(7, 8, 10, 0) 70%)',
-      badgeBg: 'bg-yellow-500/10 text-yellow-300 border-yellow-500/20',
-      themeName: 'Comédia & Diversão'
+      gradient: 'from-[#171408] via-[#0e0d09] to-black',
+      glow: 'rgba(234, 179, 8, 0.18)',
+      accentText: 'text-yellow-300',
+      lineColor: 'bg-yellow-400/50'
     };
   }
   if (g.includes('ficção')) {
     return {
-      accent: 'text-cyan-400',
-      border: 'border-cyan-500/30',
-      bgGlow: 'radial-gradient(ellipse at 80% 30%, rgba(6, 182, 212, 0.16) 0%, rgba(7, 8, 10, 0) 70%)',
-      badgeBg: 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20',
-      themeName: 'Ficção Científica'
+      gradient: 'from-[#07151b] via-[#090f14] to-black',
+      glow: 'rgba(6, 182, 212, 0.2)',
+      accentText: 'text-cyan-300',
+      lineColor: 'bg-cyan-400/50'
     };
   }
   if (g.includes('documentários') || g.includes('nacional')) {
     return {
-      accent: 'text-emerald-400',
-      border: 'border-emerald-500/30',
-      bgGlow: 'radial-gradient(ellipse at 80% 30%, rgba(16, 185, 129, 0.15) 0%, rgba(7, 8, 10, 0) 70%)',
-      badgeBg: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
-      themeName: 'Documentários & Cultura'
+      gradient: 'from-[#081712] via-[#09100e] to-black',
+      glow: 'rgba(16, 185, 129, 0.2)',
+      accentText: 'text-emerald-300',
+      lineColor: 'bg-emerald-400/50'
     };
   }
-  // Default / Drama / Romance
+  if (g.includes('romance')) {
+    return {
+      gradient: 'from-[#190a12] via-[#10090e] to-black',
+      glow: 'rgba(244, 63, 94, 0.2)',
+      accentText: 'text-pink-300',
+      lineColor: 'bg-pink-400/50'
+    };
+  }
   return {
-    accent: 'text-scard-red',
-    border: 'border-white/10',
-    bgGlow: 'radial-gradient(ellipse at 80% 30%, rgba(229, 9, 20, 0.12) 0%, rgba(7, 8, 10, 0) 70%)',
-    badgeBg: 'bg-white/5 text-gray-300 border-white/10',
-    themeName: 'Cinema & Streaming'
+    gradient: 'from-[#141720] via-[#0c0e13] to-black',
+    glow: 'rgba(229, 9, 20, 0.16)',
+    accentText: 'text-scard-ash',
+    lineColor: 'bg-scard-red/50'
   };
+};
+
+// 3D Passage Tunnel Geometry for each depth slot (-1 to +6)
+const getPassageTransform = (offset: number, isMobile: boolean) => {
+  if (offset < 0) {
+    // Gliding past camera
+    return {
+      x: 0,
+      y: 16,
+      z: 220,
+      scale: 1.18,
+      rotateY: 0,
+      opacity: 0,
+      zIndex: 60
+    };
+  }
+  if (offset === 0) {
+    // Center foreground focal poster
+    return {
+      x: 0,
+      y: 0,
+      z: 0,
+      scale: 1,
+      rotateY: 0,
+      opacity: 1,
+      zIndex: 50
+    };
+  }
+
+  // Alternating right (+1, +3, +5) and left (+2, +4, +6) tunnel walls
+  const isRightWall = offset % 2 === 1;
+  const sideSign = isRightWall ? 1 : -1;
+  const depthStep = Math.ceil(offset / 2); // 1, 2, 3
+
+  const baseSpread = isMobile ? 125 : 275;
+  const extraSpread = isMobile ? 38 : 95;
+  const x = sideSign * (baseSpread + (depthStep - 1) * extraSpread);
+  const y = -depthStep * (isMobile ? 6 : 10);
+  const z = -(offset * (isMobile ? 85 : 105));
+  const scale = Math.max(0.35, 1 - offset * 0.105);
+  const rotateY = sideSign * -(18 + depthStep * 4);
+  const opacity = offset >= 6 ? 0.12 : Math.max(0.18, 1 - offset * 0.14);
+  const zIndex = 45 - offset * 5;
+
+  return { x, y, z, scale, rotateY, opacity, zIndex };
+};
+
+interface PassageCardProps {
+  movie: MovieItem;
+  offset: number;
+  isMobile: boolean;
+  reducedMotion: boolean;
+  onSelect: () => void;
+  whatsappLink: string;
+}
+
+const PassagePosterCard: React.FC<PassageCardProps> = ({
+  movie,
+  offset,
+  isMobile,
+  reducedMotion,
+  onSelect,
+  whatsappLink
+}) => {
+  const [imgFailed, setImgFailed] = useState(false);
+
+  useEffect(() => {
+    setImgFailed(false);
+  }, [movie.imagem, movie.titulo]);
+
+  const isCenter = offset === 0;
+  const isExiting = offset < 0;
+  const palette = getGenrePalette(movie.generos || []);
+  const hasImage = Boolean(movie.imagem) && !imgFailed;
+  const geom = getPassageTransform(offset, isMobile);
+
+  return (
+    <div
+      role="group"
+      aria-roledescription="slide"
+      aria-label={movie.titulo}
+      aria-hidden={!isCenter && offset > 5}
+      onClick={() => {
+        if (!isCenter && !isExiting) {
+          onSelect();
+        }
+      }}
+      style={{
+        transform: `translate3d(calc(-50% + ${geom.x}px), calc(-50% + ${geom.y}px), ${geom.z}px) scale(${geom.scale}) rotateY(${geom.rotateY}deg)`,
+        opacity: geom.opacity,
+        zIndex: geom.zIndex,
+        transition: reducedMotion
+          ? 'none'
+          : 'transform 620ms cubic-bezier(0.22, 1, 0.36, 1), opacity 580ms cubic-bezier(0.22, 1, 0.36, 1)'
+      }}
+      className={`absolute top-1/2 left-1/2 w-[220px] sm:w-[260px] lg:w-[290px] aspect-[3/4] rounded-xl overflow-hidden select-none will-change-transform ${
+        isCenter
+          ? 'cursor-default ring-1 ring-white/30 shadow-[0_40px_90px_-20px_rgba(229,9,20,0.45)]'
+          : isExiting
+            ? 'pointer-events-none'
+            : 'cursor-pointer ring-1 ring-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.85)] hover:ring-scard-red/50'
+      }`}
+    >
+      {/* Poster Artwork or Theatrical Fallback */}
+      {hasImage ? (
+        <img
+          src={movie.imagem!}
+          alt={`Capa de ${movie.titulo}`}
+          referrerPolicy="no-referrer"
+          loading="eager"
+          draggable={false}
+          onError={() => setImgFailed(true)}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <div className={`absolute inset-0 bg-gradient-to-b ${palette.gradient} flex flex-col justify-between p-5`}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `radial-gradient(circle at 50% 25%, ${palette.glow}, transparent 70%)`
+            }}
+          />
+          <div className="relative z-10 flex items-center justify-between text-[11px] text-scard-ash border-b border-white/[0.08] pb-2.5">
+            <span className="display text-sm text-scard-bone">SCARD PLAY</span>
+            <span>{movie.ano}</span>
+          </div>
+
+          <div className="relative z-10 my-auto text-center space-y-2.5 px-1">
+            <div className={`w-7 h-[2px] mx-auto ${palette.lineColor}`} />
+            <p className={`text-xs font-medium ${palette.accentText}`}>
+              {movie.generos && movie.generos.length > 0 ? movie.generos.join(', ') : 'Catálogo 2026'}
+            </p>
+            <h4 className="display text-3xl sm:text-4xl text-white line-clamp-4 text-balance">
+              {movie.titulo}
+            </h4>
+          </div>
+
+          <div className="relative z-10 h-10" />
+        </div>
+      )}
+
+      {/* Year Tag on Image Posters */}
+      {hasImage && (
+        <div className="absolute top-3 right-3 z-10 bg-black/70 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full text-[11px] font-semibold text-white tabular">
+          {movie.ano}
+        </div>
+      )}
+
+      {/* Contrast Scrim */}
+      <div
+        className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
+          isCenter
+            ? 'bg-gradient-to-t from-black via-black/45 to-transparent opacity-95'
+            : 'bg-gradient-to-t from-black/90 via-black/25 to-black/15 opacity-80'
+        }`}
+      />
+
+      {/* Bottom Metadata & Action */}
+      <div className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-5 flex flex-col justify-end">
+        {movie.generos && movie.generos.length > 0 && (
+          <p className="text-xs font-medium text-scard-red mb-1 truncate">{movie.generos.join(', ')}</p>
+        )}
+
+        <h3
+          className={`display text-white text-balance ${
+            isCenter ? 'text-3xl sm:text-[2.1rem] line-clamp-2' : 'text-xl line-clamp-2 text-scard-bone/90'
+          }`}
+        >
+          {movie.titulo}
+        </h3>
+
+        {isCenter && (
+          <div className="mt-3 space-y-2.5">
+            {movie.sinopse && movie.sinopse.trim().length > 0 && (
+              <p className="text-xs text-scard-bone/80 leading-relaxed line-clamp-2">
+                {movie.sinopse}
+              </p>
+            )}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="w-full inline-flex items-center justify-center gap-2 bg-scard-red hover:bg-scard-redDark text-white px-4 py-2.5 rounded-full text-sm font-semibold transition-colors"
+            >
+              <MessageCircle size={15} />
+              <span>Perguntar se tem</span>
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export const CatalogCarousel: React.FC = () => {
@@ -92,27 +281,46 @@ export const CatalogCarousel: React.FC = () => {
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
-  const [isPausedHover, setIsPausedHover] = useState<boolean>(false);
-  const [progress, setProgress] = useState<number>(0);
+  const [isInteracting, setIsInteracting] = useState<boolean>(false);
+  const [onlyWithCovers, setOnlyWithCovers] = useState<boolean>(false);
 
   // Search & Filter
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedGenre, setSelectedGenre] = useState<string>('todos');
   const [showSearchModal, setShowSearchModal] = useState<boolean>(false);
 
-  // Touch Swipe tracking
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-  const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  // Viewport & reduced motion checks
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [reducedMotion, setReducedMotion] = useState<boolean>(false);
 
-  // Load static catalog once
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      mq.removeEventListener('change', handler);
+    };
+  }, []);
+
+  // Touch & Mouse Drag Swipe tracking
+  const pointerStartX = useRef<number | null>(null);
+  const pointerCurrentX = useRef<number | null>(null);
+  const isMouseDragging = useRef<boolean>(false);
+
+  // Fetch static JSON once per page load
   useEffect(() => {
     let isMounted = true;
     const fetchCatalog = async () => {
       try {
         setLoading(true);
-        // Load local static JSON without external network API calls
         let response = await fetch('/catalogo-2026.json');
         if (!response.ok) {
           response = await fetch('/assets/aistudio/catalogo-2026_d59c4fae.json');
@@ -121,8 +329,15 @@ export const CatalogCarousel: React.FC = () => {
           throw new Error('Falha ao carregar o catálogo estático.');
         }
         const data: MovieItem[] = await response.json();
+        // Prioritize titles that already have real cover artwork first in the Passage tunnel
+        const sorted = [...data].sort((a, b) => {
+          const aHas = a.imagem ? 1 : 0;
+          const bHas = b.imagem ? 1 : 0;
+          return bHas - aHas;
+        });
         if (isMounted) {
-          setMovies(data);
+          setMovies(sorted);
+          setCurrentIndex(0);
           setLoading(false);
         }
       } catch (err) {
@@ -140,446 +355,465 @@ export const CatalogCarousel: React.FC = () => {
     };
   }, []);
 
-  // Filtered list based on genre and search query
+  // Filtered list
   const filteredMovies = useMemo(() => {
     if (!movies.length) return [];
-    return movies.filter(movie => {
-      const matchGenre = selectedGenre === 'todos' || 
-        (movie.generos && movie.generos.some(g => g.toLowerCase() === selectedGenre.toLowerCase()));
-      const matchSearch = !searchQuery.trim() || 
+    return movies.filter((movie) => {
+      const matchCover = !onlyWithCovers || Boolean(movie.imagem);
+      const matchGenre =
+        selectedGenre === 'todos' ||
+        (movie.generos &&
+          movie.generos.some((g) => g.toLowerCase() === selectedGenre.toLowerCase()));
+      const matchSearch =
+        !searchQuery.trim() ||
         movie.titulo.toLowerCase().includes(searchQuery.toLowerCase().trim());
-      return matchGenre && matchSearch;
+      return matchCover && matchGenre && matchSearch;
     });
-  }, [movies, selectedGenre, searchQuery]);
+  }, [movies, onlyWithCovers, selectedGenre, searchQuery]);
 
-  // Ensure currentIndex stays within bounds when filter changes
+  const coversCount = useMemo(() => movies.filter((m) => Boolean(m.imagem)).length, [movies]);
+
+  // Distinct genres
+  const availableGenres = useMemo(() => {
+    const set = new Set<string>();
+    movies.forEach((m) => {
+      (m.generos || []).forEach((g) => set.add(g));
+    });
+    return Array.from(set).sort();
+  }, [movies]);
+
   useEffect(() => {
+    if (filteredMovies.length === 0) return;
     if (currentIndex >= filteredMovies.length) {
       setCurrentIndex(0);
     }
   }, [filteredMovies.length, currentIndex]);
 
-  // Extract distinct genres for quick filters
-  const availableGenres = useMemo(() => {
-    const set = new Set<string>();
-    movies.forEach(m => {
-      (m.generos || []).forEach(g => set.add(g));
-    });
-    return Array.from(set).sort();
-  }, [movies]);
-
-  // Navigation callbacks
   const nextSlide = useCallback(() => {
     if (filteredMovies.length <= 1) return;
-    setCurrentIndex(prev => (prev + 1) % filteredMovies.length);
-    setProgress(0);
+    setCurrentIndex((prev) => (prev + 1) % filteredMovies.length);
   }, [filteredMovies.length]);
 
   const prevSlide = useCallback(() => {
     if (filteredMovies.length <= 1) return;
-    setCurrentIndex(prev => (prev - 1 + filteredMovies.length) % filteredMovies.length);
-    setProgress(0);
+    setCurrentIndex((prev) => (prev - 1 + filteredMovies.length) % filteredMovies.length);
   }, [filteredMovies.length]);
 
-  // Check reduced motion preference
-  const prefersReducedMotion = useMemo(() => {
-    if (typeof window === 'undefined') return false;
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }, []);
+  const goToIndex = useCallback(
+    (targetIdx: number) => {
+      if (filteredMovies.length === 0) return;
+      const normalized = ((targetIdx % filteredMovies.length) + filteredMovies.length) % filteredMovies.length;
+      setCurrentIndex(normalized);
+    },
+    [filteredMovies.length]
+  );
 
-  // 5-second Autoplay timer & progress bar
+  // 5-second Autoplay (resets whenever currentIndex changes)
   useEffect(() => {
-    if (!isPlaying || isPausedHover || prefersReducedMotion || filteredMovies.length <= 1) {
-      if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+    if (!isPlaying || isInteracting || showSearchModal || reducedMotion || filteredMovies.length <= 1) {
       return;
     }
+    const timer = setTimeout(() => {
+      nextSlide();
+    }, AUTOPLAY_MS);
 
-    const intervalDuration = 5000; // 5 seconds
-    const tickInterval = 50; // update progress every 50ms
-    const step = (tickInterval / intervalDuration) * 100;
+    return () => clearTimeout(timer);
+  }, [currentIndex, isPlaying, isInteracting, showSearchModal, reducedMotion, filteredMovies.length, nextSlide]);
 
-    progressIntervalRef.current = setInterval(() => {
-      setProgress(p => {
-        if (p >= 100) {
-          nextSlide();
-          return 0;
-        }
-        return p + step;
-      });
-    }, tickInterval);
-
-    return () => {
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
-    };
-  }, [isPlaying, isPausedHover, prefersReducedMotion, filteredMovies.length, nextSlide]);
-
-  // Touch Swipe Handlers for mobile
+  // Touch Swipe
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX;
+    setIsInteracting(true);
+    pointerStartX.current = e.targetTouches[0].clientX;
+    pointerCurrentX.current = e.targetTouches[0].clientX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
+    pointerCurrentX.current = e.targetTouches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    const distance = touchStartX.current - touchEndX.current;
-    const isLeftSwipe = distance > 45;
-    const isRightSwipe = distance < -45;
-
-    if (isLeftSwipe) {
-      nextSlide();
-    } else if (isRightSwipe) {
-      prevSlide();
+    if (pointerStartX.current !== null && pointerCurrentX.current !== null) {
+      const diff = pointerStartX.current - pointerCurrentX.current;
+      if (diff > 40) {
+        nextSlide();
+      } else if (diff < -40) {
+        prevSlide();
+      }
     }
-    touchStartX.current = null;
-    touchEndX.current = null;
+    pointerStartX.current = null;
+    pointerCurrentX.current = null;
+    setIsInteracting(false);
   };
 
-  // Current movie
-  const currentMovie = filteredMovies[currentIndex] || null;
-  const aesthetic = currentMovie ? getGenreAesthetic(currentMovie.generos || []) : null;
+  // Mouse Drag Swipe
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isMouseDragging.current = true;
+    pointerStartX.current = e.clientX;
+    pointerCurrentX.current = e.clientX;
+  };
 
-  // WhatsApp query link specific to this movie
-  const currentWhatsAppLink = currentMovie
-    ? `https://wa.me/${WHATSAPP_PHONE}?text=Ol%C3%A1%2C%20vi%20o%20filme%20%22${encodeURIComponent(currentMovie.titulo)}%22%20no%20cat%C3%A1logo%202026%20do%20site%20e%20gostaria%20de%20saber%20a%20disponibilidade!`
-    : `https://wa.me/${WHATSAPP_PHONE}?text=Ol%C3%A1,%20vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es`;
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isMouseDragging.current) return;
+    pointerCurrentX.current = e.clientX;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    if (!isMouseDragging.current) return;
+    isMouseDragging.current = false;
+    if (pointerStartX.current !== null && pointerCurrentX.current !== null) {
+      const diff = pointerStartX.current - pointerCurrentX.current;
+      if (diff > 50) {
+        nextSlide();
+      } else if (diff < -50) {
+        prevSlide();
+      }
+    }
+    pointerStartX.current = null;
+    pointerCurrentX.current = null;
+  };
+
+  // Passage Tunnel visible depth window: [-1, 0, 1, 2, 3, 4, 5, 6]
+  const visibleSlides = useMemo(() => {
+    const len = filteredMovies.length;
+    if (len === 0) return [];
+    if (len === 1) return [{ movie: filteredMovies[0], offset: 0, index: 0 }];
+
+    const maxAhead = Math.min(6, len - 1);
+    const offsets: number[] = [];
+    if (len > 7) offsets.push(-1);
+    for (let o = 0; o <= maxAhead; o++) {
+      offsets.push(o);
+    }
+
+    return offsets.map((offset) => {
+      const idx = ((currentIndex + offset) % len + len) % len;
+      return { movie: filteredMovies[idx], offset, index: idx };
+    });
+  }, [filteredMovies, currentIndex]);
+
+  const currentMovie = filteredMovies[currentIndex] || null;
+
+  const totalDashes = Math.min(DASH_COUNT, Math.max(1, filteredMovies.length));
+  const activeDash =
+    filteredMovies.length <= DASH_COUNT
+      ? currentIndex
+      : Math.floor((currentIndex / filteredMovies.length) * totalDashes);
 
   if (loading) {
     return (
-      <section className="pt-24 pb-8 bg-[#07080A] border-b border-white/[0.08]">
+      <div className="pt-14 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-[440px] sm:h-[480px] rounded-3xl bg-[#0F1116] border border-white/[0.06] flex items-center justify-center animate-pulse">
-            <div className="flex flex-col items-center gap-3 text-gray-500">
-              <Film size={36} className="text-scard-red animate-spin" />
-              <span className="text-xs font-semibold tracking-wider uppercase">Carregando catálogo cinematográfico...</span>
+          <div className="h-[460px] sm:h-[520px] flex items-center justify-center">
+            <div className="flex flex-col items-center gap-3 text-scard-ash">
+              <Film size={32} className="text-scard-red animate-pulse" />
+              <span className="text-sm">
+                Carregando os lançamentos…
+              </span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 
   if (error || !currentMovie) {
-    return null; // Graceful fail without breaking page
+    return null;
   }
 
   return (
-    <section 
-      id="catalogo" 
-      className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 bg-[#07080A] border-b border-white/[0.08] overflow-hidden"
-      onMouseEnter={() => setIsPausedHover(true)}
-      onMouseLeave={() => setIsPausedHover(false)}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+    <div
+      id="catalogo"
+      role="region"
+      aria-label="Catálogo 2026 SCARD PLAY"
+      className="relative pt-16 sm:pt-20 pb-16 sm:pb-20 overflow-hidden"
+      onMouseEnter={() => setIsInteracting(true)}
+      onMouseLeave={() => setIsInteracting(false)}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Top Marquee Bar: Header & Search trigger */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-scard-red/10 border border-scard-red/30 flex items-center justify-center text-scard-red shrink-0">
-              <Film size={18} />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-widest text-scard-red">
-                  Catálogo 2026
-                </span>
-                <span className="text-[10px] text-gray-400 font-mono bg-white/[0.05] border border-white/[0.08] px-2 py-0.5 rounded">
-                  {filteredMovies.length} títulos
-                </span>
-              </div>
-              <p className="text-xs text-gray-400 hidden sm:block">
-                Pré-estreias e lançamentos identificados na grade oficial
-              </p>
-            </div>
+        {/* Compact Header Bar */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 pt-8 border-t border-white/[0.08] mb-2">
+          <div>
+            <h2 className="display text-4xl sm:text-5xl text-white">
+              Lançamentos 2026{' '}
+              <span className="text-scard-red tabular ml-1">{filteredMovies.length}</span>
+            </h2>
+            <p className="mt-2 text-sm text-scard-ash">
+              Arraste ou use as setas para ver os títulos que já estão na grade.
+            </p>
           </div>
 
-          {/* Quick controls: Genre filter dropdown & search button */}
-          <div className="flex items-center gap-2">
+          {/* Controls: Covers filter + Genre filter + Search + Play/Pause */}
+          <div className="flex flex-wrap items-center gap-2">
+            {coversCount > 0 && (
+              <button
+                type="button"
+                onClick={() => {
+                  setOnlyWithCovers(!onlyWithCovers);
+                  setCurrentIndex(0);
+                }}
+                aria-pressed={onlyWithCovers}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors min-h-[40px] ${
+                  onlyWithCovers
+                    ? 'bg-scard-red text-white border-scard-red'
+                    : 'bg-black text-scard-bone border-scard-line hover:border-white/30'
+                }`}
+              >
+                Só com capa ({coversCount})
+              </button>
+            )}
+
             <select
               value={selectedGenre}
               onChange={(e) => {
                 setSelectedGenre(e.target.value);
                 setCurrentIndex(0);
-                setProgress(0);
               }}
-              className="bg-[#0F1116] border border-white/[0.08] text-gray-300 text-xs font-medium rounded-lg px-3 py-2 focus:outline-none focus:border-scard-red"
-              aria-label="Filtrar por gênero"
+              className="bg-black border border-scard-line text-scard-bone text-sm font-medium rounded-full px-4 py-2 focus:border-scard-red min-h-[40px]"
+              aria-label="Filtrar catálogo por gênero"
             >
-              <option value="todos">Todos os Gêneros ({movies.length})</option>
-              {availableGenres.map(g => (
-                <option key={g} value={g}>{g}</option>
+              <option value="todos">Todos os gêneros ({movies.length})</option>
+              {availableGenres.map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
               ))}
             </select>
 
             <button
+              type="button"
               onClick={() => setShowSearchModal(true)}
-              className="flex items-center gap-1.5 bg-[#0F1116] hover:bg-[#151820] border border-white/[0.08] hover:border-white/[0.2] text-gray-300 text-xs font-semibold px-3.5 py-2 rounded-lg transition-colors"
-              title="Buscar filme por título"
+              className="inline-flex items-center gap-2 bg-black hover:bg-white/[0.05] border border-scard-line hover:border-white/30 text-scard-bone text-sm font-medium px-4 py-2 rounded-full transition-colors min-h-[40px]"
             >
-              <Search size={14} className="text-scard-red" />
-              <span className="hidden sm:inline">Buscar Título</span>
+              <Search size={15} className="text-scard-red" />
+              <span>Buscar título</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black hover:bg-white/[0.05] border border-scard-line text-scard-bone hover:text-white transition-colors"
+              title={isPlaying ? "Pausar alternância automática" : "Retomar alternância automática"}
+              aria-label={isPlaying ? "Pausar carrossel" : "Reproduzir carrossel"}
+            >
+              {isPlaying ? <Pause size={14} /> : <Play size={14} className="ml-0.5 fill-current" />}
             </button>
           </div>
         </div>
-
-        {/* The Main Billboard Slide Container */}
-        <div className="relative rounded-3xl overflow-hidden border border-white/[0.1] bg-[#0C0E13] shadow-2xl min-h-[460px] sm:min-h-[500px] flex flex-col justify-between">
-          
-          {/* Ambient Lighting & Backdrop Graphic */}
-          <div 
-            className="absolute inset-0 pointer-events-none transition-all duration-700"
-            style={{
-              background: aesthetic?.bgGlow || 'none'
-            }}
-          />
-
-          {/* Watermark of Movie Title in the Background */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none select-none flex items-center justify-end pr-6 opacity-[0.035]">
-            <span className="text-[14vw] font-black uppercase tracking-tighter text-white leading-none whitespace-nowrap text-right transform rotate-[-4deg]">
-              {currentMovie.titulo}
-            </span>
-          </div>
-
-          {/* Film Frame Texture / Image Support */}
-          {currentMovie.imagem ? (
-            <div className="absolute inset-0">
-              <img 
-                src={currentMovie.imagem} 
-                alt={currentMovie.titulo}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  // Fallback if local image doesn't exist yet
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#07080A] via-[#07080A]/85 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07080A] via-transparent to-[#07080A]/60" />
-            </div>
-          ) : (
-            /* Professional Dark Cinema Graphic Backdrop */
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#07080A] via-[#0D1016] to-[#121620] opacity-95">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(255,255,255,0.03)_0%,_transparent_60%)]" />
-              {/* Cinema Projector Vignette Lines */}
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-scard-red/[0.04] to-transparent pointer-events-none" />
-            </div>
-          )}
-
-          {/* Content Body: Left Column Information */}
-          <div className="relative z-10 p-6 sm:p-10 lg:p-12 max-w-3xl flex-1 flex flex-col justify-center space-y-6">
-            
-            {/* Metadata Tags Line */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-scard-red text-white text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                <Sparkles size={12} />
-                <span>Lançamento {currentMovie.ano}</span>
-              </div>
-
-              {currentMovie.generos && currentMovie.generos.length > 0 ? (
-                currentMovie.generos.map((g, i) => (
-                  <span 
-                    key={i} 
-                    className="px-2.5 py-1 rounded-md bg-white/[0.06] border border-white/[0.08] text-gray-300 text-[11px] font-medium"
-                  >
-                    {g}
-                  </span>
-                ))
-              ) : (
-                <span className="px-2.5 py-1 rounded-md bg-white/[0.06] border border-white/[0.08] text-gray-300 text-[11px] font-medium">
-                  Grade Oficial
-                </span>
-              )}
-
-              <span className="text-gray-500 hidden sm:inline">·</span>
-              <span className="text-gray-400 font-mono text-[11px] hidden sm:inline">4K Ultra HD</span>
-            </div>
-
-            {/* Movie Title */}
-            <div>
-              <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] drop-shadow-md text-balance">
-                {currentMovie.titulo}
-              </h3>
-            </div>
-
-            {/* Synopsis or Professional Preview Disclaimer */}
-            <div className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
-              {currentMovie.sinopse && currentMovie.sinopse.trim().length > 0 ? (
-                <p className="line-clamp-3">{currentMovie.sinopse}</p>
-              ) : (
-                <p className="text-gray-400 text-xs sm:text-sm italic border-l-2 border-scard-red/60 pl-3">
-                  Título em pré-visualização no catálogo 2026 da SCARD PLAY. Consulte nossa equipe de atendimento para confirmação de grade, dublagem e legendas.
-                </p>
-              )}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a 
-                href={currentWhatsAppLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-scard-red hover:bg-scard-redDark text-white px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg shadow-scard-red/25 transition-all active:scale-95"
-              >
-                <span>Consultar Disponibilidade</span>
-                <ArrowRight size={16} />
-              </a>
-
-              <a 
-                href="#planos"
-                className="inline-flex items-center gap-2 bg-white/[0.06] hover:bg-white/[0.12] text-gray-200 hover:text-white px-5 py-3.5 rounded-xl text-xs sm:text-sm font-semibold border border-white/[0.1] transition-colors"
-              >
-                <Tv size={16} className="text-scard-red" />
-                <span>Ver Planos</span>
-              </a>
-            </div>
-
-          </div>
-
-          {/* Bottom Bar inside the Billboard: Position Indicator, Progress Bar & Controls */}
-          <div className="relative z-10 p-4 sm:px-10 sm:py-5 bg-black/60 backdrop-blur-md border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
-            
-            {/* Position counter */}
-            <div className="flex items-center gap-3 text-xs text-gray-300">
-              <span className="font-mono font-bold text-white text-sm">
-                {String(currentIndex + 1).padStart(3, '0')}
-              </span>
-              <span className="text-gray-600 font-mono">/</span>
-              <span className="font-mono text-gray-400">
-                {String(filteredMovies.length).padStart(3, '0')}
-              </span>
-              <span className="text-gray-500 text-[11px] hidden md:inline ml-2">
-                (Transição a cada 5s)
-              </span>
-            </div>
-
-            {/* Mini visual indicator / next upcoming title preview */}
-            <div className="hidden lg:flex items-center gap-2 text-xs text-gray-400">
-              <span className="text-gray-500">Próximo:</span>
-              <button 
-                onClick={nextSlide}
-                className="text-gray-300 hover:text-white font-semibold truncate max-w-[240px] text-left underline decoration-scard-red/50 hover:decoration-scard-red"
-              >
-                {filteredMovies[(currentIndex + 1) % filteredMovies.length]?.titulo}
-              </button>
-            </div>
-
-            {/* Navigation buttons */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="w-9 h-9 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.08] text-gray-300 hover:text-white flex items-center justify-center transition-colors"
-                title={isPlaying ? "Pausar troca automática" : "Iniciar troca automática"}
-                aria-label={isPlaying ? "Pausar carrossel" : "Reproduzir carrossel"}
-              >
-                {isPlaying ? <Pause size={14} /> : <Play size={14} className="ml-0.5 fill-current" />}
-              </button>
-
-              <button
-                onClick={prevSlide}
-                className="w-9 h-9 rounded-lg bg-white/[0.05] hover:bg-scard-red border border-white/[0.08] hover:border-scard-red text-white flex items-center justify-center transition-all"
-                title="Título anterior"
-                aria-label="Filme anterior"
-              >
-                <ChevronLeft size={18} />
-              </button>
-
-              <button
-                onClick={nextSlide}
-                className="w-9 h-9 rounded-lg bg-white/[0.05] hover:bg-scard-red border border-white/[0.08] hover:border-scard-red text-white flex items-center justify-center transition-all"
-                title="Próximo título"
-                aria-label="Próximo filme"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
-          </div>
-
-          {/* 5-second progress bar at the very bottom edge of the billboard */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/[0.06] overflow-hidden z-20">
-            <div 
-              className="h-full bg-scard-red transition-all duration-75 ease-linear"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-
-        </div>
-
       </div>
 
-      {/* Quick Search Modal for all 328 titles */}
+      {/* 3D Passage Gallery Tunnel Stage */}
+      <div
+        className="relative w-full h-[380px] sm:h-[440px] lg:h-[490px] overflow-hidden touch-pan-y cursor-grab active:cursor-grabbing"
+        style={{
+          perspective: isMobile ? '900px' : '1250px',
+          perspectiveOrigin: '50% 48%'
+        }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUpOrLeave}
+        onMouseLeave={handleMouseUpOrLeave}
+      >
+        {/* Subtle Tunnel Depth Floor & Horizon Glow */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 55%, rgba(229, 9, 20, 0.14) 0%, rgba(20, 8, 8, 0.35) 38%, rgba(0, 0, 0, 0) 72%)'
+          }}
+        />
+        {/* Corridor Perspective Guide Lines */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-20">
+          <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-[36vw] rotate-[18deg]" />
+          <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent translate-x-[36vw] -rotate-[18deg]" />
+        </div>
+
+        {/* Edge Vignettes */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-24 bg-gradient-to-r from-black to-transparent z-50" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-24 bg-gradient-to-l from-black to-transparent z-50" />
+
+        {/* 3D Tunnel Cards Container */}
+        <div
+          className="relative w-full h-full"
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          {visibleSlides.map(({ movie, offset, index }) => {
+            const whatsappLink = `https://wa.me/${WHATSAPP_PHONE}?text=Ol%C3%A1%2C%20vi%20o%20filme%20%22${encodeURIComponent(
+              movie.titulo
+            )}%22%20no%20cat%C3%A1logo%202026%20do%20site%20e%20gostaria%20de%20saber%20a%20disponibilidade!`;
+
+            return (
+              <PassagePosterCard
+                key={`${movie.titulo}-${index}`}
+                movie={movie}
+                offset={offset}
+                isMobile={isMobile}
+                reducedMotion={reducedMotion}
+                onSelect={() => goToIndex(index)}
+                whatsappLink={whatsappLink}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Bottom Passage Controls: <  — — — — — — — —  > */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5 flex flex-col items-center gap-3">
+        <div className="flex items-center justify-center gap-3 sm:gap-5">
+          <button
+            type="button"
+            onClick={prevSlide}
+            disabled={filteredMovies.length <= 1}
+            className="w-11 h-11 rounded-full flex items-center justify-center text-scard-bone border border-scard-line hover:border-scard-red hover:bg-scard-red disabled:opacity-30 transition-colors"
+            aria-label="Filme anterior"
+            title="Voltar no túnel"
+          >
+            <ChevronLeft size={18} />
+          </button>
+
+          {/* Horizontal Dash Indicators */}
+          <div className="flex items-center gap-1.5 sm:gap-2" role="tablist" aria-label="Posição no catálogo">
+            {Array.from({ length: totalDashes }).map((_, dashIdx) => {
+              const isActive = dashIdx === activeDash;
+              const jumpIndex =
+                filteredMovies.length <= DASH_COUNT
+                  ? dashIdx
+                  : Math.floor((dashIdx / totalDashes) * filteredMovies.length);
+
+              return (
+                <button
+                  key={dashIdx}
+                  type="button"
+                  onClick={() => goToIndex(jumpIndex)}
+                  aria-label={`Ir para seção ${dashIdx + 1}`}
+                  aria-selected={isActive}
+                  className="py-2 px-0.5 group focus:outline-none"
+                >
+                  <span
+                    className={`block h-[2px] rounded-full transition-all duration-300 ${
+                      isActive
+                        ? 'w-8 sm:w-10 bg-scard-red'
+                        : 'w-4 sm:w-5 bg-white/20 group-hover:bg-white/45'
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            onClick={nextSlide}
+            disabled={filteredMovies.length <= 1}
+            className="w-11 h-11 rounded-full flex items-center justify-center text-scard-bone border border-scard-line hover:border-scard-red hover:bg-scard-red disabled:opacity-30 transition-colors"
+            aria-label="Próximo filme"
+            title="Avançar no túnel"
+          >
+            <ChevronRight size={18} />
+          </button>
+        </div>
+
+        {/* Discreet numeric position & title */}
+        <p className="flex items-center gap-3 text-sm text-scard-ash tabular" aria-live="polite">
+          <span>
+            <strong className="text-white font-semibold">{currentIndex + 1}</strong> de {filteredMovies.length}
+          </span>
+          <span className="w-4 h-px bg-scard-line" aria-hidden="true" />
+          <span className="text-scard-bone truncate max-w-[200px] sm:max-w-xs">
+            {currentMovie.titulo}
+          </span>
+        </p>
+      </div>
+
+      {/* Quick Search Modal across all 328 titles */}
       {showSearchModal && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#0F1116] border border-white/[0.1] rounded-2xl w-full max-w-xl max-h-[80vh] flex flex-col shadow-2xl overflow-hidden">
-            {/* Modal Header & Search Input */}
-            <div className="p-4 border-b border-white/[0.08] flex items-center gap-3">
-              <Search size={20} className="text-scard-red shrink-0" />
-              <input 
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Buscar título no catálogo"
+          className="fixed inset-0 z-[60] bg-black/85 backdrop-blur-md flex items-start sm:items-center justify-center p-4 pt-20 sm:pt-4"
+          onClick={() => setShowSearchModal(false)}
+        >
+          <div
+            className="bg-scard-coal border border-scard-line rounded-2xl w-full max-w-xl max-h-[80vh] flex flex-col shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-4 border-b border-scard-line flex items-center gap-3">
+              <Search size={18} className="text-scard-red shrink-0" />
+              <input
                 type="text"
                 autoFocus
-                placeholder="Digite o nome do filme (ex: Batman, Homem-Aranha, Toy Story)..."
+                placeholder="Nome do filme, ex.: Homem-Aranha, Toy Story"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder-gray-500 font-medium"
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setCurrentIndex(0);
+                }}
+                aria-label="Nome do filme"
+                className="bg-transparent border-none text-white text-base w-full focus-visible:outline-none placeholder-scard-ash/60"
               />
-              <button 
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="text-sm text-scard-ash hover:text-white px-2 py-1"
+                >
+                  Limpar
+                </button>
+              )}
+              <button
+                type="button"
                 onClick={() => setShowSearchModal(false)}
-                className="p-1.5 text-gray-400 hover:text-white rounded-lg hover:bg-white/[0.06]"
+                className="p-1.5 text-scard-ash hover:text-white rounded-full hover:bg-white/[0.06]"
+                aria-label="Fechar busca"
               >
-                <X size={20} />
+                <X size={18} />
               </button>
             </div>
 
-            {/* Results list */}
-            <div className="overflow-y-auto p-4 divide-y divide-white/[0.04] space-y-1">
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 px-2 py-1">
-                {filteredMovies.length} títulos encontrados no catálogo 2026
+            <div className="overflow-y-auto p-3 space-y-0.5">
+              <div className="text-xs text-scard-ash px-2.5 py-1.5">
+                {filteredMovies.length} {filteredMovies.length === 1 ? 'título encontrado' : 'títulos encontrados'}
               </div>
-              {filteredMovies.slice(0, 50).map((m) => {
-                const globalIndex = filteredMovies.indexOf(m);
-                return (
+              {filteredMovies.length === 0 ? (
+                <div className="py-10 px-6 text-center text-sm text-scard-ash">
+                  Nenhum título com “{searchQuery}”. Tente outro nome ou pergunte no WhatsApp se já está disponível.
+                </div>
+              ) : (
+                filteredMovies.slice(0, 60).map((m, i) => (
                   <button
-                    key={m.titulo}
+                    key={`${m.titulo}-${i}`}
+                    type="button"
                     onClick={() => {
-                      setCurrentIndex(globalIndex);
-                      setProgress(0);
+                      setCurrentIndex(i);
                       setShowSearchModal(false);
                     }}
                     className="w-full text-left p-2.5 rounded-lg hover:bg-white/[0.05] transition-colors flex items-center justify-between group"
                   >
                     <div>
-                      <div className="text-sm font-bold text-white group-hover:text-scard-red transition-colors">
+                      <div className="text-[15px] font-semibold text-white group-hover:text-scard-red transition-colors">
                         {m.titulo}
                       </div>
-                      <div className="text-[11px] text-gray-400 flex items-center gap-2 mt-0.5">
-                        <span>{m.ano}</span>
-                        {m.generos && m.generos.length > 0 && (
-                          <>
-                            <span>·</span>
-                            <span>{m.generos.join(', ')}</span>
-                          </>
-                        )}
+                      <div className="text-xs text-scard-ash mt-0.5">
+                        {m.ano}{m.generos && m.generos.length > 0 ? `, ${m.generos.join(', ')}` : ''}
                       </div>
                     </div>
-                    <ArrowRight size={14} className="text-gray-500 group-hover:text-white transition-colors" />
+                    <ChevronRight size={16} className="text-scard-ash group-hover:text-white transition-colors" />
                   </button>
-                );
-              })}
-              {filteredMovies.length > 50 && (
-                <p className="text-center text-xs text-gray-500 py-2">
-                  Mostrando os primeiros 50 resultados. Refine sua busca para ver mais.
+                ))
+              )}
+              {filteredMovies.length > 60 && (
+                <p className="text-center text-xs text-scard-ash py-2">
+                  Mostrando os 60 primeiros. Digite mais do nome para encontrar o seu.
                 </p>
               )}
             </div>
           </div>
         </div>
       )}
-
-    </section>
+    </div>
   );
 };
 

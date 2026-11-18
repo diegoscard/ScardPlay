@@ -1,462 +1,338 @@
 import React, { useState } from 'react';
-import { 
-  Tv, 
-  Smartphone, 
-  Monitor, 
-  Box, 
-  ShieldCheck, 
-  Zap, 
-  Check, 
-  ChevronDown, 
+import {
+  Tv,
+  Smartphone,
+  Monitor,
+  Box,
+  ShieldCheck,
+  Zap,
+  Check,
+  Plus,
   Star,
   Globe,
   Clock,
-  ArrowRight,
   Menu,
   X,
   Play,
   RotateCcw,
-  Sparkles,
   Headphones,
-  Film
+  Film,
+  MessageCircle
 } from 'lucide-react';
 import { PLANS, FAQ_ITEMS, TESTIMONIALS, FEATURED_CONTENT } from './constants';
-import { Plan, FAQItem } from './types';
+import { FAQItem } from './types';
 import { CatalogCarousel } from './CatalogCarousel';
 
 const WHATSAPP_BASE_LINK = "https://wa.me/5541988745822?text=Ol%C3%A1,%20vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es";
 
+const NAV_LINKS = [
+  { href: '#catalogo', label: 'Catálogo 2026' },
+  { href: '#beneficios', label: 'Benefícios' },
+  { href: '#conteudos', label: 'Conteúdos' },
+  { href: '#compatibilidade', label: 'Aparelhos e apps' },
+  { href: '#planos', label: 'Planos' },
+  { href: '#faq', label: 'Dúvidas' },
+];
+
+/* ---------- Brand ---------- */
+
 const LogoIcon = ({ size = 20, className = "" }: { size?: number; className?: string }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className={className}
-    aria-hidden="true"
-  >
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
     <path d="M8 5v14l11-7z" />
   </svg>
 );
+
+const Wordmark: React.FC<{ compact?: boolean }> = ({ compact }) => (
+  <span className="flex items-center gap-2.5">
+    <span className={`${compact ? 'w-8 h-8' : 'w-9 h-9'} bg-scard-red rounded-[10px] flex items-center justify-center shadow-[0_6px_24px_-6px_rgba(229,9,20,0.7)]`}>
+      <LogoIcon size={compact ? 16 : 18} className="text-white ml-0.5" />
+    </span>
+    <span className="display text-[1.3rem] sm:text-[1.55rem] leading-none tracking-wide text-white whitespace-nowrap">
+      SCARD PLAY <span className="text-scard-red">IPTV</span>
+    </span>
+  </span>
+);
+
+const WhatsAppButton: React.FC<{
+  href?: string;
+  children: React.ReactNode;
+  variant?: 'red' | 'light' | 'ghost';
+  size?: 'md' | 'lg';
+  className?: string;
+}> = ({ href = WHATSAPP_BASE_LINK, children, variant = 'red', size = 'md', className = '' }) => {
+  const variants = {
+    red: 'bg-scard-red hover:bg-scard-redDark text-white shadow-[0_10px_30px_-10px_rgba(229,9,20,0.8)]',
+    light: 'bg-scard-bone hover:bg-white text-black',
+    ghost: 'bg-transparent hover:bg-white/[0.06] text-scard-bone border border-scard-line hover:border-white/30',
+  };
+  const sizes = {
+    md: 'px-5 py-3 text-sm',
+    lg: 'px-7 py-4 text-base',
+  };
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2.5 rounded-full font-semibold transition-colors active:scale-[0.98] ${variants[variant]} ${sizes[size]} ${className}`}
+    >
+      {variant !== 'ghost' && <MessageCircle size={size === 'lg' ? 18 : 16} aria-hidden="true" />}
+      <span>{children}</span>
+    </a>
+  );
+};
+
+const SectionHeading: React.FC<{ title: string; intro?: string; className?: string }> = ({ title, intro, className = '' }) => (
+  <div className={`max-w-2xl ${className}`}>
+    <h2 className="display text-5xl sm:text-6xl lg:text-7xl text-white text-balance">{title}</h2>
+    {intro && <p className="mt-5 text-scard-ash text-base sm:text-lg leading-relaxed max-w-xl">{intro}</p>}
+  </div>
+);
+
+/* ---------- Header ---------- */
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#07080A]/90 backdrop-blur-md border-b border-white/[0.08]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
-        {/* Zone 1: Brand Wordmark */}
-        <a href="#inicio" className="flex items-center gap-3 shrink-0 group">
-          <div className="w-9 h-9 bg-scard-red rounded-xl flex items-center justify-center shadow-lg shadow-scard-red/25 transition-transform group-hover:scale-105">
-            <LogoIcon size={18} className="text-white ml-0.5" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-base sm:text-lg tracking-tight uppercase text-white leading-none">
-              SCARD PLAY <span className="text-scard-red">IPTV</span>
-            </span>
-            <span className="text-[10px] text-gray-400 font-medium tracking-wider uppercase mt-1">
-              Streaming Premium
-            </span>
-          </div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/[0.07]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between gap-6">
+        <a href="#inicio" className="shrink-0" aria-label="SCARD PLAY IPTV, voltar ao início">
+          <Wordmark />
         </a>
 
-        {/* Zone 2: Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold uppercase tracking-widest text-gray-300">
-          <a href="#catalogo" className="text-scard-red hover:text-white transition-colors flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-scard-red animate-pulse" />
-            <span>Catálogo 2026</span>
-          </a>
-          <a href="#inicio" className="hover:text-white transition-colors">Início</a>
-          <a href="#beneficios" className="hover:text-white transition-colors">Benefícios</a>
-          <a href="#conteudos" className="hover:text-white transition-colors">Destaques</a>
-          <a href="#compatibilidade" className="hover:text-white transition-colors">Aparelhos</a>
-          <a href="#aplicativos" className="hover:text-white transition-colors">Apps</a>
-          <a href="#planos" className="hover:text-white transition-colors">Planos</a>
-          <a href="#faq" className="hover:text-white transition-colors">Dúvidas</a>
+        <nav className="hidden lg:flex items-center gap-7 text-sm text-scard-ash" aria-label="Seções">
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-white transition-colors">
+              {link.label}
+            </a>
+          ))}
         </nav>
 
-        {/* Zone 3: Primary Action & Mobile Toggle */}
-        <div className="flex items-center gap-4 shrink-0">
-          <a 
-            href={WHATSAPP_BASE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 bg-scard-red hover:bg-scard-redDark text-white px-5 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase transition-all shadow-md shadow-scard-red/20 active:scale-95"
-          >
-            <span>Assinar Agora</span>
-            <ArrowRight size={14} />
-          </a>
-
-          <button 
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="hidden sm:block">
+            <WhatsAppButton className="!py-2.5">Assinar agora</WhatsAppButton>
+          </div>
+          <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
+            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full text-scard-bone hover:bg-white/[0.08]"
             aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0A0C10] border-b border-white/[0.08] px-6 py-6 space-y-4 animate-in fade-in duration-200">
-          <nav className="flex flex-col space-y-3 text-sm font-semibold uppercase tracking-wider text-gray-300">
-            <a 
-              href="#catalogo" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 border-b border-white/5 text-scard-red font-bold flex items-center justify-between"
-            >
-              <span>Catálogo 2026 (Lançamentos)</span>
-              <span className="text-[10px] bg-scard-red/15 text-scard-red px-2 py-0.5 rounded">Novo</span>
-            </a>
-            <a 
-              href="#inicio" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 border-b border-white/5 hover:text-scard-red"
-            >
-              Início
-            </a>
-            <a 
-              href="#beneficios" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 border-b border-white/5 hover:text-scard-red"
-            >
-              Benefícios
-            </a>
-            <a 
-              href="#conteudos" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 border-b border-white/5 hover:text-scard-red"
-            >
-              Destaques de Conteúdo
-            </a>
-            <a 
-              href="#compatibilidade" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 border-b border-white/5 hover:text-scard-red"
-            >
-              Aparelhos Compatíveis
-            </a>
-            <a 
-              href="#aplicativos" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 border-b border-white/5 hover:text-scard-red"
-            >
-              Aplicativos Grátis e Pagos
-            </a>
-            <a 
-              href="#planos" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 border-b border-white/5 hover:text-scard-red"
-            >
-              Planos e Valores
-            </a>
-            <a 
-              href="#faq" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2 hover:text-scard-red"
-            >
-              Central de Dúvidas
-            </a>
+        <div className="lg:hidden bg-black border-t border-white/[0.07] px-4 sm:px-6 pb-6">
+          <nav className="flex flex-col" aria-label="Seções">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="display text-3xl py-3 border-b border-white/[0.07] text-scard-bone hover:text-scard-red flex items-center justify-between"
+              >
+                {link.label}
+                {link.href === '#catalogo' && (
+                  <span className="font-sans normal-case text-xs font-semibold tracking-normal bg-scard-red text-white px-2 py-0.5 rounded-full" style={{ fontStretch: '100%', fontVariationSettings: "'wdth' 100" }}>
+                    Novo
+                  </span>
+                )}
+              </a>
+            ))}
           </nav>
-
-          <div className="pt-2">
-            <a 
-              href={WHATSAPP_BASE_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-scard-red hover:bg-scard-redDark text-white py-3.5 rounded-lg text-sm font-bold uppercase tracking-wider shadow-lg"
-            >
-              <span>Falar com Atendente VIP</span>
-              <ArrowRight size={16} />
-            </a>
-          </div>
+          <WhatsAppButton size="lg" className="w-full mt-6">Falar com um atendente</WhatsAppButton>
         </div>
       )}
     </header>
   );
 };
 
-const Hero: React.FC = () => {
+/* ---------- Hero (headline + catalog tunnel) ---------- */
+
+const Hero: React.FC = () => (
+  <section id="inicio" className="relative pt-[104px] sm:pt-32 bg-black overflow-hidden">
+    <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full bg-scard-red/[0.10] blur-[160px]" />
+
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+        <h1 className="lg:col-span-7 display hero-title text-white">
+          <span className="rise-mask"><span className="rise-line">Toda a TV</span></span>
+          <span className="rise-mask"><span className="rise-line" style={{ animationDelay: '90ms' }}>num só</span></span>
+          <span className="rise-mask"><span className="rise-line" style={{ animationDelay: '180ms' }}>acesso.</span></span>
+        </h1>
+
+        <div className="lg:col-span-5 lg:pb-3 space-y-7">
+          <p className="text-scard-bone/85 text-lg leading-relaxed max-w-md">
+            Mais de 150 mil conteúdos entre canais abertos e fechados, filmes, séries e esportes ao vivo em Full HD e 4K. Sem fidelidade e sem multa.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <WhatsAppButton size="lg">Quero meu acesso</WhatsAppButton>
+            <a
+              href="#planos"
+              className="inline-flex items-center justify-center rounded-full px-7 py-4 text-base font-semibold text-scard-bone border border-scard-line hover:border-white/30 hover:bg-white/[0.04] transition-colors"
+            >
+              Ver planos
+            </a>
+          </div>
+          <dl className="grid grid-cols-3 gap-4 pt-5 border-t border-white/[0.08]">
+            <div>
+              <dt className="text-xs text-scard-ash">Clientes ativos</dt>
+              <dd className="display text-3xl text-white mt-1">+15 mil</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-scard-ash">Avaliação média</dt>
+              <dd className="display text-3xl text-white mt-1 flex items-center gap-1.5">
+                4,9 <Star size={16} className="text-scard-red fill-scard-red" aria-hidden="true" />
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs text-scard-ash">Tempo de ativação</dt>
+              <dd className="display text-3xl text-white mt-1">5 min</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <CatalogCarousel />
+  </section>
+);
+
+/* ---------- Demo video ---------- */
+
+const Demo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="inicio" className="relative pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-[#07080A]">
-      {/* Subtle architectural ambient background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-[600px] h-[500px] bg-scard-red/[0.04] rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[400px] bg-white/[0.02] rounded-full blur-[120px]" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Column: Value Proposition */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="space-y-5">
-              {/* Clean metadata kicker - zero tacky pill */}
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-                <span className="text-scard-red font-bold">Qualidade 4K Ultra HD</span>
-                <span aria-hidden="true" className="text-gray-600">·</span>
-                <span>Servidores Dedicados</span>
-                <span aria-hidden="true" className="text-gray-600">·</span>
-                <span>Ativação Instantânea</span>
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08] text-balance">
-                A experiência definitiva de televisão na sua casa.
-              </h1>
-              
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-                Mais de <strong className="text-white font-semibold">150.000 conteúdos</strong> entre canais abertos e fechados, filmes de cinema, séries completas e esportes ao vivo com estabilidade garantida, sem multas e sem contratos de fidelidade.
-              </p>
-            </div>
-
-            {/* Value checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
-              {[
-                "Ativação rápida em até 5 minutos",
-                "Sem contratos de fidelidade",
-                "Suporte humano dedicado via WhatsApp",
-                "Grade completa em Full HD e 4K"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 py-1">
-                  <div className="w-5 h-5 rounded-full bg-scard-red/10 border border-scard-red/30 flex items-center justify-center shrink-0">
-                    <Check className="text-scard-red" size={12} />
-                  </div>
-                  <span className="text-sm font-medium text-gray-200">{item}</span>
+    <section id="demonstracao" className="py-24 sm:py-32 bg-scard-coal border-t border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="lg:col-span-7 order-2 lg:order-1">
+          <div className="relative rounded-2xl overflow-hidden bg-black ring-1 ring-white/10 shadow-[0_40px_120px_-40px_rgba(229,9,20,0.35)]">
+            <div className="aspect-video relative group">
+              {!isPlaying ? (
+                <>
+                  <img
+                    src="/images/hero_cinematic_livingroom_1794004161004.jpg"
+                    alt="Sala de estar com a interface da SCARD PLAY aberta na Smart TV"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  <button
+                    onClick={() => setIsPlaying(true)}
+                    className="absolute inset-0 flex items-center justify-center"
+                    aria-label="Assistir ao vídeo de demonstração"
+                  >
+                    <span className="relative w-20 h-20 rounded-full bg-scard-red text-white flex items-center justify-center transition-transform group-hover:scale-110">
+                      <span className="absolute inset-0 rounded-full bg-scard-red/50 animate-ping motion-reduce:hidden" />
+                      <Play size={28} className="relative ml-1 fill-white" />
+                    </span>
+                  </button>
+                  <p className="absolute bottom-5 left-5 right-5 text-sm text-scard-bone/90">
+                    Vídeo de 1 minuto com a interface e a qualidade de imagem reais.
+                  </p>
+                </>
+              ) : (
+                <div className="w-full h-full relative bg-black">
+                  <iframe
+                    src="https://player.vimeo.com/video/1050573081?autoplay=1"
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="Demonstração SCARD PLAY IPTV"
+                  />
+                  <button
+                    onClick={() => setIsPlaying(false)}
+                    className="absolute top-3 right-3 bg-black/80 hover:bg-black text-white px-3 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 border border-white/10 z-20"
+                  >
+                    <RotateCcw size={12} />
+                    <span>Fechar vídeo</span>
+                  </button>
                 </div>
-              ))}
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
-              <a 
-                href={WHATSAPP_BASE_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-scard-red hover:bg-scard-redDark text-white px-8 py-4 rounded-xl text-sm font-bold tracking-wider uppercase transition-all shadow-lg shadow-scard-red/25 hover:shadow-scard-red/40 active:scale-95"
-              >
-                <span>Quero Meu Acesso Agora</span>
-                <ArrowRight size={16} />
-              </a>
-              
-              <a
-                href="#planos"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-sm font-semibold text-gray-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition-colors"
-              >
-                <span>Ver Todos os Planos</span>
-              </a>
-            </div>
-
-            {/* Social Proof Strip */}
-            <div className="pt-4 border-t border-white/[0.08] flex flex-wrap items-center gap-6 sm:gap-10 text-xs text-gray-400">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-1.5">
-                  {[1, 2, 3].map((n) => (
-                    <img 
-                      key={n}
-                      src={`https://i.pravatar.cc/100?u=scard_${n}`} 
-                      alt="Assinante SCARD PLAY" 
-                      className="w-7 h-7 rounded-full border border-black object-cover"
-                    />
-                  ))}
-                </div>
-                <span className="font-semibold text-gray-200">+15.000 clientes</span>
-              </div>
-              
-              <div className="flex items-center gap-1.5">
-                <div className="flex text-yellow-500">
-                  {[...Array(5)].map((_, idx) => (
-                    <Star key={idx} size={13} className="fill-yellow-500" />
-                  ))}
-                </div>
-                <span className="font-semibold text-gray-200">4.9/5 de avaliação</span>
-              </div>
-
-              <div className="flex items-center gap-1.5 text-gray-400">
-                <Clock size={14} className="text-scard-red" />
-                <span>Ativação média: <strong>5 min</strong></span>
-              </div>
+              )}
             </div>
           </div>
+        </div>
 
-          {/* Right Column: Hero Video Showcase */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-white/[0.1] bg-[#0E1015] shadow-2xl">
-              <div className="aspect-video relative group">
-                {!isPlaying ? (
-                  <>
-                    <img 
-                      src="/src/assets/images/hero_cinematic_livingroom_1794004161004.jpg" 
-                      alt="Experiência SCARD PLAY na Smart TV"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                    
-                    {/* Play Button Trigger */}
-                    <button 
-                      onClick={() => setIsPlaying(true)}
-                      className="absolute inset-0 flex items-center justify-center group focus:outline-none"
-                      aria-label="Assistir demonstração"
-                    >
-                      <div className="w-16 h-16 rounded-full bg-scard-red text-white flex items-center justify-center shadow-2xl transition-transform transform group-hover:scale-110 active:scale-95">
-                        <Play size={24} className="ml-1 fill-white" />
-                      </div>
-                    </button>
-
-                    <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/10 text-[11px] font-semibold text-gray-200 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-scard-red animate-pulse" />
-                      <span>Demonstração do Sistema</span>
-                    </div>
-
-                    <div className="absolute bottom-4 left-4 right-4 text-left">
-                      <p className="text-xs text-gray-400 uppercase tracking-widest font-semibold mb-1">Vídeo Oficial</p>
-                      <p className="text-sm font-bold text-white">Clique para ver a interface e qualidade real</p>
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full h-full relative bg-black">
-                    <iframe 
-                      src="https://player.vimeo.com/video/1050573081?autoplay=1" 
-                      className="w-full h-full"
-                      frameBorder="0" 
-                      allow="autoplay; fullscreen; picture-in-picture" 
-                      allowFullScreen
-                      title="Demonstração SCARD PLAY IPTV"
-                    />
-                    <button 
-                      onClick={() => setIsPlaying(false)}
-                      className="absolute top-3 right-3 bg-black/80 hover:bg-black text-white p-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-white/10 transition-colors z-20"
-                    >
-                      <RotateCcw size={12} />
-                      <span>Fechar Vídeo</span>
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              {/* Sub-strip with technical reassurance */}
-              <div className="p-4 bg-[#0A0C10] border-t border-white/[0.08] flex items-center justify-between text-xs text-gray-400">
-                <div className="flex items-center gap-2">
-                  <Tv size={16} className="text-scard-red" />
-                  <span className="font-medium text-gray-300">Grade HD / Full HD / 4K</span>
-                </div>
-                <div className="flex items-center gap-1.5 text-gray-300 font-medium">
-                  <ShieldCheck size={16} className="text-scard-red" />
-                  <span>Estabilidade Contínua</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div className="lg:col-span-5 order-1 lg:order-2">
+          <SectionHeading
+            title="Veja como fica na sua TV"
+            intro="A mesma grade que você teria na TV a cabo, organizada num aplicativo só, com busca, categorias e guia de programação."
+          />
+          <ul className="mt-9 space-y-4">
+            {[
+              "Ativação em até 5 minutos",
+              "Sem contrato de fidelidade",
+              "Suporte por pessoas reais no WhatsApp",
+              "Grade completa em Full HD e 4K",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3.5 text-scard-bone">
+                <span className="w-6 h-6 rounded-full bg-scard-red flex items-center justify-center shrink-0">
+                  <Check size={14} strokeWidth={3} className="text-white" />
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
   );
 };
 
+/* ---------- Benefits ---------- */
+
 const Benefits: React.FC = () => {
-  const benefitItems = [
-    { 
-      number: "01",
-      icon: <Film size={22} />, 
-      title: "Mais de 150.000 Conteúdos", 
-      desc: "Catálogo completo com canais abertos e fechados, lançamentos do cinema, séries completas, novelas e documentários atualizados semanalmente." 
-    },
-    { 
-      number: "02",
-      icon: <Zap size={22} />, 
-      title: "Transmissão 4K Sem Travamentos", 
-      desc: "Servidores dedicados com largura de banda de alta velocidade para você assistir aos jogos do seu time e filmes sem buffering." 
-    },
-    { 
-      number: "03",
-      icon: <Smartphone size={22} />, 
-      title: "Compatibilidade Universal", 
-      desc: "Funciona perfeitamente na sua Smart TV (Samsung, LG, Roku, Android), Celular, TV Box, Computador ou Tablet." 
-    },
-    { 
-      number: "04",
-      icon: <Headphones size={22} />, 
-      title: "Suporte Humano VIP", 
-      desc: "Equipe técnica disponível para auxiliar no passo a passo da instalação e sanar qualquer dúvida diretamente no WhatsApp." 
-    },
-    { 
-      number: "05",
-      icon: <ShieldCheck size={22} />, 
-      title: "Privacidade e Controle Parental", 
-      desc: "Conteúdo adulto opcional com bloqueio seguro por senha, mantendo a programação da sua família sob total controle." 
-    },
-    { 
-      number: "06",
-      icon: <Clock size={22} />, 
-      title: "Ativação Rápida e Transparente", 
-      desc: "Sem filas de espera, sem necessidade de técnico na sua residência e sem contratos com multas ou cláusulas abusivas." 
-    },
+  const items = [
+    { icon: <Film size={22} />, title: "Mais de 150 mil conteúdos", desc: "Canais abertos e fechados, lançamentos do cinema, séries completas, novelas e documentários, atualizados toda semana." },
+    { icon: <Zap size={22} />, title: "4K sem travar", desc: "Servidores dedicados e banda larga de alta velocidade para ver o jogo do seu time e os filmes sem buffering." },
+    { icon: <Smartphone size={22} />, title: "Funciona em tudo", desc: "Smart TV Samsung, LG, Roku e Android, celular, TV Box, computador ou tablet." },
+    { icon: <Headphones size={22} />, title: "Suporte VIP", desc: "A equipe técnica acompanha a instalação passo a passo e tira suas dúvidas direto no WhatsApp." },
+    { icon: <ShieldCheck size={22} />, title: "Controle parental", desc: "Conteúdo adulto é opcional e fica bloqueado por senha. A programação da família fica sob seu controle." },
+    { icon: <Clock size={22} />, title: "Ativação sem burocracia", desc: "Sem fila, sem técnico em casa e sem contrato com multa ou cláusula abusiva." },
   ];
 
   return (
-    <section id="beneficios" className="py-24 bg-[#0A0C10] border-t border-white/[0.06] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16 space-y-4">
-          <p className="text-xs font-bold uppercase tracking-widest text-scard-red">
-            Vantagens Exclusivas
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Por que milhares de clientes escolhem a SCARD PLAY?
-          </h2>
-          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
-            Uma estrutura moderna pensada para oferecer a estabilidade que a TV convencional e serviços amadores não entregam.
-          </p>
+    <section id="beneficios" className="py-24 sm:py-32 bg-black border-t border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="lg:col-span-4 min-w-0">
+          <div className="lg:sticky lg:top-28">
+            <SectionHeading
+              title="Por que escolhem a SCARD PLAY"
+              intro="Estrutura própria para entregar a estabilidade que a TV convencional e os serviços amadores não entregam."
+            />
+          </div>
         </div>
 
-        {/* Asymmetric Editorial Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefitItems.map((item, idx) => (
-            <div 
-              key={idx} 
-              className="p-8 rounded-2xl bg-[#0F1116] border border-white/[0.06] hover:border-scard-red/30 transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] text-scard-red flex items-center justify-center transition-colors group-hover:bg-scard-red group-hover:text-white">
-                    {item.icon}
-                  </div>
-                  <span className="font-mono text-xs font-semibold text-gray-500 tracking-wider">
-                    {item.number}
-                  </span>
-                </div>
-                
-                <h3 className="text-lg font-bold text-white mb-2 tracking-tight group-hover:text-scard-red transition-colors">
-                  {item.title}
-                </h3>
-                
-                <p className="text-sm text-gray-400 leading-relaxed font-normal">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
+        <ul className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10">
+          {items.map((item) => (
+            <li key={item.title} className="py-8 border-t border-scard-line">
+              <span className="text-scard-red block mb-5" aria-hidden="true">{item.icon}</span>
+              <h3 className="text-xl font-semibold text-white tracking-tight">{item.title}</h3>
+              <p className="mt-2 text-scard-ash leading-relaxed">{item.desc}</p>
+            </li>
           ))}
-        </div>
-
+        </ul>
       </div>
     </section>
   );
 };
+
+/* ---------- Featured content ---------- */
 
 const FeaturedContentSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('todos');
 
   const categories = [
-    { id: 'todos', label: 'Todos os Destaques' },
-    { id: 'cinema', label: 'Cinema & Filmes' },
-    { id: 'series', label: 'Séries & Novelas' },
-    { id: 'esportes', label: 'Esportes Ao Vivo' },
+    { id: 'todos', label: 'Tudo' },
+    { id: 'cinema', label: 'Cinema e filmes' },
+    { id: 'series', label: 'Séries e novelas' },
+    { id: 'esportes', label: 'Esportes ao vivo' },
   ];
 
   const filteredItems = FEATURED_CONTENT.filter(item => {
@@ -468,33 +344,23 @@ const FeaturedContentSection: React.FC = () => {
   });
 
   return (
-    <section id="conteudos" className="py-24 bg-[#07080A] border-t border-white/[0.06]">
+    <section id="conteudos" className="py-24 sm:py-32 bg-scard-coal border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-          <div className="max-w-2xl space-y-3">
-            <p className="text-xs font-bold uppercase tracking-widest text-scard-red">
-              Catálogo Sob Demanda e Ao Vivo
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              O melhor do cinema, esportes e televisão.
-            </h2>
-            <p className="text-gray-400 text-sm sm:text-base">
-              Conteúdo com qualidade de áudio e imagem para toda a família curtir junto.
-            </p>
-          </div>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+          <SectionHeading
+            title="Cinema, esporte e TV no mesmo lugar"
+            intro="Imagem e som de qualidade para a família inteira assistir junto."
+          />
 
-          {/* Interactive filter tabs */}
-          <div className="flex flex-wrap gap-2 p-1 bg-[#0F1116] rounded-xl border border-white/[0.06] shrink-0">
+          <div className="flex gap-1 p-1 rounded-full bg-black border border-scard-line overflow-x-auto no-scrollbar max-w-full self-start lg:self-auto shrink-0" role="tablist" aria-label="Filtrar conteúdos">
             {categories.map((cat) => (
               <button
                 key={cat.id}
+                role="tab"
+                aria-selected={activeCategory === cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-lg text-xs font-semibold tracking-wide transition-colors ${
-                  activeCategory === cat.id 
-                    ? 'bg-scard-red text-white' 
-                    : 'text-gray-400 hover:text-white'
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                  activeCategory === cat.id ? 'bg-scard-red text-white' : 'text-scard-ash hover:text-white'
                 }`}
               >
                 {cat.label}
@@ -503,589 +369,400 @@ const FeaturedContentSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Media Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item, idx) => (
-            <div 
-              key={idx}
-              className="group relative rounded-xl overflow-hidden bg-[#0F1116] border border-white/[0.06] hover:border-white/[0.15] transition-all aspect-[16/10] flex flex-col justify-end"
-            >
-              <img 
-                src={item.image} 
-                alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-              
-              <div className="relative p-6 z-10 space-y-1.5">
-                <div className="flex items-center gap-2 text-xs font-semibold text-gray-300">
-                  <span className="text-scard-red uppercase tracking-wider text-[11px] font-bold">
-                    {item.category}
-                  </span>
-                  {item.badge && (
-                    <>
-                      <span aria-hidden="true" className="text-gray-500">·</span>
-                      <span className="text-gray-300 text-[11px]">{item.badge}</span>
-                    </>
-                  )}
-                </div>
-                <h3 className="text-lg font-bold text-white tracking-tight">
-                  {item.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Catalog Callout */}
-        <div className="mt-14 text-center">
-          <a 
-            href={WHATSAPP_BASE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-sm font-bold text-gray-200 hover:text-white bg-[#0F1116] hover:bg-[#151820] border border-white/[0.1] hover:border-scard-red/40 px-8 py-4 rounded-xl transition-all shadow-lg group"
-          >
-            <span>Falar com Atendente e Ver Catálogo Completo</span>
-            <ArrowRight size={16} className="text-scard-red transition-transform group-hover:translate-x-1" />
-          </a>
-        </div>
-
-      </div>
-    </section>
-  );
-};
-
-const Compatibility: React.FC = () => {
-  const devices = [
-    { icon: <Tv size={28} />, name: 'Smart TV', detail: 'Samsung, LG, TCL, Philco' },
-    { icon: <Box size={28} />, name: 'TV Box & Sticks', detail: 'Fire TV, Mi Box, Chromecast' },
-    { icon: <Smartphone size={28} />, name: 'Celulares', detail: 'Android & iOS iPhone' },
-    { icon: <Globe size={28} />, name: 'Computador & Web', detail: 'Windows, Mac, Navegadores' },
-    { icon: <Monitor size={28} />, name: 'Tablets & Consoles', detail: 'iPad, Tablets, Xbox' },
-  ];
-
-  return (
-    <section id="compatibilidade" className="py-20 bg-[#0A0C10] border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <p className="text-xs font-bold uppercase tracking-widest text-scard-red">
-            Liberdade Multi-Telas
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Assista no aparelho que você já tem em casa.
-          </h2>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Compatibilidade garantida com os principais sistemas e aplicativos do mercado.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {devices.map((device, idx) => (
-            <div 
-              key={idx}
-              className="p-6 rounded-2xl bg-[#0F1116] border border-white/[0.06] hover:border-white/[0.15] transition-all text-center flex flex-col items-center justify-center space-y-3"
-            >
-              <div className="text-gray-300">
-                {device.icon}
-              </div>
-              <h3 className="text-sm font-bold text-white tracking-tight">
-                {device.name}
-              </h3>
-              <p className="text-[11px] text-gray-500 font-medium">
-                {device.detail}
-              </p>
-            </div>
-          ))}
-        </div>
-
-      </div>
-    </section>
-  );
-};
-
-const SupportedApps: React.FC = () => {
-  const systems = [
-    {
-      name: "Smart TV LG",
-      platform: "webOS",
-      icon: <Tv size={22} className="text-scard-red" />,
-      free: ["Play Sim", "Smarters Player Lite", "SS IPTV", "Room IPTV"],
-      paid: ["IBO Player", "DuplexPlay", "Flix IPTV", "Bob Player"]
-    },
-    {
-      name: "Smart TV Samsung",
-      platform: "Tizen OS",
-      icon: <Monitor size={22} className="text-scard-red" />,
-      free: ["Play Sim", "Smarters Player Lite", "SS IPTV", "Room IPTV"],
-      paid: ["IBO Player", "DuplexPlay", "Flix IPTV", "Bob Player"]
-    },
-    {
-      name: "Sistema Roku",
-      platform: "Roku OS / AOC / Philco",
-      icon: <Box size={22} className="text-scard-red" />,
-      free: ["Play Sim", "IPTV Smarters", "MetaPlayer", "GSE Smart IPTV"],
-      paid: ["ClouDDy", "IBO Player", "Rivu TV"]
-    },
-    {
-      name: "Sistema Android",
-      platform: "Android TV / TV Box / Celular",
-      icon: <Smartphone size={22} className="text-scard-red" />,
-      free: ["Play Sim", "XCIPTV Player", "IPTV Smarters Pro", "Televizo"],
-      paid: ["TiviMate", "IMPlayer", "IBO Player"]
-    }
-  ];
-
-  return (
-    <section id="aplicativos" className="py-24 bg-[#07080A] border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="max-w-3xl mb-16 space-y-3">
-          <p className="text-xs font-bold uppercase tracking-widest text-scard-red">
-            Guia de Aplicativos
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Aplicativos compatíveis para cada tipo de TV
-          </h2>
-          <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-            Seja em aplicativos 100% gratuitos ou reprodutores premium com recursos avançados, nossa lista foi testada para máxima estabilidade.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {systems.map((sys, idx) => (
-            <div 
-              key={idx} 
-              className="bg-[#0F1116] border border-white/[0.08] rounded-2xl p-6 sm:p-7 hover:border-scard-red/30 transition-all flex flex-col justify-between"
-            >
-              <div>
-                {/* System Header */}
-                <div className="flex items-center gap-3.5 pb-5 mb-5 border-b border-white/[0.08]">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0">
-                    {sys.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-white tracking-tight leading-tight">
-                      {sys.name}
-                    </h3>
-                    <span className="text-[11px] text-gray-500 font-medium">
-                      {sys.platform}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Free Apps List */}
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center justify-between text-xs font-semibold">
-                    <span className="text-gray-300">Aplicativos Grátis</span>
-                    <span className="text-[10px] text-emerald-400 font-mono uppercase bg-emerald-500/10 px-2 py-0.5 rounded">Sem Custo</span>
-                  </div>
-                  <ul className="space-y-2">
-                    {sys.free.map((app, i) => (
-                      <li key={i} className="flex items-center gap-2 text-xs text-gray-300">
-                        <Check size={14} className="text-emerald-400 shrink-0" />
-                        <span>{app}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px w-full bg-white/[0.06] my-5" />
-
-                {/* Paid / Premium Apps List */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between text-xs font-semibold">
-                    <span className="text-gray-300">Aplicativos Pagos</span>
-                    <span className="text-[10px] text-scard-red font-mono uppercase bg-scard-red/10 px-2 py-0.5 rounded">Premium</span>
-                  </div>
-                  <ul className="space-y-2">
-                    {sys.paid.map((app, i) => (
-                      <li key={i} className="flex items-center gap-2 text-xs text-gray-300">
-                        <Star size={13} className="text-scard-red fill-scard-red shrink-0" />
-                        <span>{app}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-white/[0.06]">
-                <a 
-                  href={WHATSAPP_BASE_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center block text-[11px] font-semibold text-gray-400 hover:text-white transition-colors"
-                >
-                  Ajuda para instalar este sistema →
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-      </div>
-    </section>
-  );
-};
-
-const PlansSection: React.FC = () => {
-  return (
-    <section id="planos" className="py-24 bg-[#0A0C10] border-t border-white/[0.06] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <p className="text-xs font-bold uppercase tracking-widest text-scard-red">
-            Valores Transparentes
-          </p>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Escolha o pacote ideal para você
-          </h2>
-          <p className="text-gray-400 text-base">
-            Invista no seu entretenimento com planos claros, sem taxas ocultas e sem renovação automática forçada.
-          </p>
-        </div>
-        
-        {/* Plans Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-          {PLANS.map((plan) => {
-            const isHighlight = plan.highlight;
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[240px] lg:auto-rows-[260px] gap-4">
+          {filteredItems.map((item, idx) => {
+            const isLead = idx === 0 && filteredItems.length >= 3;
             return (
-              <div 
-                key={plan.id}
-                className={`relative rounded-2xl flex flex-col justify-between p-8 sm:p-10 transition-all duration-300 ${
-                  isHighlight 
-                    ? 'bg-[#0E1015] border-2 border-scard-red shadow-2xl shadow-scard-red/15 lg:-translate-y-2' 
-                    : 'bg-[#0F1116] border border-white/[0.08] hover:border-white/[0.18]'
+              <article
+                key={item.title}
+                className={`group relative rounded-xl overflow-hidden bg-black flex flex-col justify-end ${
+                  isLead ? 'sm:col-span-2 lg:row-span-2' : ''
                 }`}
               >
-                {/* Highlight Badge */}
-                {isHighlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-scard-red text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">
-                    Mais Popular · Melhor Custo-Benefício
-                  </div>
+                <img
+                  src={item.image}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                {item.badge && (
+                  <span className="absolute top-4 left-4 text-xs font-semibold text-white bg-black/60 backdrop-blur px-2.5 py-1 rounded-full border border-white/15">
+                    {item.badge}
+                  </span>
                 )}
-
-                <div>
-                  {/* Plan Header */}
-                  <div className="border-b border-white/[0.08] pb-6 mb-8 text-center sm:text-left">
-                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest block mb-2">
-                      {plan.name}
-                    </span>
-                    <h3 className="text-2xl font-extrabold text-white tracking-tight mb-4">
-                      {plan.period}
-                    </h3>
-                    
-                    {/* Price Display */}
-                    <div className="flex items-baseline justify-center sm:justify-start gap-1">
-                      <span className="text-xl font-bold text-gray-400">R$</span>
-                      <span className="text-5xl font-extrabold text-white tracking-tight font-mono">
-                        {plan.price.split(',')[0]}
-                      </span>
-                      <span className="text-2xl font-bold text-gray-300 font-mono">
-                        ,{plan.price.split(',')[1]}
-                      </span>
-                      <span className="text-xs text-gray-400 font-medium ml-1">
-                        / {plan.durationLabel}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Benefit Items */}
-                  <div className="space-y-3.5 mb-10">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
-                      O que está incluso:
-                    </p>
-                    {plan.benefits.map((benefit, bIdx) => (
-                      <div key={bIdx} className="flex items-start gap-3">
-                        <Check size={16} className="text-scard-red shrink-0 mt-0.5" />
-                        <span className="text-sm font-medium text-gray-300 leading-snug">
-                          {benefit}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="relative p-6">
+                  <p className="text-sm text-white/80 font-medium flex items-center gap-2"><span className="w-4 h-0.5 bg-scard-red" aria-hidden="true" />{item.category}</p>
+                  <h3 className={`display text-white mt-1.5 ${isLead ? 'text-5xl sm:text-6xl' : 'text-3xl'}`}>
+                    {item.title}
+                  </h3>
                 </div>
-
-                {/* Plan Action CTA Button */}
-                <div className="pt-4 mt-auto">
-                  <a 
-                    href={plan.whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full py-4 px-6 rounded-xl text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all active:scale-95 ${
-                      isHighlight
-                        ? 'bg-scard-red hover:bg-scard-redDark text-white shadow-lg shadow-scard-red/25'
-                        : 'bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1]'
-                    }`}
-                  >
-                    <span>Contratar {plan.period}</span>
-                    <ArrowRight size={16} />
-                  </a>
-                </div>
-              </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Guarantee Banner */}
-        <div className="mt-16 max-w-3xl mx-auto p-6 rounded-2xl bg-[#0F1116] border border-white/[0.08] flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-          <div className="w-12 h-12 rounded-xl bg-scard-red/10 border border-scard-red/25 flex items-center justify-center shrink-0">
-            <ShieldCheck size={26} className="text-scard-red" />
-          </div>
-          <div className="space-y-1">
-            <h4 className="text-sm font-bold text-white tracking-tight">
-              Ativação Rápida e Suporte Humanizado
-            </h4>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              Após escolher seu pacote, nossa equipe envia seus dados de acesso imediatos via WhatsApp com instruções claras de configuração para sua TV.
-            </p>
-          </div>
+        <div className="mt-12 flex justify-center">
+          <WhatsAppButton variant="ghost" size="lg">Pedir o catálogo completo no WhatsApp</WhatsAppButton>
         </div>
-
       </div>
     </section>
   );
 };
 
-const SocialProof: React.FC = () => {
+/* ---------- Devices + apps ---------- */
+
+const DevicesAndApps: React.FC = () => {
+  const devices = [
+    { icon: <Tv size={26} />, name: 'Smart TV', detail: 'Samsung, LG, TCL, Philco' },
+    { icon: <Box size={26} />, name: 'TV Box e sticks', detail: 'Fire TV, Mi Box, Chromecast' },
+    { icon: <Smartphone size={26} />, name: 'Celular', detail: 'Android e iPhone' },
+    { icon: <Globe size={26} />, name: 'Computador', detail: 'Windows, Mac e navegador' },
+    { icon: <Monitor size={26} />, name: 'Tablet e console', detail: 'iPad, tablets e Xbox' },
+  ];
+
+  const systems = [
+    { name: "Smart TV LG", platform: "webOS", icon: <Tv size={18} />, apps: ["Play Sim", "Smarters Player Lite", "SS IPTV", "Room IPTV", "IBO Player", "DuplexPlay", "Flix IPTV", "Bob Player"] },
+    { name: "Smart TV Samsung", platform: "Tizen OS", icon: <Monitor size={18} />, apps: ["Play Sim", "Smarters Player Lite", "SS IPTV", "Room IPTV", "IBO Player", "DuplexPlay", "Flix IPTV", "Bob Player"] },
+    { name: "Roku", platform: "Roku OS, AOC e Philco", icon: <Box size={18} />, apps: ["Play Sim", "IPTV Smarters", "MetaPlayer", "GSE Smart IPTV", "ClouDDy", "IBO Player", "Rivu TV"] },
+    { name: "Android", platform: "Android TV, TV Box e celular", icon: <Smartphone size={18} />, apps: ["Play Sim", "XCIPTV Player", "IPTV Smarters Pro", "Televizo", "TiviMate", "IMPlayer", "IBO Player"] },
+  ];
+
+  const [active, setActive] = useState(0);
+  const sys = systems[active];
+
   return (
-    <section className="py-24 bg-[#07080A] border-t border-white/[0.06]">
+    <section id="compatibilidade" className="py-24 sm:py-32 bg-black border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="max-w-2xl mb-16 space-y-3">
-          <p className="text-xs font-bold uppercase tracking-widest text-scard-red">
-            Opinião de Quem Já Assina
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Credibilidade construída através de estabilidade e suporte.
-          </h2>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Depoimentos reais de clientes que utilizam a SCARD PLAY diariamente.
-          </p>
-        </div>
+        <SectionHeading
+          title="Funciona no aparelho que você já tem"
+          intro="Compatível com os principais sistemas do mercado. Não precisa comprar nada novo."
+        />
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t, idx) => (
-            <div 
-              key={idx} 
-              className="bg-[#0F1116] p-8 rounded-2xl border border-white/[0.06] flex flex-col justify-between space-y-6 hover:border-white/[0.12] transition-colors"
-            >
-              <div className="space-y-4">
-                <div className="flex gap-1 text-yellow-500">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} size={15} className="fill-yellow-500" />
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed font-normal italic">
-                  "{t.text}"
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3 pt-5 border-t border-white/[0.06]">
-                <div className="w-9 h-9 rounded-full bg-scard-red/15 border border-scard-red/30 flex items-center justify-center font-bold text-scard-red text-xs uppercase">
-                  {t.author[0]}
-                </div>
-                <div>
-                  <span className="block font-bold text-sm text-white">{t.author}</span>
-                  <span className="block text-[11px] text-gray-500 font-medium">Assinante Verificado</span>
-                </div>
-              </div>
-            </div>
+        <ul className="mt-12 grid grid-cols-2 md:grid-cols-5 border-t border-l border-scard-line">
+          {devices.map((d) => (
+            <li key={d.name} className="p-6 border-b border-r border-scard-line">
+              <span className="text-scard-red" aria-hidden="true">{d.icon}</span>
+              <p className="mt-4 font-semibold text-white">{d.name}</p>
+              <p className="mt-1 text-sm text-scard-ash">{d.detail}</p>
+            </li>
           ))}
-        </div>
+        </ul>
 
+        <div id="aplicativos" className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-4 min-w-0">
+            <h3 className="display text-4xl sm:text-5xl text-white">Qual app instalar</h3>
+            <p className="mt-4 text-scard-ash leading-relaxed">
+              Escolha sua TV e veja os aplicativos compatíveis testados pela nossa equipe.
+            </p>
+            <div className="mt-8 flex lg:flex-col gap-2 overflow-x-auto no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0" role="tablist" aria-label="Sistema da sua TV">
+              {systems.map((s, i) => (
+                <button
+                  key={s.name}
+                  role="tab"
+                  aria-selected={active === i}
+                  onClick={() => setActive(i)}
+                  className={`shrink-0 flex items-center gap-3 text-left px-4 py-3.5 rounded-xl border transition-colors ${
+                    active === i
+                      ? 'border-scard-red bg-scard-red/[0.08] text-white'
+                      : 'border-scard-line text-scard-ash hover:text-white hover:border-white/25'
+                  }`}
+                >
+                  <span className={active === i ? 'text-scard-red' : ''}>{s.icon}</span>
+                  <span>
+                    <span className="block font-semibold text-sm">{s.name}</span>
+                    <span className="block text-xs text-scard-ash mt-0.5">{s.platform}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="lg:col-span-8 rounded-2xl bg-scard-coal border border-scard-line p-6 sm:p-10" role="tabpanel" aria-label={sys.name}>
+            <div>
+              <div className="flex items-baseline justify-between border-b border-scard-line pb-3">
+                <h4 className="font-semibold text-white">Aplicativos compatíveis</h4>
+                <span className="text-xs text-scard-ash">{sys.apps.length} opções</span>
+              </div>
+              <ul className="mt-5 grid sm:grid-cols-2 gap-x-10 gap-y-3.5">
+                {sys.apps.map((app) => (
+                  <li key={app} className="flex items-center gap-3 text-scard-bone">
+                    <Check size={16} className="text-scard-red shrink-0" />
+                    {app}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-10 pt-6 border-t border-scard-line flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <p className="text-sm text-scard-ash">Não sabe instalar? A gente configura com você.</p>
+              <WhatsAppButton variant="ghost">Pedir ajuda com a {sys.name}</WhatsAppButton>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-const FAQAccordionItem: React.FC<{ item: FAQItem }> = ({ item }) => {
+/* ---------- Plans ---------- */
+
+const PlansSection: React.FC = () => (
+  <section id="planos" className="relative py-24 sm:py-32 bg-scard-coal border-t border-white/[0.06] overflow-hidden">
+    <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full bg-scard-red/[0.07] blur-[150px]" />
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Escolha seu plano"
+        intro="Preço fechado, sem taxa escondida e sem renovação automática. Todos os planos têm o catálogo completo."
+      />
+
+      <div className="mt-14 grid md:grid-cols-3 gap-5 items-stretch">
+        {PLANS.map((plan) => {
+          const isHighlight = plan.highlight;
+          const [reais, centavos] = plan.price.split(',');
+          return (
+            <div
+              key={plan.id}
+              className={`relative rounded-2xl flex flex-col p-7 sm:p-9 ${
+                isHighlight
+                  ? 'bg-black ring-2 ring-scard-red shadow-[0_30px_80px_-30px_rgba(229,9,20,0.6)] md:-my-4 md:py-12'
+                  : 'bg-black/60 ring-1 ring-scard-line'
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-scard-ash">{plan.name}</span>
+                {isHighlight && (
+                  <span className="text-xs font-semibold bg-scard-red text-white px-3 py-1 rounded-full">
+                    Mais escolhido
+                  </span>
+                )}
+              </div>
+
+              <h3 className="display text-5xl text-white mt-3">{plan.period}</h3>
+
+              <div className="mt-6 flex items-start gap-1 text-white">
+                <span className="text-lg font-semibold mt-2">R$</span>
+                <span className="display text-[5.5rem] leading-[0.85] tabular">{reais}</span>
+                <span className="display text-4xl mt-1 tabular">,{centavos}</span>
+              </div>
+              <p className="mt-2 text-sm text-scard-ash">por {plan.durationLabel}</p>
+
+              <ul className="mt-8 pt-8 border-t border-scard-line space-y-3.5 flex-1">
+                {plan.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-3 text-scard-bone">
+                    <Check size={18} className="text-scard-red shrink-0 mt-0.5" />
+                    <span className="leading-snug">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <WhatsAppButton
+                href={plan.whatsappLink}
+                variant={isHighlight ? 'red' : 'light'}
+                size="lg"
+                className="w-full mt-10"
+              >
+                Contratar plano {plan.period.toLowerCase()}
+              </WhatsAppButton>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-4 max-w-3xl">
+        <ShieldCheck size={28} className="text-scard-red shrink-0" />
+        <p className="text-scard-ash leading-relaxed">
+          <span className="text-white font-semibold">Ativação rápida e suporte de verdade.</span>{' '}
+          Depois de escolher o plano, você recebe os dados de acesso no WhatsApp com o passo a passo para a sua TV.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+/* ---------- Testimonials ---------- */
+
+const SocialProof: React.FC = () => (
+  <section className="py-24 sm:py-32 bg-black border-t border-white/[0.06]">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <SectionHeading title="Quem assina, recomenda" />
+        <div className="flex items-center gap-4">
+          <span className="display text-7xl text-white">4,9</span>
+          <div>
+            <div className="flex gap-0.5 text-scard-red">
+              {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-scard-red" />)}
+            </div>
+            <p className="text-sm text-scard-ash mt-1">média de +15 mil assinantes</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-14 grid md:grid-cols-3 gap-10 md:gap-0 md:divide-x divide-scard-line">
+        {TESTIMONIALS.map((t, idx) => (
+          <figure key={idx} className="md:px-10 first:md:pl-0 last:md:pr-0 flex flex-col justify-between">
+            <blockquote className="text-xl leading-relaxed text-scard-bone text-pretty">
+              “{t.text}”
+            </blockquote>
+            <figcaption className="mt-8 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-full bg-scard-red text-white flex items-center justify-center font-bold">
+                {t.author[0]}
+              </span>
+              <span>
+                <span className="block font-semibold text-white">{t.author}</span>
+                <span className="block text-sm text-scard-ash">Assinante verificado</span>
+              </span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ---------- FAQ ---------- */
+
+const FAQAccordionItem: React.FC<{ item: FAQItem; id: string }> = ({ item, id }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-white/[0.08] last:border-0">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex items-center justify-between text-left group gap-4 focus:outline-none"
-      >
-        <span className={`text-base sm:text-lg font-bold tracking-tight transition-colors ${isOpen ? 'text-scard-red' : 'text-white group-hover:text-gray-200'}`}>
-          {item.question}
-        </span>
-        <div className={`p-1.5 rounded-lg transition-transform duration-300 shrink-0 ${isOpen ? 'text-scard-red rotate-180 bg-scard-red/10' : 'text-gray-500 bg-white/[0.04]'}`}>
-          <ChevronDown size={18} />
+    <div className="border-b border-scard-line">
+      <h3>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={id}
+          className="w-full py-6 flex items-center justify-between text-left gap-6 group"
+        >
+          <span className={`text-lg sm:text-xl font-semibold tracking-tight transition-colors ${isOpen ? 'text-white' : 'text-scard-bone group-hover:text-white'}`}>
+            {item.question}
+          </span>
+          <span className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'bg-scard-red text-white rotate-45' : 'bg-white/[0.06] text-scard-bone'}`}>
+            <Plus size={18} />
+          </span>
+        </button>
+      </h3>
+      <div id={id} className="accordion-panel" data-open={isOpen}>
+        <div>
+          <p className="pb-7 pr-14 text-scard-ash leading-relaxed max-w-2xl">{item.answer}</p>
         </div>
-      </button>
-      
-      {isOpen && (
-        <div className="pb-6 animate-in fade-in duration-200">
-          <p className="text-gray-300 text-sm leading-relaxed max-w-3xl font-normal">
-            {item.answer}
-          </p>
-        </div>
-      )}
+      </div>
     </div>
   );
 };
 
-const FAQ: React.FC = () => {
-  return (
-    <section id="faq" className="py-24 bg-[#0A0C10] border-t border-white/[0.06]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center mb-16 space-y-3">
-          <p className="text-xs font-bold uppercase tracking-widest text-scard-red">
-            Perguntas Frequentes
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Tire suas dúvidas antes de assinar
-          </h2>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Separamos as respostas para as perguntas mais comuns dos nossos clientes.
-          </p>
+const FAQ: React.FC = () => (
+  <section id="faq" className="py-24 sm:py-32 bg-scard-coal border-t border-white/[0.06]">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <div className="lg:col-span-5">
+        <div className="lg:sticky lg:top-28">
+          <SectionHeading
+            title="Dúvidas antes de assinar"
+            intro="As perguntas que mais recebemos. Se a sua não estiver aqui, é só chamar."
+          />
+          <WhatsAppButton variant="ghost" className="mt-8">Perguntar no WhatsApp</WhatsAppButton>
         </div>
-
-        <div className="bg-[#0F1116] rounded-2xl p-6 sm:p-10 border border-white/[0.08]">
-          {FAQ_ITEMS.map((item, idx) => (
-            <FAQAccordionItem key={idx} item={item} />
-          ))}
-        </div>
-
       </div>
-    </section>
-  );
-};
-
-const CTAFinal: React.FC = () => {
-  return (
-    <section className="py-24 bg-[#0E1015] border-t border-white/[0.08] relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-scard-red/[0.08] blur-[150px] rounded-full" />
+      <div className="lg:col-span-7 border-t border-scard-line">
+        {FAQ_ITEMS.map((item, idx) => (
+          <FAQAccordionItem key={idx} item={item} id={`faq-${idx}`} />
+        ))}
       </div>
+    </div>
+  </section>
+);
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-semibold text-gray-300">
-          <Sparkles size={14} className="text-scard-red" />
-          <span>Ativação Rápida e Suporte Direto</span>
+/* ---------- Final CTA ---------- */
+
+const CTAFinal: React.FC = () => (
+  <section className="relative bg-scard-red overflow-hidden">
+    <LogoIcon size={720} className="pointer-events-none absolute -right-40 top-1/2 -translate-y-1/2 text-black/[0.12]" />
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <h2 className="display cta-title text-white max-w-4xl text-balance">
+        Sua TV nunca mais será a mesma.
+      </h2>
+      <p className="mt-6 text-white/90 text-lg max-w-xl leading-relaxed">
+        Assine hoje e tenha o catálogo completo em alta definição, pagando até 90% menos que um pacote de TV a cabo.
+      </p>
+      <div className="mt-10 flex flex-col sm:flex-row gap-3">
+        <a
+          href={WHATSAPP_BASE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2.5 rounded-full bg-black hover:bg-neutral-900 text-white px-8 py-4 text-base font-semibold transition-colors active:scale-[0.98]"
+        >
+          <MessageCircle size={18} />
+          Começar pelo WhatsApp
+        </a>
+        <a
+          href="#planos"
+          className="inline-flex items-center justify-center rounded-full border border-white/50 hover:bg-white/10 text-white px-8 py-4 text-base font-semibold transition-colors"
+        >
+          Comparar planos
+        </a>
+      </div>
+    </div>
+  </section>
+);
+
+/* ---------- Footer ---------- */
+
+const Footer: React.FC = () => (
+  <footer className="bg-black pt-20 pb-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-14 border-b border-scard-line">
+        <div className="md:col-span-5 space-y-5">
+          <Wordmark compact />
+          <p className="text-scard-ash leading-relaxed max-w-sm">
+            Entretenimento digital desde 2015. Transmissão estável, atendimento atencioso e grade completa para toda a família.
+          </p>
         </div>
 
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Sua televisão nunca mais será a mesma.
-        </h2>
+        <nav className="md:col-span-3" aria-label="Rodapé">
+          <h4 className="text-sm font-semibold text-white">Navegação</h4>
+          <ul className="mt-4 space-y-2.5 text-sm text-scard-ash">
+            <li><a href="#inicio" className="hover:text-white transition-colors">Início</a></li>
+            {NAV_LINKS.map((l) => (
+              <li key={l.href}><a href={l.href} className="hover:text-white transition-colors">{l.label}</a></li>
+            ))}
+          </ul>
+        </nav>
 
-        <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-          Assine a SCARD PLAY IPTV hoje mesmo e tenha acesso ilimitado a todo o catálogo em alta definição, economizando até 90% em comparação com pacotes tradicionais de TV a cabo.
+        <div className="md:col-span-4">
+          <h4 className="text-sm font-semibold text-white">Atendimento e suporte</h4>
+          <p className="mt-4 text-sm text-scard-ash leading-relaxed">
+            Ativação de novos acessos e suporte técnico para assinantes pelo WhatsApp.
+          </p>
+          <WhatsAppButton className="mt-5">Falar com o atendimento</WhatsAppButton>
+        </div>
+      </div>
+
+      <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-scard-ash/70">
+        <p>© 2015–2026 SCARD PLAY IPTV. Todos os direitos reservados.</p>
+        <p className="md:text-right max-w-xl">
+          Não hospedamos arquivos em servidores próprios. Todo o conteúdo é retransmitido por provedores e tecnologias de terceiros compatíveis.
         </p>
-
-        <div className="pt-2">
-          <a 
-            href={WHATSAPP_BASE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-scard-red hover:bg-scard-redDark text-white px-10 py-5 rounded-xl text-base font-bold uppercase tracking-wider transition-all shadow-xl shadow-scard-red/25 hover:shadow-scard-red/40 active:scale-95"
-          >
-            <span>Começar Agora via WhatsApp</span>
-            <ArrowRight size={18} />
-          </a>
-        </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </footer>
+);
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-[#07080A] pt-20 pb-12 border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/[0.08]">
-          
-          {/* Brand info */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-scard-red rounded-lg flex items-center justify-center shadow-md shadow-scard-red/30">
-                <LogoIcon size={18} className="text-white ml-0.5" />
-              </div>
-              <span className="font-extrabold text-lg uppercase tracking-tight text-white">
-                SCARD PLAY <span className="text-scard-red">IPTV</span>
-              </span>
-            </div>
-            
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Serviço especializado em entretenimento digital de alta performance desde 2015. Qualidade de transmissão, suporte atencioso e grade completa para toda a família.
-            </p>
-          </div>
-          
-          {/* Nav links */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="font-bold text-xs uppercase tracking-widest text-white">
-              Navegação
-            </h4>
-            <ul className="space-y-2.5 text-xs text-gray-400 font-medium">
-              <li><a href="#inicio" className="hover:text-white transition-colors">Início</a></li>
-              <li><a href="#beneficios" className="hover:text-white transition-colors">Benefícios</a></li>
-              <li><a href="#conteudos" className="hover:text-white transition-colors">Destaques</a></li>
-              <li><a href="#compatibilidade" className="hover:text-white transition-colors">Aparelhos</a></li>
-              <li><a href="#aplicativos" className="hover:text-white transition-colors">Aplicativos</a></li>
-              <li><a href="#planos" className="hover:text-white transition-colors">Planos</a></li>
-              <li><a href="#faq" className="hover:text-white transition-colors">Perguntas Frequentes</a></li>
-            </ul>
-          </div>
-
-          {/* Contact and Support */}
-          <div className="md:col-span-4 space-y-3">
-            <h4 className="font-bold text-xs uppercase tracking-widest text-white">
-              Atendimento e Suporte
-            </h4>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              Atendimento disponível via WhatsApp para ativação de novos acessos e suporte técnico para assinantes.
-            </p>
-            <div className="pt-2">
-              <a 
-                href={WHATSAPP_BASE_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold text-scard-red hover:text-white transition-colors"
-              >
-                <span>Falar com o Atendimento VIP</span>
-                <ArrowRight size={14} />
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Legal Notice */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] text-gray-500">
-          <p>© 2015-2026 SCARD PLAY IPTV. Todos os direitos reservados.</p>
-          <p className="text-center md:text-right max-w-xl text-[10px] text-gray-600">
-            Aviso: Não hospedamos arquivos em servidores próprios. Todo o conteúdo é retransmitido através de provedores e tecnologias de terceiros compatíveis.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-const App: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-[#07080A] text-white selection:bg-scard-red selection:text-white font-sans">
-      <Header />
-      <CatalogCarousel />
+const App: React.FC = () => (
+  <div className="min-h-screen bg-black text-scard-bone font-sans">
+    <Header />
+    <main>
       <Hero />
+      <Demo />
       <Benefits />
       <FeaturedContentSection />
-      <Compatibility />
-      <SupportedApps />
+      <DevicesAndApps />
       <PlansSection />
       <SocialProof />
       <FAQ />
       <CTAFinal />
-      <Footer />
-    </div>
-  );
-};
+    </main>
+    <Footer />
+  </div>
+);
 
 export default App;

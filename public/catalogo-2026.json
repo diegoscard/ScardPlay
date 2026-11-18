@@ -6,7 +6,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/10-anos-do-impeachment.jpg"
   },
   {
     "titulo": "2DIE4: 24 Horas no Limite",
@@ -15,7 +15,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/2die4-24-horas-no-limite.jpg"
   },
   {
     "titulo": "53 Domingos",
@@ -24,7 +24,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/53-domingos.jpg"
   },
   {
     "titulo": "72 Horas em Miami",
@@ -33,14 +33,14 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/72-horas-em-miami.jpg"
   },
   {
     "titulo": "A Acusada",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-acusada.jpg"
   },
   {
     "titulo": "A Caixa Azul",
@@ -121,7 +121,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-ilha-esquecida.jpg"
   },
   {
     "titulo": "A Maldição do Casamento",
@@ -193,7 +193,7 @@
       "Documentários"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/a-rainha-do-xadrez.jpg"
   },
   {
     "titulo": "A Revolução dos Bichos",
@@ -282,7 +282,7 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/alerta-apocalipse.webp"
   },
   {
     "titulo": "Ali G: Ken é Eu?",
@@ -418,7 +418,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/ato-noturno.png"
   },
   {
     "titulo": "Atraídos Pelo Destino",
@@ -545,7 +545,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/camp-rock-3.jpg"
   },
   {
     "titulo": "Carlos Lacerda - A Voz que Abalou o Brasil",
@@ -590,7 +590,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/cinco-tipos-de-medo.png"
   },
   {
     "titulo": "Clika: Sonho e Perigo",
@@ -681,7 +681,7 @@
       "Nacional"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/convocadas.jpg"
   },
   {
     "titulo": "Coração Partido",
@@ -708,7 +708,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/corrida-dos-bichos.jpg"
   },
   {
     "titulo": "Corta-fogo",
@@ -726,7 +726,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/coyote-vs-acme.webp"
   },
   {
     "titulo": "Criadas",
@@ -789,7 +789,7 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/da-magia-a-seducao-feitico-de-amor.jpg"
   },
   {
     "titulo": "De Férias com Você",
@@ -897,7 +897,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/devoradores-de-estrelas.jpg"
   },
   {
     "titulo": "Dhurandhar: A Vingança",
@@ -915,7 +915,7 @@
       "Ficção Científica"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/dia-d.jpg"
   },
   {
     "titulo": "Dibu Martínez: O Garoto que Parava o Tempo",
@@ -1192,14 +1192,14 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/homem-aranha-um-novo-dia.jpg"
   },
   {
     "titulo": "Homem-Aranha: Um Novo Dia 4k",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/homem-aranha-um-novo-dia-4k.jpg"
   },
   {
     "titulo": "Hora do Recreio",
@@ -1217,7 +1217,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/hungria-a-escolha-de-um-sonho.png"
   },
   {
     "titulo": "Idiotas",
@@ -1586,7 +1586,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/michael.jpg"
   },
   {
     "titulo": "Miguel Ángel Blanco: As 48 Horas que Mudaram a Espanha",
@@ -1622,7 +1622,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/minions-e-monstros.jpg"
   },
   {
     "titulo": "Missão Refúgio",
@@ -1649,7 +1649,7 @@
       "Ação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/mortal-kombat-2.jpg"
   },
   {
     "titulo": "Mother Mary",
@@ -1658,7 +1658,7 @@
       "Thriller"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/mother-mary.jpg"
   },
   {
     "titulo": "Máquina de Guerra",
@@ -1839,7 +1839,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-diabo-veste-prada-2.png"
   },
   {
     "titulo": "O Diário de Pilar na Amazônia",
@@ -1848,7 +1848,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-diario-de-pilar-na-amazonia.jpg"
   },
   {
     "titulo": "O Drama",
@@ -1939,7 +1939,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-homem-que-sussurra.jpg"
   },
   {
     "titulo": "O Jogo do Predador",
@@ -2012,7 +2012,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-rei-da-internet.webp"
   },
   {
     "titulo": "O Som da Morte",
@@ -2093,7 +2093,7 @@
       "Suspense"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/obsessao.jpeg"
   },
   {
     "titulo": "Onde Estiver Estarei: Uma Paixão Rubro-negra",
@@ -2198,7 +2198,7 @@
       "Crime"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/peaky-blinders-o-homem-imortal.jpg"
   },
   {
     "titulo": "Pedagogia do Abandono",
@@ -2225,7 +2225,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/pequenas-criaturas.png"
   },
   {
     "titulo": "Perdida no Ártico",
@@ -2334,14 +2334,14 @@
       "Terror"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/panico-7.jpg"
   },
   {
     "titulo": "Pânico 7 4K",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/panico-7-4k.jpg"
   },
   {
     "titulo": "Quatro Histórias de Desejo 3",
@@ -2368,7 +2368,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/quinze-dias.jpg"
   },
   {
     "titulo": "Raio-X Lula 3",
@@ -2413,7 +2413,7 @@
       "Drama"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/rio-de-sangue.png"
   },
   {
     "titulo": "Ruas da Glória",
@@ -2431,7 +2431,7 @@
       "Nacional"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/salve-geral-irmandade.png"
   },
   {
     "titulo": "Schumacher 94: Nasce Uma Lenda",
@@ -2555,7 +2555,7 @@
       "Aventura"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/super-mario-galaxy-o-filme.jpg"
   },
   {
     "titulo": "Supergirl",
@@ -2681,7 +2681,7 @@
       "Animação"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/toy-story-5.jpg"
   },
   {
     "titulo": "Trago Seu Amor",
@@ -2799,7 +2799,7 @@
       "Comédia"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/velhos-bandidos.jpg"
   },
   {
     "titulo": "Velocidade e Paixão",
@@ -2935,13 +2935,13 @@
       "Romance"
     ],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-morro-dos-ventos-uivantes.png"
   },
   {
     "titulo": "“O Morro dos Ventos Uivantes” 4k",
     "ano": 2026,
     "generos": [],
     "sinopse": "",
-    "imagem": null
+    "imagem": "/filmes/o-morro-dos-ventos-uivantes-4k.png"
   }
 ]

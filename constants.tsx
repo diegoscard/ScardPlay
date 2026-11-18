@@ -97,19 +97,19 @@ export const FEATURED_CONTENT: FeaturedItem[] = [
   {
     title: "Filmes de Bilheteria",
     category: "Cinema & Lançamentos",
-    image: "/src/assets/images/featured_cinema_thriller_1794004188048.jpg",
+    image: "/images/featured_cinema_thriller_1794004188048.jpg",
     badge: "4K HDR"
   },
   {
     title: "Séries Completas",
     category: "Prestige Dramas",
-    image: "/src/assets/images/featured_prestige_series_1794004202207.jpg",
+    image: "/images/featured_prestige_series_1794004202207.jpg",
     badge: "Temporadas Completas"
   },
   {
     title: "Esportes Ao Vivo & Campeonatos",
     category: "Transmissão 60FPS",
-    image: "/src/assets/images/featured_sports_soccer_1794004175243.jpg",
+    image: "/images/featured_sports_soccer_1794004175243.jpg",
     badge: "Futebol & Lutas"
   },
   {

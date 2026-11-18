@@ -1,0 +1,100 @@
+:root {
+  color-scheme: dark;
+  --red: #E50914;
+  --red-dark: #B20710;
+  --ink: #000000;
+  --coal: #0F0D0C;
+  --line: #26211E;
+  --ash: #A39A92;
+  --bone: #F3EEE7;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-variation-settings: 'wdth' 100;
+  background-color: var(--ink);
+  color: var(--bone);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--red);
+  color: #fff;
+}
+
+/* Display type: condensed poster billing block */
+.display {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-stretch: 62%;
+  font-variation-settings: 'wdth' 62;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.005em;
+}
+
+.condensed {
+  font-stretch: 75%;
+  font-variation-settings: 'wdth' 75;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Keyboard focus */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Page-load: headline lines rise once */
+@keyframes rise {
+  from { transform: translateY(105%); }
+  to { transform: translateY(0); }
+}
+.rise-mask { display: block; overflow: hidden; padding-bottom: 0.04em; }
+.rise-line {
+  display: block;
+  transform: translateY(105%);
+  animation: rise 900ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+/* Smooth accordion */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.accordion-panel[data-open='true'] { grid-template-rows: 1fr; }
+.accordion-panel > div { overflow: hidden; }
+
+/* Hide scrollbar on horizontal tab rails */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: #2b2522; border-radius: 6px; border: 2px solid var(--ink); }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise-line { animation: none; transform: none; }
+  .accordion-panel { transition: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+.hero-title { font-size: clamp(3.6rem, 11vw, 9.5rem); }
+.cta-title { font-size: clamp(3.2rem, 9vw, 8rem); }
