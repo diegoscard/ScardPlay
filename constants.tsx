@@ -144,7 +144,7 @@ export const FEATURED_CONTENT: FeaturedItem[] = [
  */
 export const HERO_TRAILER = {
   mp4: '/trailer.mp4',
-  youtube: 'https://www.youtube.com/watch?v=Y-Dcn-qnnjs',
+  youtube: 'https://www.youtube.com/watch?v=M1SV8KN-dRI',
   startAt: 80,
   poster: '/images/trailer-poster.jpg',
 };
