@@ -139,11 +139,11 @@ export const FEATURED_CONTENT: FeaturedItem[] = [
  *   marca do YouTube). Se o arquivo não existir, o site usa o YouTube automaticamente.
  * - youtube: cole aqui o link do trailer no YouTube (ex.: https://www.youtube.com/watch?v=XXXXXXXXXXX
  *   ou https://youtu.be/XXXXXXXXXXX). Também aceita só o código.
- * - startAt: segundo do trailer em que o vídeo começa (pula logos de estúdio, por exemplo).
+ * - startAt: segundo em que o vídeo do YouTube começa (só vale para o YouTube; o MP4 já foi cortado).
  * - poster: imagem mostrada enquanto o vídeo carrega.
  */
 export const HERO_TRAILER = {
-  mp4: 'public/trailer.mp4',
+  mp4: '/trailer.mp4',
   youtube: 'https://www.youtube.com/watch?v=Y-Dcn-qnnjs',
   startAt: 80,
   poster: '/images/trailer-poster.jpg',

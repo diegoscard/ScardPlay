@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { HERO_TRAILER } from './constants';
 
 /**
@@ -7,8 +7,7 @@ import { HERO_TRAILER } from './constants';
  * Ordem de tentativa:
  *  1. Arquivo MP4 em /public (HERO_TRAILER.mp4) — fica 100% limpo, sem logo nem barra.
  *  2. Vídeo do YouTube (HERO_TRAILER.youtube) — usado se o MP4 não existir.
- *  3. Só a imagem (HERO_TRAILER.poster) — se nenhum dos dois estiver configurado
- *     ou se a pessoa pediu "reduzir movimento" no aparelho.
+ *  3. Só a imagem (HERO_TRAILER.poster) — se nenhum dos dois estiver configurado.
  *
  * Os navegadores só deixam vídeo tocar sozinho se estiver sem som, por isso ele é mudo.
  */
@@ -23,28 +22,25 @@ const youtubeIdFrom = (value: string): string => {
 };
 const YT_ID = youtubeIdFrom(HERO_TRAILER.youtube);
 
+// Arquivos da pasta public/ ficam na raiz do site: "public/trailer.mp4" vira "/trailer.mp4"
+const MP4_SRC = (() => {
+  const v = (HERO_TRAILER.mp4 || '').trim();
+  if (!v || /^https?:\/\//i.test(v)) return v;
+  return '/' + v.replace(/^\.?\/+/, '').replace(/^public\//, '');
+})();
+
 export const HeroTrailer: React.FC = () => {
-  const [reducedMotion, setReducedMotion] = useState(false);
   const [mode, setMode] = useState<Mode>(
-    HERO_TRAILER.mp4 ? 'mp4' : YT_ID ? 'youtube' : 'poster'
+    MP4_SRC ? 'mp4' : YT_ID ? 'youtube' : 'poster'
   );
   const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
 
   const fallbackFromMp4 = () => {
     setVisible(false);
     setMode(YT_ID ? 'youtube' : 'poster');
   };
 
-  const showVideo = !reducedMotion && mode !== 'poster';
+  const showVideo = mode !== 'poster';
   const id = YT_ID;
   const ytSrc =
     `https://www.youtube-nocookie.com/embed/${id}` +
@@ -67,7 +63,7 @@ export const HeroTrailer: React.FC = () => {
         <video
           key="mp4"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}
-          src={HERO_TRAILER.mp4}
+          src={MP4_SRC}
           poster={HERO_TRAILER.poster || undefined}
           autoPlay
           muted
@@ -103,8 +99,8 @@ export const HeroTrailer: React.FC = () => {
       )}
 
       {/* Escurecimento para o texto continuar legível sobre o vídeo */}
-      <div className="absolute inset-0 bg-black/35" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/10" />
+      <div className="absolute inset-0 bg-black/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/50 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/80 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black via-black/70 to-transparent" />
     </div>
