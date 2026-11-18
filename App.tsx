@@ -22,6 +22,7 @@ import {
 import { PLANS, FAQ_ITEMS, TESTIMONIALS, FEATURED_CONTENT } from './constants';
 import { FAQItem } from './types';
 import { CatalogCarousel } from './CatalogCarousel';
+import { HeroTrailer } from './HeroTrailer';
 
 const WHATSAPP_BASE_LINK = "https://wa.me/5541988745822?text=Ol%C3%A1,%20vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es";
 
@@ -154,31 +155,33 @@ const Header: React.FC = () => {
 /* ---------- Hero (headline + catalog tunnel) ---------- */
 
 const Hero: React.FC = () => (
-  <section id="inicio" className="relative pt-[104px] sm:pt-32 bg-black overflow-hidden">
-    <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full bg-scard-red/[0.10] blur-[160px]" />
+  <section id="inicio" className="relative bg-black">
+    <div className="relative min-h-[92svh] flex items-end overflow-hidden">
+      <HeroTrailer />
 
-    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-        <h1 className="lg:col-span-7 display hero-title text-white">
-          <span className="rise-mask"><span className="rise-line">Toda a TV</span></span>
-          <span className="rise-mask"><span className="rise-line" style={{ animationDelay: '90ms' }}>num só</span></span>
-          <span className="rise-mask"><span className="rise-line" style={{ animationDelay: '180ms' }}>acesso.</span></span>
-        </h1>
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-14 sm:pb-20">
+        <div className="max-w-3xl">
+          <h1 className="display hero-title text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+            <span className="rise-mask"><span className="rise-line">Toda a TV</span></span>
+            <span className="rise-mask"><span className="rise-line" style={{ animationDelay: '90ms' }}>num só</span></span>
+            <span className="rise-mask"><span className="rise-line" style={{ animationDelay: '180ms' }}>acesso.</span></span>
+          </h1>
 
-        <div className="lg:col-span-5 lg:pb-3 space-y-7">
-          <p className="text-scard-bone/85 text-lg leading-relaxed max-w-md">
+          <p className="mt-7 text-scard-bone/90 text-lg leading-relaxed max-w-lg">
             Mais de 150 mil conteúdos entre canais abertos e fechados, filmes, séries e esportes ao vivo em Full HD e 4K. Sem fidelidade e sem multa.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3">
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <WhatsAppButton size="lg">Quero meu acesso</WhatsAppButton>
             <a
               href="#planos"
-              className="inline-flex items-center justify-center rounded-full px-7 py-4 text-base font-semibold text-scard-bone border border-scard-line hover:border-white/30 hover:bg-white/[0.04] transition-colors"
+              className="inline-flex items-center justify-center rounded-full px-7 py-4 text-base font-semibold text-white bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 transition-colors"
             >
               Ver planos
             </a>
           </div>
-          <dl className="grid grid-cols-3 gap-4 pt-5 border-t border-white/[0.08]">
+
+          <dl className="mt-10 grid grid-cols-3 gap-4 max-w-lg pt-5 border-t border-white/15">
             <div>
               <dt className="text-xs text-scard-ash">Clientes ativos</dt>
               <dd className="display text-3xl text-white mt-1">+15 mil</dd>

@@ -544,7 +544,7 @@ export const CatalogCarousel: React.FC = () => {
 
           {/* Controls: Covers filter + Genre filter + Search + Play/Pause */}
           <div className="flex flex-wrap items-center gap-2">
-            {coversCount > 0 && (
+            {coversCount > 0 && coversCount < movies.length && (
               <button
                 type="button"
                 onClick={() => {

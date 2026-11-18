@@ -131,3 +131,20 @@ export const FEATURED_CONTENT: FeaturedItem[] = [
     badge: "Alta Definição"
   }
 ];
+
+/**
+ * Trailer que roda no fundo do topo do site (sem som, em loop, sem controles).
+ *
+ * - mp4: coloque o arquivo do trailer em public/trailer.mp4 (recomendado: fica sem nenhuma
+ *   marca do YouTube). Se o arquivo não existir, o site usa o YouTube automaticamente.
+ * - youtube: cole aqui o link do trailer no YouTube (ex.: https://www.youtube.com/watch?v=XXXXXXXXXXX
+ *   ou https://youtu.be/XXXXXXXXXXX). Também aceita só o código.
+ * - startAt: segundo do trailer em que o vídeo começa (pula logos de estúdio, por exemplo).
+ * - poster: imagem mostrada enquanto o vídeo carrega.
+ */
+export const HERO_TRAILER = {
+  mp4: '/trailer.mp4',
+  youtube: '',
+  startAt: 0,
+  poster: '/images/trailer-poster.jpg',
+};
