@@ -519,40 +519,40 @@ const PlansSection: React.FC = () => (
         intro="Preço fechado, sem taxa escondida e sem renovação automática. Todos os planos têm o catálogo completo."
       />
 
-      <div className="mt-14 grid md:grid-cols-3 gap-5 items-stretch">
+      <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch">
         {PLANS.map((plan) => {
           const isHighlight = plan.highlight;
           const [reais, centavos] = plan.price.split(',');
           return (
             <div
               key={plan.id}
-              className={`relative rounded-2xl flex flex-col p-7 sm:p-9 ${
+              className={`relative rounded-2xl flex flex-col p-7 xl:p-6 ${
                 isHighlight
-                  ? 'bg-black ring-2 ring-scard-red shadow-[0_30px_80px_-30px_rgba(229,9,20,0.6)] md:-my-4 md:py-12'
+                  ? 'bg-black ring-2 ring-scard-red shadow-[0_30px_80px_-30px_rgba(229,9,20,0.6)] xl:-my-4 xl:py-10'
                   : 'bg-black/60 ring-1 ring-scard-line'
               }`}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <span className="text-sm text-scard-ash">{plan.name}</span>
                 {isHighlight && (
-                  <span className="text-xs font-semibold bg-scard-red text-white px-3 py-1 rounded-full">
+                  <span className="text-xs font-semibold bg-scard-red text-white px-3 py-1 rounded-full whitespace-nowrap shrink-0">
                     Mais escolhido
                   </span>
                 )}
               </div>
 
-              <h3 className="display text-5xl text-white mt-3">{plan.period}</h3>
+              <h3 className="display text-5xl xl:text-[2.75rem] text-white mt-3">{plan.period}</h3>
 
               <div className="mt-6 flex items-start gap-1 text-white">
                 <span className="text-lg font-semibold mt-2">R$</span>
-                <span className="display text-[5.5rem] leading-[0.85] tabular">{reais}</span>
-                <span className="display text-4xl mt-1 tabular">,{centavos}</span>
+                <span className="display text-[5.5rem] xl:text-[4.5rem] leading-[0.85] tabular">{reais}</span>
+                <span className="display text-4xl xl:text-3xl mt-1 tabular">,{centavos}</span>
               </div>
               <p className="mt-2 text-sm text-scard-ash">por {plan.durationLabel}</p>
 
               <ul className="mt-8 pt-8 border-t border-scard-line space-y-3.5 flex-1">
                 {plan.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-3 text-scard-bone">
+                  <li key={benefit} className="flex items-start gap-3 text-scard-bone text-[15px]">
                     <Check size={18} className="text-scard-red shrink-0 mt-0.5" />
                     <span className="leading-snug">{benefit}</span>
                   </li>
@@ -563,7 +563,7 @@ const PlansSection: React.FC = () => (
                 href={plan.whatsappLink}
                 variant={isHighlight ? 'red' : 'light'}
                 size="lg"
-                className="w-full mt-10"
+                className="w-full mt-10 xl:!px-4 xl:!py-3.5 xl:!text-sm whitespace-nowrap"
               >
                 Contratar plano {plan.period.toLowerCase()}
               </WhatsAppButton>

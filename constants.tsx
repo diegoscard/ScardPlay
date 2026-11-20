@@ -35,6 +35,22 @@ export const PLANS: Plan[] = [
     ]
   },
   {
+    id: 'semestral',
+    name: 'Plano Plus',
+    period: 'Semestral',
+    price: '179,90',
+    durationLabel: '6 meses',
+    whatsappLink: 'https://wa.me/5541988745822?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20PLANO%20SEMESTRAL%20do%20SCARD%20PLAY%20IPTV.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F',
+    benefits: [
+      'Mais de 150 mil conteúdos',
+      'Assista em vários aparelhos',
+      'Filmes, Séries, Novelas, Cursos',
+      'Conteúdo Adulto Opcional',
+      'Qualidade Full HD / 4K',
+      'Suporte Prioritário VIP'
+    ]
+  },
+  {
     id: 'premium',
     name: 'Plano Premium',
     period: 'Anual',
